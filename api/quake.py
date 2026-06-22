@@ -5,7 +5,7 @@ import json
 import random
 import requests
 from config.data import Urls, logging
-from config.config import QuakeKey, user_agents
+from config import QuakeKey, user_agents
 
 
 
@@ -16,7 +16,7 @@ class Quake:
             "X-QuakeToken": QuakeKey
         }
         if QuakeKey == "":
-            logging.warning("请先在config/config.py文件中配置quake的api")
+            logging.warning("请先在config/settings.py文件中配置quake的api")
             exit(0)
         
         try:
@@ -60,5 +60,4 @@ class Quake:
                         logging.info(url)
                         Urls.url.append(url)
         except Exception as e:
-            logging.error("获取失败")
-            pass
+            logging.error("360 Quake API 异常: {0}".format(str(e)))

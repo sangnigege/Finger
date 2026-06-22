@@ -6,9 +6,12 @@ import base64
 import random
 import requests
 from urllib.parse import quote
-from config.data import logging,Urls,Ips
-from config.config import Fofa_key,Fofa_email,user_agents,Fofa_Size
-import readline
+from config.data import logging, Urls, Ips
+from config import Fofa_key, Fofa_email, user_agents, Fofa_Size
+try:
+    import readline
+except ImportError:
+    pass
 
 
 class Fofa:
@@ -69,9 +72,8 @@ class Fofa:
             logging.error("网络超时")
         except json.decoder.JSONDecodeError:
             logging.error("获取失败，请重试")
-        except:
-            logging.error("获取失败")
-            pass
+        except Exception as e:
+            logging.error("FOFA API 异常: {0}".format(str(e)))
 
     def check(self):
         try:
@@ -84,5 +86,6 @@ class Fofa:
                     return False
             else:
                 return False
-        except:
+        except Exception as e:
+            logging.warning("FOFA 认证检查失败: {0}".format(str(e)))
             return False

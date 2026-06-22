@@ -1,191 +1,320 @@
 <h1 align="center">
-  <br>
   <img src="http://picbed.easy233.top//imgQQ%E6%88%AA%E5%9B%BE20210603085018.png" width="400px" alt="Finger">
 </h1>
 
-<h4 align="center">一款红队在大量的资产中存活探测与重点攻击系统指纹探测工具</h4>
+<h4 align="center">红队资产存活探测与重点攻击系统指纹识别工具</h4>
 
 <p align="center">
-  <a href="#开始">开始</a> •
-  <a href="#更新日志">更新日志</a> •
-  <a href="#支持选项">支持选项</a> •
-  <a href="#指纹识别规则">指纹识别规则</a> •
-  <a href="#实际效果">实际效果</a> •
-  <a href="#todo">TODO</a> •
-  <a href="#感谢列表">感谢列表</a>
-</p>
-<p align="center">
-    <img src="https://img.shields.io/badge/Author-EASY-da282a">
-    <img src="https://img.shields.io/badge/Language-python3.7-da282a"></a>
-    <img src="https://img.shields.io/badge/Version-V5.0-da282a">
+  <img src="https://img.shields.io/badge/Author-EASY-da282a">
+  <img src="https://img.shields.io/badge/Language-Python%203.10+-da282a">
+  <img src="https://img.shields.io/badge/Version-V5.2-da282a">
+  <img src="https://img.shields.io/badge/Rules-16,277-da282a">
 </p>
 
+---
 
+## 项目简介
 
+Finger 是一款面向红队的资产指纹探测工具，在大量资产中快速识别重点攻击系统（OA、CMS、框架、防火墙、路由器、CDN 等），协助渗透测试人员快速定位高价值目标。
 
+本项目 fork 自 [EASY233/Finger](https://github.com/EASY233/Finger)，在 V5.1 基础上进行了大量优化和完善。
 
-## 开始
+### 核心能力
 
-Finger定位于一款红队在大量的资产中存活探测与重点攻击系统指纹探测工具。在面临大量资产时候Finger可以快速从中查找出重点攻击系统协助我们快速展开渗透。早有前辈贡献出优秀的作品[[EHole(棱洞)2.0 重构版-红队重点攻击系统指纹探测工具](https://github.com/EdgeSecurityTeam/EHole) 但是该项目代码不开源我想做出一些修改也没有办法，所以决定使用其指纹库自行开发一个趁手的工具。
+- **存活探测** — 并发 HTTP 扫描，自动处理 URL 格式异常
+- **指纹识别** — 16,277 条规则，覆盖 CMS、OA、框架、防火墙、路由器、摄像头、CDN 等
+- **CDN 检测** — 三层检测：多 IP 判定 + CIDR 范围匹配 + 响应头特征
+- **IP 归属地** — 基于 ip2region 数据库，自动获取 IP 地理位置和运营商
+- **资产收集** — 支持 FOFA / 360 Quake API 资产搜集
+- **库模式调用** — `from lib.finger import Finger` 可被其他工具直接引用
 
-## 更新日志
+---
 
-没想到能够获取到这么多star，真的非常高兴也让我更加坚定把该工具开发的更加完善。
+## 快速开始
 
-###  2022-3-18 更新
+### 环境要求
 
-- 本次更新之后Finger会把所有请求失败的资产同样保存下来，并记录下请求失败原因方便手动检查
-- 对输入目标进行了简单的去除特殊字符处理。
-- 修复部分小bug
+- Python 3.10+
+- Linux / macOS / Windows
 
-这样改进的原因主要是日常做项目的时候，客户给的资产中经常有url格式不正确的情况出现
+### 安装
 
-例如：
-
-```
-http://"www.baidu.com
-http://www.baidu.com(备注)
-移动端:www.baidu.com
-.......
-```
-
-或者因为网络原因请求超时，这种情况以往Finger会把这些资产全部抛弃保存导致错过了很多资产。
-
-现在会把所有所有失败的请求，以及失败的原因保存在表格的最下面。
-
-![](./img/5.png)
-
-**⚠️注意**
-更新后保存为xlsx后打开可能会出现如下问题:
-
-![](./img/8.png)
-
-点击进行修复-删除即可
-
-![](./img/6.png)
-
-这是因为部分链接不符合url格式导致，**进行修复不会导致任何数据丢失！！**
-
-![](./img/7.png)
-
-### V5.0 版本大更新
-
-- 取消html输出格式，默认使用xlsx格式保存数据，目前只支持xlsx和json保存数据
-- 增加自动获取IP，识别CDN，获取ip归属地功能。
-- 增加调用fofa，360quake的api来搜集资产，并自动进行存活探测以及指纹识别(⚠️**注意Finger调用api的时候仅获取web资产**)。
-- 修复若干bug
-
-### V5.1 更新
-
-- 优化输出
-- 修复通过fofa api查询web信息不全的bug
-
-## 支持选项
-
-### 下载使用
-
-Finger使用python3.7开发全平台支持,可以使用下面命令下载使用:
-
-```html
-git clone https://github.com/EASY233/Finger.git
-pip3 install -r requirements.txt
-python3 Finger.py -h
+```bash
+git clone https://github.com/sangnigege/Finger.git
+cd Finger
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
-### 参数说明
+### 使用
 
-Finger追求极简命令参数只有以下几个:
+```bash
+# 单个 URL 指纹识别
+python Finger.py -u http://example.com
 
-- -u  对单个URL进行指纹识别
-- -f   对指定文件中的url进行批量指纹识别
-- -i    对ip进行fofa数据查询采集其web资产
-- -if   对指定文件中的ip批量调用fofa进行数据查询采集其web资产
-- -fofa 调用fofa api进行资产收集
-- -quake 调用360 quake进行资产收集
-- -o  指定输出方式默认不选择的话是xlsx格式，支持json，xls。
+# 批量 URL 扫描
+python Finger.py -f targets.txt
 
-Finger支持的URL格式有:www.baidu.com , 127.0.0.1,http://www.baidu.com。 但是前两种不推荐使用Finger会在URL处理阶段自动为其添加``http://``和``https://``
+# 指定输出格式 (json / xlsx，默认 xlsx)
+python Finger.py -f targets.txt -o json
 
-Finger支持的IP格式有单个IP格式192.168.10.1,IP段192.168.10.1/24，某一小段IP192..168.10.10-192.168.10.50满足日常使用的所有需求。Finger会首先通过Fofa采集IP的web资产，然后对其进行存活探测以及系统指纹探测。
+# IP 资产收集（自动调 FOFA 获取 web 资产）
+python Finger.py -i 192.168.1.0/24
 
-### 配置说明
-
-默认线程数为30实际需要修改可以在`config/config.py`中进行修改，调用api查询功能需要从配置文件修改为自已对应的 api信息。
-
+# FOFA / Quake 关键词搜索
+python Finger.py -fofa
+python Finger.py -quake
 ```
-# 设置线程数，默认30
+
+### 库模式
+
+```python
+from lib.finger import Finger
+
+f = Finger(threads=30)
+results, filepath = f.scan_and_save(
+    ['http://target1.com', 'http://target2.com'],
+    fmt='xlsx'
+)
+for r in results:
+    print(f"{r['url']} → {r['cms']} [{r['confidence']}]")
+```
+
+---
+
+## 参数说明
+
+| 参数 | 说明 |
+|------|------|
+| `-u URL` | 单个 URL 指纹识别 |
+| `-f FILE` | 批量 URL 文件 |
+| `-i IP` | IP/IP段/IP范围（自动调 FOFA 获取 web 资产） |
+| `-if FILE` | IP 文件 |
+| `-fofa` | 交互式 FOFA 关键词搜索 |
+| `-quake` | 交互式 360 Quake 关键词搜索 |
+| `-o FORMAT` | 输出格式：`json` / `xlsx`（默认 xlsx） |
+
+支持的 URL 格式：`www.baidu.com`、`127.0.0.1`、`http://www.baidu.com` 均可自动处理。
+
+支持的 IP 格式：`192.168.1.1`、`192.168.1.0/24`、`192.168.1.10-192.168.1.50`。
+
+---
+
+## 配置说明
+
+编辑 `config/settings.py`：
+
+```python
+# 线程数，默认 30
 threads = 30
 
-# 设置Fofa key信息
+# FOFA API 配置
 Fofa_email = ""
 Fofa_key = ""
-# 普通会员API查询数据是前100，高级会员是前10000条根据自已的实际情况进行调整。
-Fofa_Size = 100
+Fofa_Size = 100       # 普通会员 100，高级会员 10000
 
-# 设置360quake key信息，每月能免费查询3000条记录
+# 360 Quake API 配置（每月免费 3000 条）
 QuakeKey = ""
 
-# 是否选择在线跟新指纹库，默认为True每次程序都会检查一遍指纹库是否是最新
-FingerPrint_Update = True
+# 是否启动时在线更新指纹库（默认关闭）
+FingerPrint_Update = False
 ```
 
-## 指纹识别规则
+---
 
-Finger的指纹规则学习之[EHole(棱洞)2.0 重构版-红队重点攻击系统指纹探测工具](https://github.com/EdgeSecurityTeam/EHole)。指纹格式如下:
+## 指纹识别
 
-```
-cms：系统名称
-method：识别方式 (支持三种识别方式，分别为：keyword、faviconhash、regula)
-location：位置（指纹识别位置，提供两个位置，一个为body，一个为header）
-keyword：关键字（favicon图标hash、正则表达式、关键字）
-```
-
-keyword支持多关键字匹配，需要所有关键字匹配上才能识别。
-
-一个简单例子:
+### 规则格式
 
 ```json
 {
-		"cms": "seeyon",
-		"method": "keyword",
-		"location": "body",
-		"keyword": ["/seeyon/USER-DATA/IMAGES/LOGIN/login.gif"]
+    "cms": "Shiro",
+    "method": "keyword",
+    "location": "header",
+    "keyword": ["rememberMe=", "=deleteMe", "shiroCookie"],
+    "logic": "or",
+    "confidence": 100
 }
 ```
 
-## 实际效果
+### 识别方式
 
-URL批量扫描效果如下:
+| method | 说明 | 精度 | 示例 |
+|--------|------|------|------|
+| `keyword` | 关键词匹配（支持 AND/OR 逻辑） | body★★☆ / header★★★★ / title★★★★ | `"keyword": ["Swagger UI"]` |
+| `faviconhash` | favicon 图标 hash 匹配 | ★★★★★ | `"keyword": ["81586312"]` |
+| `regula` | 正则表达式匹配 | ★★★★ | `"keyword": ["Apache/([\\d.]+)"]` |
 
-![](./img/1.png)
+### 匹配位置
 
-调用api进行资产收集效果扫描如下:
+| location | 说明 | 误报风险 |
+|----------|------|----------|
+| `header` | HTTP 响应头（多格式兼容） | 低 |
+| `title` | 页面 `<title>` 标签 | 低 |
+| `body` | 页面 HTML 全文 | 中（自动降权） |
 
-![](./img/imgimage-20210915171346477.png)
+### 置信度
 
-默认使用xlsx对数据进行保存，重点资产和普通资产分开展示:
-![](./img/imgimage-20210915171612756.png)
+- 规则可指定 `confidence`（0-100），默认 100
+- body 单关键词自动降权：<5字符 -60 / <8字符 -40 / ≥8字符 -20
+- header / title / faviconhash 规则不降权
+- 最终仅保留 confidence ≥ 50 的匹配结果
+- 输出时同名 CMS 去重，最多显示 8 个
+
+### 规则规模
+
+| 类型 | 数量 |
+|------|------|
+| keyword（关键词） | 15,668 |
+| faviconhash（图标哈希） | 608 |
+| regula（正则） | 1 |
+| **总计** | **16,277** |
+| 覆盖产品数 | 11,600 |
+
+---
+
+## CDN 检测
+
+三层检测机制：
+
+| 层级 | 方式 | 说明 |
+|------|------|------|
+| ① DNS 多 IP | 解析到 ≥2 个 IP | 多数 CDN 返回多个边缘节点 IP |
+| ② CIDR 匹配 | 540 条已知 CDN IP 段 | 单 IP 时与已知 CDN IP 范围对比 |
+| ③ 响应头特征 | 16 个 CDN 专属响应头 | Cloudflare/Fastly/CloudFront/Akamai 等 |
+
+三层之间短路判断，零额外发包。
+
+---
+
+## WAF 隐匿
+
+- 每个目标最多 2 次发包（主页 + favicon）
+- 请求头包含 `Sec-Fetch-*` 系列，与 Chrome 浏览器一致
+- favicon 请求使用正确的 `Accept: image/*` 头
+- UA 池为 2025 年 Chrome 131 / Firefox 135
+- 不发送 Cookie（已移除 `rememberMe=test`）
+- `verify=False` 跳过 SSL 证书验证
+
+---
+
+## 指纹库更新记录
+
+| 版本 | 规则数 | 变更 |
+|------|--------|------|
+| 原始 (V5.1) | 648 | Fork 原始版本 |
+| 合并版 | 28,906 | 合并 16 个指纹库（254K 原始规则去重） |
+| 精简版 | 17,010 | 同产品 OR 合并，减少 41% 冗余 |
+| 统一版 | 16,277 | CMS 名归一化 + 清理通用关键词 + 补充 faviconhash |
+
+---
+
+## 项目结构
+
+```
+Finger/
+├── Finger.py              # CLI 入口
+├── requirements.txt       # Python 依赖（5 个直接依赖）
+├── config/
+│   ├── settings.py        # 配置（线程/API key/UA/指纹更新开关）
+│   ├── color.py           # 终端颜色
+│   ├── data.py            # 全局共享数据结构
+│   ├── datatype.py        # AttribDict（属性可访问的字典）
+│   └── log.py             # 彩色日志
+├── lib/
+│   ├── finger.py          # 库模式接口（可 import 使用）
+│   ├── req.py             # HTTP 请求引擎（并发扫描）
+│   ├── identify.py        # 指纹匹配引擎（16K 规则 + 自动降权）
+│   ├── output.py          # 结果输出（JSON / XLSX + 彩色标记）
+│   ├── ip_factory.py      # IP 解析 + CDN 检测
+│   ├── ip_attributable.py # IP 归属地查询
+│   ├── ip2region/          # ip2region v3 xdb 搜索引擎
+│   ├── cmdline.py         # 命令行参数解析
+│   ├── checkenv.py        # 环境检查 + 在线更新
+│   └── options.py         # 选项初始化（URL 清洗/IP 解析）
+├── api/
+│   ├── fofa.py            # FOFA API
+│   └── quake.py           # 360 Quake API
+└── library/
+    ├── finger.json        # 指纹库（16,277 条规则）
+    ├── cdn_ip_cidr.json   # CDN IP CIDR 范围（549 条，含 Cloudflare 最新）
+    └── data/ip2region.xdb # IP 归属地数据库 v3（~7MB）
+```
+
+---
+
+## 依赖
+
+5 个直接依赖，全部活跃维护：
+
+| 包 | 用途 | 版本要求 |
+|---|---|---|
+| requests | HTTP 请求 | ≥2.28.0 |
+| beautifulsoup4 | HTML 解析（标题提取） | ≥4.10.0 |
+| mmh3 | favicon MurmurHash3 哈希 | ≥3.0.0 |
+| XlsxWriter | Excel 输出 | ≥1.4.4 |
+| colorama | Windows 终端颜色 | ≥0.4.4 |
+
+---
+
+## 更新日志
+
+### V5.2（2026-06）
+
+- **指纹库**：合并 16 个来源，254K 原始规则去重 → 16,277 条，覆盖 11,600 产品
+- **置信度系统**：自动降权 body 单关键词，过滤低置信度匹配，同名 CMS 去重
+- **OR/AND 逻辑**：规则支持 `logic: "or"` 灵活匹配
+- **版本号提取**：支持 `version_regex` 自动提取产品版本
+- **CMS 名归一化**：统一 1,715 条大小写/空格/横线变体
+- **CDN 检测**：三层检测 + 16 种响应头特征
+- **WAF 隐匿**：添加 `Sec-Fetch-*` 浏览器头，favicon 请求修正 Accept
+- **安全修复**：移除 `rememberMe=test` Shiro Cookie（自曝扫描器特征）
+- **Bug 修复**：CaseInsensitiveDict 兼容、ip2region 文件泄漏、logger 未定义
+- **库模式**：`from lib.finger import Finger` 可供其他工具直接引用
+- **跨平台**：修复 Python 3.10-3.13 兼容性，移除 Windows 专用依赖
+- **ip2region 升级**：v1 → v3.16.0 xdb 格式（更小 7MB vs 11MB，更准，2025年数据）
+- **依赖精简**：12→5 个直接依赖，移除 lxml/urllib3/pyreadline 等冗余
+- **输出增强**：XLSX 按置信度红/橙着色，新增 Confidence/Version 列
+
+### V5.1（2022-03）
+
+- 优化输出，修复 FOFA API bug
+
+### V5.0（2021-09）
+
+- xlsx/json 输出，IP 归属地，FOFA/Quake API 集成
+
+---
 
 ## TODO
 
-- [ ] 1.优化指纹识别规则
-- [ ] 2.提高ip归属地识别的精确性
+- [ ] 增加 `--min-confidence` CLI 参数，允许用户自定义过滤阈值
+- [ ] 优化 UA 池（扩充到 20+）
+- [ ] 支持自定义请求头/Cookie
+- [ ] 增加请求间隔（`--delay`）降低 WAF 触发概率
+- [x] 升级 ip2region 至 v3/xdb 格式（v3.16.0，7MB，2025年更新）
 
-## 感谢列表
-在开发过程中参考学习了非常多前辈们的优秀开源项目，特此感谢!
+---
 
-[Glass(镜) V2.0-剑客到刺客的蜕变](https://github.com/s7ckTeam/Glass)
+## 已知局限
 
-[EHole(棱洞)2.0 重构版-红队重点攻击系统指纹探测工具](https://github.com/EdgeSecurityTeam/EHole)
+- **IP 归属地**：已升级至 ip2region v3.16.0 xdb 格式（7MB，2025年更新），精度和覆盖率均优于 v1。部分边缘 IP 可能查询失败（已知 searcher bug），不影响主流程。
+- **指纹库**：body 单关键词规则存在一定误报（已通过自动降权减轻）。建议扫描后人工复核低置信度结果。
 
-[WebAliveScan](https://github.com/broken5/WebAliveScan)
+---
 
-[AUTO-EARN](https://github.com/Echocipher/AUTO-EARN)
+## 感谢
 
-[Ip2region](https://github.com/lionsoul2014/ip2region)
+在开发过程中参考学习了以下优秀开源项目：
 
-[OneForAll是一款功能强大的子域收集工具](https://github.com/shmilylty/OneForAll)
+- [Finger](https://github.com/EASY233/Finger) — 本项目上游，由 EASY 开发的 V5.1 版本
+- [EHole(棱洞)](https://github.com/EdgeSecurityTeam/EHole) — 指纹识别思路来源
+- [Glass(镜)](https://github.com/s7ckTeam/Glass)
+- [WebAliveScan](https://github.com/broken5/WebAliveScan)
+- [ip2region](https://github.com/lionsoul2014/ip2region)
+- [OneForAll](https://github.com/shmilylty/OneForAll)
 
-感谢**Ti0s** 提供的建议
+感谢 Ti0s 提供的建议。
+
 [![Stargazers over time](https://starchart.cc/EASY233/Finger.svg)](https://starchart.cc/EASY233/Finger)
-

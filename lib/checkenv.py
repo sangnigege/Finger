@@ -6,7 +6,7 @@ import os
 import time
 import requests
 import hashlib
-from config.config import head,FingerPrint_Update
+from config import get_random_headers, FingerPrint_Update
 from config.data import path,logging
 
 class CheckEnv:
@@ -46,7 +46,7 @@ class CheckEnv:
             nowTime = time.strftime("%Y%m%d%H%M%S", time.localtime())
             logging.info("正在在线更新指纹库。。")
             Fingerprint_Page = "https://cdn.jsdelivr.net/gh/EASY233/Finger/library/finger.json"
-            response = requests.get(Fingerprint_Page,timeout = 10,headers = head)
+            response = requests.get(Fingerprint_Page, timeout=10, headers=get_random_headers())
             filepath = os.path.join(path.library,"finger.json")
             bakfilepath = os.path.join(path.library,"finger_{}.json.bak".format(nowTime))
             with open(filepath,"rb") as file:
