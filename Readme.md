@@ -283,12 +283,9 @@ Finger/
 
 ## 感谢
 
-在开发过程中参考学习了以下优秀开源项目：
+在开发过程中实际参考和引用了以下优秀开源项目：
 
 - [Finger](https://github.com/EASY233/Finger) — 本项目上游，由 EASY 开发的 V5.1 版本
-- [EHole(棱洞)](https://github.com/EdgeSecurityTeam/EHole) — 指纹识别思路来源
-- [Glass(镜)](https://github.com/s7ckTeam/Glass)
-- [WebAliveScan](https://github.com/broken5/WebAliveScan)
-- [ip2region](https://github.com/lionsoul2014/ip2region)
-- [OneForAll](https://github.com/shmilylty/OneForAll)
+- [EHole(棱洞)](https://github.com/EdgeSecurityTeam/EHole) — 指纹识别思路与规则格式
+- [ip2region](https://github.com/lionsoul2014/ip2region) — IP 归属地数据库与查询引擎
 
