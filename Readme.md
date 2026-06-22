@@ -1,6 +1,4 @@
-<h1 align="center">
-  <img src="http://picbed.easy233.top//imgQQ%E6%88%AA%E5%9B%BE20210603085018.png" width="400px" alt="Finger">
-</h1>
+
 
 <h4 align="center">红队资产存活探测与重点攻击系统指纹识别工具</h4>
 
@@ -17,7 +15,6 @@
 
 Finger 是一款面向红队的资产指纹探测工具，在大量资产中快速识别重点攻击系统（OA、CMS、框架、防火墙、路由器、CDN 等），协助渗透测试人员快速定位高价值目标。
 
-本项目 fork 自 [EASY233/Finger](https://github.com/EASY233/Finger)，在 V5.1 基础上进行了大量优化和完善。
 
 ### 核心能力
 
@@ -197,16 +194,6 @@ FingerPrint_Update = False
 - 不发送 Cookie（已移除 `rememberMe=test`）
 - `verify=False` 跳过 SSL 证书验证
 
----
-
-## 指纹库更新记录
-
-| 版本 | 规则数 | 变更 |
-|------|--------|------|
-| 原始 (V5.1) | 648 | Fork 原始版本 |
-| 合并版 | 28,906 | 合并 16 个指纹库（254K 原始规则去重） |
-| 精简版 | 17,010 | 同产品 OR 合并，减少 41% 冗余 |
-| 统一版 | 16,277 | CMS 名归一化 + 清理通用关键词 + 补充 faviconhash |
 
 ---
 
@@ -285,21 +272,11 @@ Finger/
 
 - xlsx/json 输出，IP 归属地，FOFA/Quake API 集成
 
----
-
-## TODO
-
-- [ ] 增加 `--min-confidence` CLI 参数，允许用户自定义过滤阈值
-- [ ] 优化 UA 池（扩充到 20+）
-- [ ] 支持自定义请求头/Cookie
-- [ ] 增加请求间隔（`--delay`）降低 WAF 触发概率
-- [x] 升级 ip2region 至 v3/xdb 格式（v3.16.0，7MB，2025年更新）
 
 ---
 
 ## 已知局限
 
-- **IP 归属地**：已升级至 ip2region v3.16.0 xdb 格式（7MB，2025年更新），精度和覆盖率均优于 v1。部分边缘 IP 可能查询失败（已知 searcher bug），不影响主流程。
 - **指纹库**：body 单关键词规则存在一定误报（已通过自动降权减轻）。建议扫描后人工复核低置信度结果。
 
 ---
@@ -315,6 +292,3 @@ Finger/
 - [ip2region](https://github.com/lionsoul2014/ip2region)
 - [OneForAll](https://github.com/shmilylty/OneForAll)
 
-感谢 Ti0s 提供的建议。
-
-[![Stargazers over time](https://starchart.cc/EASY233/Finger.svg)](https://starchart.cc/EASY233/Finger)
