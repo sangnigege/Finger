@@ -71,7 +71,7 @@ class Output:
             default_creds = {}
             creds_file = os.path.join(path.library, 'default_creds.json')
             if os.path.exists(creds_file):
-                with open(creds_file, 'r') as f:
+                with open(creds_file, 'r', encoding='utf-8') as f:
                     default_creds = json.load(f)
 
             for row, value in enumerate(Webinfo.result, start=1):
