@@ -193,6 +193,10 @@ class Finger:
         }
         match_info = self.identify.match(datas)
 
+        # 控制台实时输出（仅指纹匹配成功时输出，与旧版行为一致）
+        if match_info["cms"]:
+            logging.success(f"{match_info['cms']} {server} {str(title)[:40]:40s} {url}")
+
         # Server header 版本兜底提取
         version = match_info["version"] if match_info["version"] != "-" else ""
         if not version and server:
