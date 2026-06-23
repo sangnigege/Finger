@@ -9234,8 +9234,7 @@
 				"strhtml=\"<title>\"+i1+\"</title>\";",
 				"content=\"arris 2307\"",
 				"/arris_style.css",
-				"arris group",
-				"copyright"
+				"arris group"
 			],
 			"logic": "or",
 			"confidence": 100
@@ -31897,9 +31896,7 @@
 			"keyword": [
 				"Powered by DouPHP",
 				"DouPHP",
-				"theme",
 				"content=\"douphp",
-				"indexLeft",
 				"dou_callback",
 				"douco",
 				"content=\"douph"
@@ -62857,11 +62854,9 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"login_files",
-				"platform"
+				"login_files"
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "Kyocera (Printer)",
