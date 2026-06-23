@@ -45096,17 +45096,6 @@
 			]
 		},
 		{
-			"cms": "HP Printer / Server",
-			"method": "faviconhash",
-			"location": "body",
-			"keyword": [
-				"905744673",
-				"-2144363468",
-				"2150603828"
-			],
-			"logic": "or"
-		},
-		{
 			"cms": "HP-3Com-3CRWE554G72",
 			"method": "keyword",
 			"location": "body",
@@ -136800,18 +136789,6 @@
 			"location": "title",
 			"keyword": [
 				"紫斑马网站管理系统"
-			]
-		},
-		{
-			"cms": "红帆 HFOffice",
-			"method": "faviconhash",
-			"location": "body",
-			"keyword": [
-				"630899054"
-			],
-			"expected_server": [
-				"Microsoft-IIS",
-				"Microsoft-HTTPAPI"
 			]
 		},
 		{
