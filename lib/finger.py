@@ -317,8 +317,14 @@ class Finger:
         # PHP/8.0.5
         m = re.search(r'PHP/([\d.]+)', server, re.I)
         if m: return f'PHP {m.group(1)}'
-        # Generic fallback: Product/NumericVersion
-        m = re.match(r'([^\s/]+)/(\d+[.\d]*)', server)
+        # squid/frontier-squid-4.13
+        m = re.match(r'squid/[^\s]*?(\d+[.\d]+)', server, re.I)
+        if m: return f'squid {m.group(1)}'
+        # Generic fallback: Product/V[ersion] or Product/version
+        m = re.match(r'([^\s/]+)/(?:[Vv])?(\d+[.\d]*)', server)
+        if m: return f'{m.group(1)} {m.group(2)}'
+        # Multi-word product: "Rapid Logic/1.1", "EPSON UPnP/1.0"
+        m = re.match(r'([^\s/]+(?:\s+[^\s/]+)?)/(\d+[.\d]*)', server)
         if m: return f'{m.group(1)} {m.group(2)}'
         return ''
 
