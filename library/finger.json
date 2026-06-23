@@ -55,6 +55,15 @@
 			"logic": "or"
 		},
 		{
+			"cms": "0example",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<title>Example Domain</title>"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "1024 CMS",
 			"method": "keyword",
 			"location": "body",
@@ -2713,6 +2722,19 @@
 			"keyword": [
 				"ACTi Corporation All Rights Reserved"
 			]
+		},
+		{
+			"cms": "ACTI 视频监控",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"/cgi-bin/system?SYSTEM_INFO",
+				"/cgi-bin/system?",
+				"Web Configurator",
+				"images/header_logo.jpg"
+			],
+			"confidence": 100,
+			"logic": "or"
 		},
 		{
 			"cms": "ACTi-ACM-1231",
@@ -5934,6 +5956,15 @@
 			]
 		},
 		{
+			"cms": "Alt-Svc",
+			"method": "keyword",
+			"location": "header",
+			"keyword": [
+				"Alt-Svc"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "Altenergy电力系统控制软件",
 			"method": "keyword",
 			"location": "title",
@@ -7095,9 +7126,11 @@
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
-				"Apache Dubbo"
+				"Apache Dubbo",
+				"realm=\"dubbo\""
 			],
-			"confidence": 100
+			"confidence": 100,
+			"logic": "or"
 		},
 		{
 			"cms": "Apache Hadoop",
@@ -7191,6 +7224,16 @@
 			"location": "header",
 			"keyword": [
 				"Apache Shiro"
+			],
+			"confidence": 100
+		},
+		{
+			"cms": "Apache Solr",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"solrcore initialization failures",
+				"app_config.solr_path"
 			],
 			"confidence": 100
 		},
@@ -7412,6 +7455,15 @@
 			"logic": "or"
 		},
 		{
+			"cms": "apache-druid",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"content=\"Apache Druid console\""
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "Apache-Druid[+]默认口令admin/admin",
 			"method": "keyword",
 			"location": "header",
@@ -7432,7 +7484,7 @@
 				"druid.index.init"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "Apache-Dubbo",
@@ -7464,7 +7516,8 @@
 			"location": "body",
 			"keyword": [
 				"<title>Apache Flink Web Dashboard</title>",
-				"<flink-root></flink-root>"
+				"<flink-root></flink-root>",
+				"<img alt=\"apache flink dashboard\" src=\"images/flink-logo.png"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -7544,6 +7597,17 @@
 			],
 			"logic": "or",
 			"confidence": 100
+		},
+		{
+			"cms": "Apache-Mesos",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<img src=\"/static/img/mesos_logo.png\" alt=\"apache mesos\">",
+				"href=\"/static/css/mesos.css"
+			],
+			"confidence": 100,
+			"logic": "or"
 		},
 		{
 			"cms": "apache-nifi",
@@ -7770,6 +7834,16 @@
 			],
 			"confidence": 100,
 			"logic": "or"
+		},
+		{
+			"cms": "apache2-ubuntu默认页面",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"Apache2 Ubuntu Default Page",
+				"ubuntu-logo.png"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "Apache2Debian默认页",
@@ -9173,6 +9247,15 @@
 			"logic": "or"
 		},
 		{
+			"cms": "array-vpn",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"an_util.js"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "ArrayNetworks-Company's-product",
 			"method": "keyword",
 			"location": "header",
@@ -9234,7 +9317,8 @@
 				"strhtml=\"<title>\"+i1+\"</title>\";",
 				"content=\"arris 2307\"",
 				"/arris_style.css",
-				"arris group"
+				"arris group",
+				"arris"
 			],
 			"logic": "or",
 			"confidence": 100
@@ -11717,6 +11801,17 @@
 			]
 		},
 		{
+			"cms": "AVCON6 系统管理平台",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"avcon",
+				"filename=AVCON6Setup.exe"
+			],
+			"confidence": 100,
+			"logic": "or"
+		},
+		{
 			"cms": "AVer-DVR",
 			"method": "keyword",
 			"location": "body",
@@ -13974,7 +14069,10 @@
 				"powerd by",
 				"beescms",
 				"/default/images/xslider.js",
-				"/default/images/search_btn.gif"
+				"/default/images/search_btn.gif",
+				"mx_form/mx_form.php",
+				"powerd by beescms",
+				"template/default/images/slides.min.jquery.js"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -14968,7 +15066,7 @@
 				"/DesktopModules/InformationFeedback/webview/"
 			],
 			"logic": "or",
-			"confidence": 60
+			"confidence": 100
 		},
 		{
 			"cms": "Blazix",
@@ -18548,6 +18646,15 @@
 			"confidence": 100
 		},
 		{
+			"cms": "cbss-system",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<li>com.cbss.xss.filter.xssfilter.dofilter"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "CBSSautomatedtesting",
 			"method": "keyword",
 			"location": "body",
@@ -21548,6 +21655,15 @@
 			]
 		},
 		{
+			"cms": "ciscovpn",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"/+CSCOE+/logon.html"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "Cisco小区网络管理系统",
 			"method": "keyword",
 			"location": "header",
@@ -23673,9 +23789,13 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"/web/submitlogon2.d"
+				"/web/submitlogon2.d",
+				"/activex/sinoccshell.cab",
+				"/web/submitlogon2.do",
+				"广州协商科技有限公司"
 			],
-			"confidence": 100
+			"confidence": 100,
+			"logic": "or"
 		},
 		{
 			"cms": "Collaborativemanagementplatform",
@@ -25985,7 +26105,7 @@
 				"/wap/first/zsff/iconfont/iconfont.css"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "CRMEB开源商城",
@@ -28480,7 +28600,7 @@
 			"keyword": [
 				"content=\"dbshop"
 			],
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "DBShop开源电子商务网店系统",
@@ -32130,9 +32250,11 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"<div id=\"logo\" class=\"logo\"><img src=\"/avdesk/includes/system/templates/images/logo_en.png\" alt=\"\" /></div>"
+				"<div id=\"logo\" class=\"logo\"><img src=\"/avdesk/includes/system/templates/images/logo_en.png\" alt=\"\" /></div>",
+				"/avdesk/includes/system/templates/images/logo_en.png"
 			],
-			"confidence": 100
+			"confidence": 100,
+			"logic": "or"
 		},
 		{
 			"cms": "DR.COM日志搜索引擎",
@@ -32320,6 +32442,17 @@
 				"dreamer-cms-(.*="
 			],
 			"confidence": 100
+		},
+		{
+			"cms": "DreamerCMS",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<!-- 小屏幕导航按钮和LOGO -->",
+				"el: '.swiper-pagination',"
+			],
+			"confidence": 100,
+			"logic": "or"
 		},
 		{
 			"cms": "DreamerShop",
@@ -34169,6 +34302,19 @@
 			]
 		},
 		{
+			"cms": "ecology-oa",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"/wui/common/css/w7ovfont.css",
+				"client/jquery.client_wev8.js",
+				"ecology8/lang/weaver_lang_7_wev8.js",
+				"typeof poppedwindow"
+			],
+			"confidence": 100,
+			"logic": "or"
+		},
+		{
 			"cms": "ecology泛微-协同商务系统-ecology",
 			"method": "keyword",
 			"location": "body",
@@ -34185,7 +34331,10 @@
 				"e-mobile",
 				"weaver",
 				"/images/login_logo@2x.png",
-				"action=\"/verifylogin.do"
+				"action=\"/verifylogin.do",
+				"content=\"weaver e-mobile\"",
+				"e-mobile&nbsp;",
+				"window.apiprifix = \"/emp\";"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -35718,6 +35867,15 @@
 			"keyword": [
 				"413602919"
 			]
+		},
+		{
+			"cms": "Elgg",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"413602919"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "Elgg_开源SNS",
@@ -38319,6 +38477,17 @@
 			"logic": "or"
 		},
 		{
+			"cms": "f5 Big IP",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"content=\"F5 Networks, Inc.\"",
+				"content=\"f5 networks, inc."
+			],
+			"confidence": 100,
+			"logic": "or"
+		},
+		{
 			"cms": "F5 BIG-IP",
 			"method": "keyword",
 			"location": "header",
@@ -39651,9 +39820,11 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"ReportServer"
+				"ReportServer",
+				"content=\"finereport--web reporting tool\""
 			],
-			"confidence": 100
+			"confidence": 100,
+			"logic": "or"
 		},
 		{
 			"cms": "Fingerprintjs",
@@ -43454,7 +43625,8 @@
 				"金盘软件",
 				"class=\"jp-searchtabs",
 				"/opac/periodicals",
-				"onclick=\"change(\"book\");"
+				"onclick=\"change(\"book\");",
+				"onclick=\"change('book');"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -44080,7 +44252,7 @@
 				"content=\"https://gradio.app/\""
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "Grafana",
@@ -45107,6 +45279,15 @@
 			"confidence": 100
 		},
 		{
+			"cms": "H3C-ER3100[+]默认密码admin/adminer3100",
+			"method": "keyword",
+			"location": "title",
+			"keyword": [
+				"er3100系统管理"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "H3C-ER3100G2",
 			"method": "keyword",
 			"location": "title",
@@ -45167,6 +45348,26 @@
 				"ER3200",
 				"home.asp",
 				"h3c.com"
+			],
+			"confidence": 100
+		},
+		{
+			"cms": "H3C-ER3200[+]默认密码:admin/adminer3200",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"ER3200",
+				"h3c.com",
+				"home.asp"
+			],
+			"confidence": 100
+		},
+		{
+			"cms": "H3C-ER3200[+]默认密码:admin/adminer3200",
+			"method": "keyword",
+			"location": "title",
+			"keyword": [
+				"er3200系统管理"
 			],
 			"confidence": 100
 		},
@@ -45373,6 +45574,18 @@
 				"h3c &#26234;&#33021;&#31649;&#29702;&#20013;&#24515;</span>",
 				"href=\"/selfservice/javax.faces.resource/theme.css.xhtml?ln=primefaces-imc-classic-blue\"",
 				"/imc/login.jsf"
+			],
+			"confidence": 100,
+			"logic": "or"
+		},
+		{
+			"cms": "H3C-IMC[+]默认密码admin/admin",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"com_h3c_imc_usr_usermgr_alluser_overlaydiv",
+				"h3c &#26234;&#33021;&#31649;&#29702;&#20013;&#24515;</span>",
+				"src=\"/imc/faces/extensionresource/com.h3c.imc.component.util.extensionresourceloader/"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -47553,7 +47766,7 @@
 				"if(m_bdvrcontrol.stoptalk())"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "Hikvision-Video-backup-server",
@@ -47637,6 +47850,34 @@
 				"安全接入网关",
 				"src=\"./webui/js/jquerylib/jquery-1.7.2.min.js\""
 			]
+		},
+		{
+			"cms": "Hikvision-摄像头[+]默认口令admin/{12345/ADMIN12345}",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"/hikgis/",
+				"/ui/css/ui.css?version=\" + new date.gettime",
+				"classid=\"clsid:7b43048f-da7a-458f-af35-d825bdbb6816\" codebase=\"../codebase/netvideoocx.cab",
+				"classid=\"clsid:f030f48f-cd67-45d1-b622-a5d88a7bcfe9\" id=\"hcnetvideo",
+				"codebase=\"../codebase/newhcnetactivex.cab",
+				"hcnetvideoactivex.cab",
+				"id=\"divanonymous\"",
+				"id=\"divpswstrength\"",
+				"updatetips",
+				"去除edge下将数字处理成电话的错误"
+			],
+			"confidence": 100,
+			"logic": "or"
+		},
+		{
+			"cms": "Hikvision-摄像头[+]默认口令admin/{12345/ADMIN12345}",
+			"method": "keyword",
+			"location": "header",
+			"keyword": [
+				"_goaheadwebsessionid"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "HikvisioniVMS-5060",
@@ -52151,6 +52392,15 @@
 			]
 		},
 		{
+			"cms": "ibm-spectrum-computing",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"ssoclient_"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "IBM-SPID-HTTP-Server",
 			"method": "keyword",
 			"location": "header",
@@ -53674,7 +53924,7 @@
 				"<li><a href=\"http://www.ikuai8.com\" target=\"_blank\">官网</a></li>"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "iKuai[+]默认密码admin/admin;万能密码'or''=''or''='",
@@ -53899,6 +54149,15 @@
 			"keyword": [
 				"imo云办公室"
 			]
+		},
+		{
+			"cms": "imo-云办公室",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"download/imo_setup.exe"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "imo云办公室",
@@ -55346,6 +55605,15 @@
 				"<!-- site built by Intraxxion, www.intraxxion.com, more_info@intraxxion.com, tel: +31 45 5650207, fax: +31 45 5650123"
 			],
 			"logic": "or",
+			"confidence": 100
+		},
+		{
+			"cms": "Intrinsyc deviceWEB",
+			"method": "keyword",
+			"location": "header",
+			"keyword": [
+				"Intrinsyc deviceWEB"
+			],
 			"confidence": 100
 		},
 		{
@@ -57815,6 +58083,15 @@
 			]
 		},
 		{
+			"cms": "jeecg_boot",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"/sys/common/pdf/pdfPreviewIframe"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "JEECG_JAVA快速开发平台",
 			"method": "keyword",
 			"location": "title",
@@ -57847,7 +58124,7 @@
 				"src=/cdn/babel-polyfill/polyfill_7_2_5.js"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "JeecgBoot-企业级低代码平台",
@@ -57918,7 +58195,7 @@
 				"content=\"jeeplus\""
 			],
 			"logic": "or",
-			"confidence": 60
+			"confidence": 100
 		},
 		{
 			"cms": "jeeshop",
@@ -58584,7 +58861,8 @@
 				"ams-build-number",
 				"content=\"jira",
 				"href=\"/secure/AboutPage.jspa\">About JIRA</a>",
-				"<meta name=\"stp-license-product-name\" content=\"JIRA\"/>"
+				"<meta name=\"stp-license-product-name\" content=\"JIRA\"/>",
+				"com.atlassian.jira"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -60029,7 +60307,8 @@
 			"location": "body",
 			"keyword": [
 				"<div id=\"ipython-main-app\" class=\"container\">",
-				"<div id=\"ipython_notebook\" class=\"nav navbar-brand\">"
+				"<div id=\"ipython_notebook\" class=\"nav navbar-brand\">",
+				"<title>Jupyter Notebook</title>"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -62674,7 +62953,7 @@
 				"link rel=\"icon\" href=\"/kubepi/link.ico"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "kubernetes",
@@ -62707,6 +62986,28 @@
 			"keyword": [
 				"realm=\"kubernetes"
 			]
+		},
+		{
+			"cms": "kubernetes[+]默认口令admin/kuboard123",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<article class=\"post kubernetes",
+				"<b>kubernetes</b> listening",
+				"href=\"assets/images/kubernetes-logo.png",
+				"value=\"kubernetes"
+			],
+			"confidence": 100,
+			"logic": "or"
+		},
+		{
+			"cms": "kubernetes[+]默认口令admin/kuboard123",
+			"method": "keyword",
+			"location": "title",
+			"keyword": [
+				"kubernetes ci"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "KubernetesDashboard",
@@ -63413,7 +63714,9 @@
 			"location": "body",
 			"keyword": [
 				"layer.open(",
-				"layer.js"
+				"layer.js",
+				"layer.js@取消此条规则",
+				"layer.open(@取消此条规则"
 			],
 			"logic": "or",
 			"confidence": 100
@@ -68029,6 +68332,15 @@
 			]
 		},
 		{
+			"cms": "mailsite-express",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<b>mailsite <em>express"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "MailSiteExpress",
 			"method": "keyword",
 			"location": "header",
@@ -68667,9 +68979,11 @@
 			"location": "body",
 			"keyword": [
 				"casloginview",
-				"i-verfiy"
+				"i-verfiy",
+				"北京天源迪科信息技术有限公司"
 			],
-			"confidence": 100
+			"confidence": 100,
+			"logic": "or"
 		},
 		{
 			"cms": "Management-Switch-Web-Server",
@@ -78866,7 +79180,7 @@
 				"progressmessage('initializing ...')"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "Nexus Repository Manager",
@@ -80973,7 +81287,7 @@
 				"../o2_core/o2/xDesktop"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "o2oa[+]默认密码xadmin/o2",
@@ -81466,6 +81780,15 @@
 			"keyword": [
 				"OfficeWeb365"
 			]
+		},
+		{
+			"cms": "OfficeWeb365",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"请输入furl参数"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "OK3W文章发布系统",
@@ -84764,6 +85087,19 @@
 			]
 		},
 		{
+			"cms": "panabit-gateway",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"Maintain",
+				"Panalog",
+				"forum.panabit.com",
+				"pa_iptcode"
+			],
+			"confidence": 100,
+			"logic": "or"
+		},
+		{
 			"cms": "Panabit-Intelligent-gateway",
 			"method": "keyword",
 			"location": "body",
@@ -84798,7 +85134,8 @@
 				"unamexx",
 				"img/12.png",
 				"id=\"codeno\"",
-				"日志系统"
+				"日志系统",
+				"Maintain/cloud_index.php"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -84842,6 +85179,16 @@
 			"keyword": [
 				"ixcache"
 			]
+		},
+		{
+			"cms": "panabit智能网关[+]默认密码admin/ixcache",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"Maintain",
+				"Panalog"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "Panasonic Network Camera",
@@ -85506,7 +85853,7 @@
 				"PbootCMS管理中心-V2"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "Pc4Uploader",
@@ -92453,7 +92800,8 @@
 				"content=\"ruby on rails",
 				"alt=\"ruby on rails\"",
 				"type=\"hidden\" name=\"authenticity_token",
-				"href=\"/assets/"
+				"href=\"/assets/",
+				"/users/sign_in"
 			],
 			"logic": "or",
 			"confidence": 100
@@ -93174,6 +93522,15 @@
 			"keyword": [
 				"server: reblaze secure web gateway"
 			]
+		},
+		{
+			"cms": "Red Hat",
+			"method": "keyword",
+			"location": "header",
+			"keyword": [
+				"Red Hat"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "Red-Lion-HMI",
@@ -97949,7 +98306,7 @@
 				"href=\"live.html\">"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "seller-狮子鱼管理后台",
@@ -102861,6 +103218,15 @@
 			]
 		},
 		{
+			"cms": "sophos-cyberoam-ssl-vpn",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"src=\"/images/customizeimages/uploadedlogo.jpg\""
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "Sophos-Cyberoam-SSLVPN",
 			"method": "keyword",
 			"location": "body",
@@ -103262,6 +103628,15 @@
 				"<!-- INCLUDE SPEAKKER -->"
 			],
 			"logic": "or",
+			"confidence": 100
+		},
+		{
+			"cms": "Special-Device-Testing---Risk-Assessment-System",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"var unitid = getpagerequestvalue(\"unitid\""
+			],
 			"confidence": 100
 		},
 		{
@@ -106801,9 +107176,11 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"<div class=\"log-dvr-logo\">"
+				"<div class=\"log-dvr-logo\">",
+				"<div class='log-dvr-logo'>"
 			],
-			"confidence": 100
+			"confidence": 100,
+			"logic": "or"
 		},
 		{
 			"cms": "TBKDVR",
@@ -109821,9 +110198,13 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"web user interface"
+				"web user interface",
+				"TOPSEC",
+				"image/aaa.png",
+				"username"
 			],
-			"confidence": 100
+			"confidence": 100,
+			"logic": "or"
 		},
 		{
 			"cms": "TOPSEC-Firewall",
@@ -113934,7 +114315,9 @@
 				"window.location.href = \"/wcm\";",
 				"forum.trs.com.cn",
 				"0;url=/wcm",
-				"/wcm\" target=\"_blank\">网站管理"
+				"/wcm\" target=\"_blank\">网站管理",
+				"/wcm/app/js",
+				"/wcm\" target=\"_blank\">管理"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -120073,9 +120456,11 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"content=\"泛微云桥e-bridge\""
+				"content=\"泛微云桥e-bridge\"",
+				"content=\"webkit\""
 			],
-			"confidence": 100
+			"confidence": 100,
+			"logic": "or"
 		},
 		{
 			"cms": "Weaver-e-Bridge",
@@ -125255,6 +125640,15 @@
 			]
 		},
 		{
+			"cms": "xxl-job[+]默认口令admin/123456",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"分布式任务调度平台XXL-JOB"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "xycms",
 			"method": "keyword",
 			"location": "body",
@@ -126310,7 +126704,9 @@
 			"keyword": [
 				"uclient.yonyou.com",
 				"UClient",
-				"url=nccloud"
+				"url=nccloud",
+				"YONYOU NC",
+				"img/logo_small.ico"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -126847,7 +127243,7 @@
 				"type=application/x-xtx-axhost"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "Yuneasy-IPCalling",
@@ -132159,7 +132555,7 @@
 				"<meta name=\"description\" content=\"亿华人力资源管理系统\" />"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "亿景企业网站管理系统",
@@ -132184,6 +132580,15 @@
 			"keyword": [
 				"亿网引用友情链接程序"
 			]
+		},
+		{
+			"cms": "亿赛通 电子文档安全管理系统",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<title>电子文档安全管理系统</title>"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "亿赛通DLP",
@@ -133637,7 +134042,7 @@
 				"/netrep/sysmgr/usermanager/reguser.jsp"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "北京亚鸿世纪互联网信息安全综合管理系统",
@@ -133818,6 +134223,15 @@
 			"keyword": [
 				"775044030"
 			]
+		},
+		{
+			"cms": "医药信息管理系统",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"775044030"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "医院一站式后勤管理系统",
@@ -134617,7 +135031,7 @@
 				"虚拟商品,自动发货,在线支付,付费阅读"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "口福科技网上订餐系统平台版",
@@ -135354,7 +135768,7 @@
 				"Microsoft Visual Studio .NET 7.1"
 			],
 			"logic": "or",
-			"confidence": 60
+			"confidence": 100
 		},
 		{
 			"cms": "商联达s2b2c商城系统",
@@ -135761,6 +136175,16 @@
 			"keyword": [
 				"多米_DuomiCms影视管理系统"
 			]
+		},
+		{
+			"cms": "大华-智慧园区综合管理平台",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"DSS助手",
+				"/WPMS/asset/img/black/"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "大华-智能物联综合管理平台",
@@ -137678,6 +138102,15 @@
 			]
 		},
 		{
+			"cms": "安美数字 酒店宽带运营系统",
+			"method": "keyword",
+			"location": "title",
+			"keyword": [
+				"酒店宽带运营系统"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "安美数字酒店宽带运营系统",
 			"method": "keyword",
 			"location": "title",
@@ -137708,7 +138141,7 @@
 				"<a href='http://www.amttgroup.com/' target='_blank'><font color='#FFFFFF'>安美数字"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "安脉学校综合管理平台",
@@ -139685,7 +140118,7 @@
 				"window.external.addFavorite(favURL, \"慧星自来水营业管理信息系统\")"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "慧林ICP/iP备案系统",
@@ -140869,7 +141302,7 @@
 				"欢迎使用本系统"
 			],
 			"logic": "or",
-			"confidence": 60
+			"confidence": 100
 		},
 		{
 			"cms": "昂酷二手车系统",
@@ -140878,6 +141311,28 @@
 			"keyword": [
 				"昂酷二手车系统"
 			]
+		},
+		{
+			"cms": "昆石网络 VOS3000虚拟运营支撑系统",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<meta name=\"description\" content=\"VOS3000",
+				"<meta name=\"keywords\" content=\"VOS3000",
+				"content=\"vos3000",
+				"images/vos3000.ico"
+			],
+			"confidence": 100,
+			"logic": "or"
+		},
+		{
+			"cms": "昆石网络 VOS3000虚拟运营支撑系统",
+			"method": "keyword",
+			"location": "header",
+			"keyword": [
+				"昆石网络 VOS3000"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "昆石网络VOS2009",
@@ -142774,9 +143229,12 @@
 			"method": "faviconhash",
 			"location": "body",
 			"keyword": [
-				"1578525679"
+				"1578525679",
+				"/wui/common/page/sysRemind.jsp",
+				"ecology_JSessionid"
 			],
-			"confidence": 100
+			"confidence": 100,
+			"logic": "or"
 		},
 		{
 			"cms": "泛微OA",
@@ -142813,7 +143271,8 @@
 			"location": "body",
 			"keyword": [
 				"wx.weaver",
-				"e-Bridge"
+				"e-Bridge",
+				"content=\"泛微云桥e-Bridge,http://wx.weaver.com.cn\""
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -143104,7 +143563,7 @@
 				"var _FactoryData"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "海天OA",
@@ -143434,6 +143893,15 @@
 			"keyword": [
 				"rsa.js",
 				"commonFunction.js"
+			],
+			"confidence": 100
+		},
+		{
+			"cms": "深信服 行为感知系统",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"isHighPerformance : !!SFIsHighPerformance,"
 			],
 			"confidence": 100
 		},
@@ -144971,6 +145439,16 @@
 			]
 		},
 		{
+			"cms": "登录页面",
+			"method": "regula",
+			"location": "body",
+			"keyword": [
+				"<input.*pass",
+				"<input.*user"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "白狐微信公众号助手CMS",
 			"method": "keyword",
 			"location": "body",
@@ -145494,7 +145972,11 @@
 				"self.location",
 				"Lw==",
 				"/theme/default/images/main/zt-logo.png",
-				"zentaosid"
+				"zentaosid",
+				"$('#zentao').addClass('btn-success');",
+				"$('#zentaopro').addclass",
+				"<a id='zentaopro' href='/pro/'",
+				"href='/zentao/favicon.ico"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -147682,7 +148164,7 @@
 				"<title>聚水潭SaaS协同平台登录入口</title>"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "股票文章管理系统",
@@ -147702,6 +148184,15 @@
 			],
 			"confidence": 100,
 			"logic": "or"
+		},
+		{
+			"cms": "脸爱云一脸通智慧管理平台",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"脸爱云一脸通智慧管理平台"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "腾和企业网站管理系统_灰色简洁版",
@@ -148075,7 +148566,8 @@
 			"location": "body",
 			"keyword": [
 				"ruoyi",
-				"ruoyi/login.js"
+				"ruoyi/login.js",
+				"<script>(function(e){function n(n){for(var r,c,a=n[0],d=n[1],f=n[2],i=0,l=[];i<a.length;i++)c=a[i],u[c]&&l.push(u[c][0]),u[c]=0;for(r in d)Object.prototype.hasOwnProperty.call(d,r)&&(e[r]=d[r]);"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -148103,7 +148595,7 @@
 				"/ruoyi/js/ry-ui.js"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "若依ruoyi管理系统",
@@ -149112,7 +149604,7 @@
 				"www.cailsoft.com"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "赛诸葛数字化智能中台系统",
@@ -149613,7 +150105,14 @@
 				"Office Anywhere",
 				"通达OA",
 				"<link rel=\"shortcut icon\" href=\"/images/tongda.ico\" />",
-				"Office Anywhere 2013"
+				"Office Anywhere 2013",
+				"/static/templates/2013_01/index.css/",
+				"<a href='http://www.tongda2000.com/' target='_black'>通达官网</a>",
+				"<title>Office Anywhere",
+				"网络智能办公系统",
+				"href=\"/static/images/tongda.ico\"",
+				"javascript:document.form1.uname.focus()",
+				"紧急通知：今日10点停电"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -149996,7 +150495,7 @@
 				"class=\"anouncetext\">为了更好的保障企业内网的安全，公司决定从即日起全面部署金山企业安全终端防护优化系统"
 			],
 			"logic": "or",
-			"confidence": 80
+			"confidence": 100
 		},
 		{
 			"cms": "金山终端安全系统[+]默认口令admin/admin",
@@ -151284,6 +151783,18 @@
 			"keyword": [
 				"飘花影视CMS系统"
 			]
+		},
+		{
+			"cms": "飞企互联 FE 业务协作平台",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"js39/flyrise.stopBackspace.js",
+				"src=\\\"/js39/external/jquery",
+				"src=\\\"/js39/flyrise.dialog.js"
+			],
+			"confidence": 100,
+			"logic": "or"
 		},
 		{
 			"cms": "飞企互联 FE业务协作平台",
