@@ -62,35 +62,26 @@ class Finger:
         errors = []
         unique_urls = list(set(urls))
 
-        with ThreadPoolExecutor(self.threads) as pool:
-            futures = {
-                pool.submit(self._scan_one, url, timeout): url
-                for url in unique_urls
-            }
+        pool = ThreadPoolExecutor(self.threads)
+        try:
+            futures = {pool.submit(self._scan_one, url, timeout): url for url in unique_urls}
             for future in as_completed(futures):
                 url = futures[future]
                 try:
                     result = future.result()
-                    if result:
-                        results.append(result)
+                    if result: results.append(result)
                 except KeyboardInterrupt:
-                    logging.error("用户强制中止!")
-                    break
+                    raise
                 except Exception as e:
-                    errors.append({
-                        "url": url,
-                        "cms": "-",
-                        "title": str(e),
-                        "status": "-",
-                        "Server": "-",
-                        "size": "-",
-                        "iscdn": "-",
-                        "ip": "-",
-                        "address": "-",
-                        "isp": "-",
-                        "confidence": 0,
-                        "version": "-",
-                    })
+                    errors.append({"url": url, "cms": "-", "title": str(e),
+                        "status": "-", "Server": "-", "size": "-",
+                        "iscdn": "-", "ip": "-", "address": "-",
+                        "isp": "-", "confidence": 0, "version": "-"})
+        except KeyboardInterrupt:
+            pool.shutdown(wait=False, cancel_futures=True)
+            logging.error("用户强制中止!")
+        finally:
+            pool.shutdown(wait=False)
 
         # 有 CMS 的结果优先排在前面
         results.sort(key=lambda r: (r.get("confidence", 0), r.get("cms") != ""),

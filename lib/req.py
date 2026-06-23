@@ -14,7 +14,7 @@ from lib.identify import Identify
 import urllib3
 
 urllib3.disable_warnings()
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 class Request:
@@ -23,8 +23,19 @@ class Request:
         Urlerror.result = []
         self.checkcms = Identify()
         self.ipFactory = IPFactory()
-        with ThreadPoolExecutor(settings.threads) as pool:
-            run = pool.map(self.apply, set(Urls.url))
+        urls = set(Urls.url)
+        try:
+            with ThreadPoolExecutor(settings.threads) as pool:
+                futures = {pool.submit(self.apply, url): url for url in urls}
+                for future in as_completed(futures):
+                    try:
+                        future.result()
+                    except Exception:
+                        pass
+        except KeyboardInterrupt:
+            pool.shutdown(wait=False, cancel_futures=True)
+            logging.error("用户强制中止!")
+            exit(0)
 
     def apply(self, url):
         try:
@@ -35,9 +46,6 @@ class Request:
                     self.response(url, response, True)
                 else:
                     self.response(url, response)
-        except KeyboardInterrupt:
-            logging.error("用户强制程序，系统中止!")
-            exit(0)
         except Exception as e:
             results = {"url": str(url), "cms": "-", "title": str(e),
                        "status": "-", "Server": "-",
