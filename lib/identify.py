@@ -28,7 +28,7 @@ class Identify:
         for m in sorted(matches, key=lambda x: x["confidence"], reverse=True):
             if m["cms"] not in seen:
                 seen[m["cms"]] = m
-        top = sorted(seen.values(), key=lambda x: x["confidence"], reverse=True)[:8]
+        top = sorted(seen.values(), key=lambda x: x["confidence"], reverse=True)
         cms_list = [m["cms"] for m in top]
         self.datas["cms"] = ','.join(cms_list)
         self.datas["confidence"] = max((m["confidence"] for m in top), default=0)
@@ -76,7 +76,7 @@ class Identify:
         for m in sorted(matches, key=lambda x: x["confidence"], reverse=True):
             if m["cms"] not in seen:
                 seen[m["cms"]] = m
-        top = sorted(seen.values(), key=lambda x: x["confidence"], reverse=True)[:8]
+        top = sorted(seen.values(), key=lambda x: x["confidence"], reverse=True)
         cms_list = [m["cms"] for m in top]
         return {
             "cms": ','.join(cms_list),
