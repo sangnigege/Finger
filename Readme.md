@@ -15,7 +15,7 @@
 
 Finger 是一款面向红队的资产指纹探测工具，在大量资产中快速识别重点攻击系统（OA、CMS、框架、防火墙、路由器、CDN 等），协助渗透测试人员快速定位高价值目标。
 
-本分支在原项目基础上进行了大量优化：规则质量提升、置信度引擎重写、Server 版本提取、默认口令标注、规则审计、架构统一等。详见 [改进说明](#本分支改进)。
+本分支在原项目 V5.1 基础上进行了大量优化：规则质量提升、置信度引擎重写、Server 版本提取、默认口令标注、规则审计、架构统一等。
 
 ### 核心能力
 
@@ -183,7 +183,7 @@ FingerPrint_Update = False
 | `body` | 页面 HTML 全文 |
 | `url` | 🆕 URL 路径匹配（dirsearch 联动友好） |
 
-### 置信度算法（本分支改进）
+### 置信度算法（V6.0）
 
 置信度不再由规则预设，而是从匹配过程**自动推导**：
 
@@ -241,9 +241,9 @@ library/           指纹库 + 默认口令库 + CDN/IP数据
 
 ---
 
-## 本分支改进
+## V6.0 改进说明
 
-基于原项目 V6.0，本分支增加了以下改进：
+> 本仓库 (sangnigege/Finger) 基于上游 EASY233/Finger V5.1 开发，计划合回上游。
 
 ### 规则优化
 - **删除 32 个通用误报关键词**（`body`、`/login`、`download`、`self.location`、`username` 等）
@@ -276,35 +276,28 @@ library/           指纹库 + 默认口令库 + CDN/IP数据
 
 ## 更新日志
 
-### 本分支
+### V6.0（本仓库, sangnigege/Finger）
 
-- **规则库**：16,359→16,858 条规则，新增 OA/ERP/打印机/AI/安全等 60+ 类别
-- **置信度引擎**：重写为算法自动计算，零维护成本
-- **URL 路径匹配**：新增 `location: url`，与 dirsearch 联动
-- **Server 版本提取**：自动提取 nginx/Apache/IIS/PHP 等版本号
-- **模型提取**：HP 打印机/海康摄像头等硬件型号自动提取
-- **默认口令**：34 产品默认口令标注
-- **规则审计**：`--audit` 自动检测潜在 FP 规则
+- **规则库**：16,359→16,858 条规则，新增 OA/ERP/打印机/AI/安全等 60+ 类别，覆盖 11,945 产品
+- **置信度引擎**：重写为算法自动计算（位置/命中率/关键词质量），零维护成本
+- **URL 路径匹配**：新增 `location: url`（130 条规则），与 dirsearch 联动
+- **Server 版本提取**：自动提取 nginx/Apache/IIS/PHP 等 10+ 种 Server 版本号
+- **型号提取**：`model_regex` 支持 HP/海康/Dell/Canon/Lenovo 等硬件型号
+- **默认口令**：34 产品默认口令独立列标注
+- **规则审计**：`--audit` 四维自动检测（Server 多样性/404 命中率/命中率异常/关键词质量）
 - **架构统一**：CLI + 库模式共用 `Finger` 类，`req.py` 废弃
-- **质量修复**：删除 32 个通用误报关键词，favicon SSL 修复
-- **性能优化**：默认超时 10→5s
-- **输出增强**：置信度分级着色、JSON 中文修复
+- **质量修复**：删除 32 个通用误报关键词（`body`、`/login`、`download` 等），favicon SSL 修复
+- **性能优化**：默认超时 10→5s，扫描速度提升 ~40%
+- **输出增强**：置信度分级着色（≥80 红/≥50 黄），JSON 中文修复
+- **指纹库**：合并 17 个来源（含 EHole + MUKI），254K 原始规则去重清洗
 
-### V6.0（2026-06，上游）
+### V5.1（2022-03，上游 EASY233/Finger）
 
-- **指纹库**：合并 17 个来源（含 EHole + MUKI），254K 原始规则去重清洗 → 16,347 条，覆盖 11,617 产品
-- **匹配引擎**：keyword + faviconhash + regula 三种方式，OR/AND 逻辑，双 hash 兼容（EHole + FOFA）
-- **CMS 名归一化**：统一大小写/空格/横线变体 + 同名产品 OR 合并
-- **版本号提取**：110 条 version_regex 覆盖 80 产品
-- **CDN 检测**：三层检测 + 16 种响应头特征（默认关闭，`--cdn` 开启）
-- **WAF 隐匿**：添加 `Sec-Fetch-*` 浏览器头，favicon 请求修正 Accept
-- **安全修复**：移除 `rememberMe=test` Shiro Cookie（自曝扫描器特征）
-- **Bug 修复**：CaseInsensitiveDict 兼容、ip2region 文件泄漏、logger 未定义
-- **库模式**：`from lib.finger import Finger` 可供其他工具直接引用
-- **跨平台**：修复 Python 3.10-3.13 兼容性，移除 Windows 专用依赖
-- **ip2region 升级**：v1 → v3.16.0 xdb 格式
-- **依赖精简**：12→4 个直接依赖
-- **输出增强**：XLSX 按置信度红/橙着色，新增 Confidence/Version 列
+- 优化输出，修复 FOFA API bug
+
+### V5.0（2021-09，上游 EASY233/Finger）
+
+- xlsx/json 输出，IP 归属地，FOFA/Quake API 集成
 
 ### V5.1（2022-03）
 
@@ -320,7 +313,7 @@ library/           指纹库 + 默认口令库 + CDN/IP数据
 
 在开发过程中实际参考和引用了以下优秀开源项目：
 
-- [Finger](https://github.com/EASY233/Finger) — 本项目上游，由 EASY 开发的 V5.1 版本
+- [Finger](https://github.com/EASY233/Finger) — 本项目上游（V5.1），由 EASY 开发
 - [EHole(棱洞)](https://github.com/EdgeSecurityTeam/EHole) — 指纹识别思路与规则格式
 - [ip2region](https://github.com/lionsoul2014/ip2region) — IP 归属地数据库与查询引擎
 - [ObserverWard](https://github.com/0x727/ObserverWard) — 指纹库参考
