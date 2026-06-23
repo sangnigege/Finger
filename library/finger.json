@@ -16910,7 +16910,6 @@
 			"keyword": [
 				"var title_zh = '下一代防火墙'",
 				"class=\"login_main_text\">下一代防火墙</div>",
-				"<title></title>",
 				"var title_zh = \"下一代防火墙\""
 			],
 			"logic": "or",
@@ -17535,11 +17534,9 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"Canal Admin",
-				"js/app"
+				"Canal Admin"
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "CancoSoft-asset-Management",
@@ -53402,10 +53399,7 @@
 			"location": "body",
 			"keyword": [
 				"iGENUS",
-				"login.php",
-				"language",
-				"Copyright by<A HREF=\"http://www.igenus.org",
-				"form.action = \"login.php?Cmd=login\";"
+				"Copyright by<A HREF=\"http://www.igenus.org"
 			],
 			"logic": "or",
 			"confidence": 100
@@ -57869,10 +57863,8 @@
 			"location": "body",
 			"keyword": [
 				"/r/cms/www",
-				"shortcut icon",
 				"http://www.jeecms.com",
 				"JEECMS",
-				"powered by",
 				"\"/cnf/r/cms/common.js\"",
 				"/r/cms/www/",
 				"/u/cms/www/",
@@ -63421,9 +63413,7 @@
 			"location": "body",
 			"keyword": [
 				"layer.open(",
-				"layer.js",
-				"layer.open(@取消此条规则",
-				"layer.js@取消此条规则"
+				"layer.js"
 			],
 			"logic": "or",
 			"confidence": 100
@@ -120083,10 +120073,8 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"content=\"webkit\"",
 				"content=\"泛微云桥e-bridge\""
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -144983,15 +144971,6 @@
 			]
 		},
 		{
-			"cms": "登陆页面",
-			"method": "keyword",
-			"location": "body",
-			"keyword": [
-				"type=\"password\""
-			],
-			"confidence": 100
-		},
-		{
 			"cms": "白狐微信公众号助手CMS",
 			"method": "keyword",
 			"location": "body",
@@ -150662,11 +150641,9 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"/static/img/title.ico",
-				"/js/app"
+				"/static/img/title.ico"
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "锐捷RG-WALL1600系列下一代防火墙",
