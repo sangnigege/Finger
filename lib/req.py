@@ -30,7 +30,7 @@ class Request:
         try:
             #proxies = { "http": "127.0.0.1:8080","https": "127.0.0.1:8080"}
             with requests.get(url, timeout=10, headers=self.get_headers(), verify=False,
-                              allow_redirects=True, stream=True) as response:
+                              allow_redirects=True, stream=True, proxies=settings.get_proxies()) as response:
                 if int(response.headers.get("content-length", default=1000)) > 100000:
                     self.response(url, response, True)
                 else:
@@ -96,7 +96,7 @@ class Request:
             favicon_headers['Sec-Fetch-Site'] = 'same-origin'
             favicon_headers.pop('Upgrade-Insecure-Requests', None)
             favicon_headers.pop('Sec-Fetch-User', None)
-            response = requests.get(favicon_url, headers=favicon_headers, timeout=4)
+            response = requests.get(favicon_url, headers=favicon_headers, timeout=4, proxies=settings.get_proxies())
             favicon_raw = response.content
             # 兼容 Finger/EHole 现有规则（MIME base64）
             hash_ehole = mmh3.hash(base64.encodebytes(favicon_raw))

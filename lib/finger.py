@@ -140,6 +140,7 @@ class Finger:
                 verify=False,
                 allow_redirects=True,
                 stream=True,
+                proxies=settings.get_proxies(),
             ) as resp:
                 return self._process_response(url, resp)
         except Exception as e:
@@ -248,7 +249,7 @@ class Finger:
             h['Sec-Fetch-Site'] = 'same-origin'
             h.pop('Upgrade-Insecure-Requests', None)
             h.pop('Sec-Fetch-User', None)
-            resp = requests.get(target, headers=h, timeout=4)
+            resp = requests.get(target, headers=h, timeout=4, proxies=settings.get_proxies())
             raw = resp.content
             return {'ehole': mmh3.hash(base64.encodebytes(raw)),
                     'fofa': mmh3.hash(base64.b64encode(raw))}

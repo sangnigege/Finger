@@ -4,7 +4,7 @@
 import os
 from api.fofa import Fofa
 from api.quake import Quake
-from config.data import Urls, logging, Save, Ips
+from config.data import Urls, logging, Save, Ips, Proxy
 
 
 class initoptions:
@@ -12,16 +12,24 @@ class initoptions:
         self.key = ["\"","“","”","\\","'"]
         Urls.url = []
         Ips.ip = []
+        Proxy.url = ""
         self._url = args.url
         self._file = args.file
         self._ip = args.ip
         self._ipfile = args.ipfile
         self.format = args.output
+        self.proxy = args.proxy
         # 查询顺序非常重要不能随便移动位置
+        self.proxy_config()
         self.api_data(args)
         self.target()
         self.output()
         self.get_ip()
+
+    def proxy_config(self):
+        if self.proxy:
+            Proxy.url = self.proxy.strip()
+            logging.info(f"代理已设置: {Proxy.url}")
 
     def api_data(self, args):
         if args.fofa:

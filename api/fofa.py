@@ -7,7 +7,7 @@ import random
 import requests
 from urllib.parse import quote
 from config.data import logging, Urls, Ips
-from config import Fofa_key, Fofa_email, user_agents, Fofa_Size
+from config import Fofa_key, Fofa_email, user_agents, Fofa_Size, get_proxies as _get_proxies
 try:
     import readline
 except ImportError:
@@ -52,7 +52,7 @@ class Fofa:
         url = "https://fofa.info/api/v1/search/all?email={0}&key={1}&qbase64={2}&full=false&fields=protocol,host&size={3}".format(
             self.email, self.key, keyword, self.size)
         try:
-            response = requests.get(url,timeout=10,headers = self.headers )
+            response = requests.get(url, timeout=10, headers=self.headers, proxies=self.get_proxies())
             datas = json.loads(response.text)
             if "results" in datas.keys():
                 for data in datas["results"]:
@@ -79,7 +79,7 @@ class Fofa:
         try:
             if self.email and self.key:
                 auth_url = "https://fofa.info/api/v1/info/my?email={0}&key={1}".format(self.email, self.key)
-                response = requests.get(auth_url, timeout=10, headers=self.headers)
+                response = requests.get(auth_url, timeout=10, headers=self.headers, proxies=self.get_proxies())
                 if "{\"error\":false" in response.text:
                     return True
                 else:
@@ -89,3 +89,7 @@ class Fofa:
         except Exception as e:
             logging.warning("FOFA 认证检查失败: {0}".format(str(e)))
             return False
+
+    @staticmethod
+    def get_proxies():
+        return _get_proxies()

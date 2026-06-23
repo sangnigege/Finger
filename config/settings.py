@@ -53,3 +53,12 @@ def get_random_headers():
         "User-Agent": random.choice(user_agents),
         "Accept-Encoding": "gzip, deflate",
     }
+
+
+def get_proxies():
+    """从全局配置读取代理地址，构建 requests 兼容的 proxies 字典"""
+    from config.data import Proxy
+    proxy_url = getattr(Proxy, 'url', '')
+    if not proxy_url:
+        return None
+    return {"http": proxy_url, "https": proxy_url}

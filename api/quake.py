@@ -5,7 +5,7 @@ import json
 import random
 import requests
 from config.data import Urls, logging
-from config import QuakeKey, user_agents
+from config import QuakeKey, user_agents, get_proxies as _get_proxies
 
 
 
@@ -46,7 +46,7 @@ class Quake:
         }
         try:
             response = requests.post(url="https://quake.360.cn/api/v3/search/quake_service", headers=self.headers,
-                                     json=self.data, timeout=10)
+                                     json=self.data, timeout=10, proxies=self.get_proxies())
             datas = json.loads(response.text)
             if len(datas['data']) >= 1 and datas['code'] == 0:
                 for data in datas['data']:
@@ -61,3 +61,7 @@ class Quake:
                         Urls.url.append(url)
         except Exception as e:
             logging.error("360 Quake API 异常: {0}".format(str(e)))
+
+    @staticmethod
+    def get_proxies():
+        return _get_proxies()
