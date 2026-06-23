@@ -555,8 +555,7 @@
 			"keyword": [
 				"switchingserverpopup",
 				"images/mail/35pushmail.app.png",
-				"class=\"user_define_img_btn6\" href=\"http://help.mail.35.com/mailman/81.html",
-				"35"
+				"class=\"user_define_img_btn6\" href=\"http://help.mail.35.com/mailman/81.html"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -585,8 +584,7 @@
 				"360entinst",
 				"关于全网部署360私有云的通知",
 				"私有云控制中心",
-				"/download/360inst.exe",
-				"天擎"
+				"/download/360inst.exe"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -885,7 +883,6 @@
 			"location": "body",
 			"keyword": [
 				"360天堤",
-				"360",
 				"360防火墙"
 			],
 			"confidence": 100,
@@ -991,8 +988,7 @@
 			"location": "body",
 			"keyword": [
 				"resources/image/logo_header.png",
-				"网神防火墙系统",
-				"360"
+				"网神防火墙系统"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -1733,8 +1729,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"/resource/javascript/system/runtime.min.js",
-				"password"
+				"/resource/javascript/system/runtime.min.js"
 			],
 			"confidence": 100
 		},
@@ -1744,7 +1739,6 @@
 			"location": "body",
 			"keyword": [
 				"/resource/javascript/system/runtime.min.js",
-				"password",
 				"license.78oa.com",
 				"src=\"/module/index.php",
 				"<a href=\"http://www.78oa.com\" target=\"_blank\">78OA办公系统</a>"
@@ -2594,8 +2588,7 @@
 			"location": "body",
 			"keyword": [
 				"login_1\">ca密码",
-				"window.external.addfavorite",
-				"安财"
+				"window.external.addfavorite"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -2616,7 +2609,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"安财",
 				"window.external.addfavorite(location.href,document.title);",
 				"by:lin.zhibin",
 				"<div id=\"dsitetitle\""
@@ -3297,8 +3289,7 @@
 			"location": "body",
 			"keyword": [
 				"/cfajax/",
-				"ColdFusion.Ajax",
-				"cdm"
+				"ColdFusion.Ajax"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -3700,7 +3691,6 @@
 			"location": "body",
 			"keyword": [
 				"content=\"tpn,vpn,内网安全,内网控制,主机防护\"",
-				"iam",
 				"src=\"/page/assets/javascripts/adt.js\""
 			],
 			"confidence": 100,
@@ -3719,7 +3709,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"iam",
 				"src=\"/page/assets/javascripts/adt.js\""
 			]
 		},
@@ -16884,14 +16873,6 @@
 			]
 		},
 		{
-			"cms": "BWS",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"BWS"
-			]
-		},
-		{
 			"cms": "bxemail",
 			"method": "keyword",
 			"location": "body",
@@ -19633,8 +19614,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"loid_regist()",
-				"login"
+				"loid_regist()"
 			]
 		},
 		{
@@ -19988,7 +19968,6 @@
 				"structure/index",
 				"index.files/cicro_userdefine.css",
 				"content=\"cicro",
-				"cws",
 				"cicro"
 			],
 			"confidence": 100,
@@ -21638,8 +21617,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"Citrix Access Gateway",
-				"login"
+				"Citrix Access Gateway"
 			],
 			"confidence": 100
 		},
@@ -23675,7 +23653,6 @@
 			"keyword": [
 				"/cfajax/",
 				"ColdFusion.Ajax",
-				"cdm",
 				"<cfscript>",
 				"<title>ColdFusion Administrator Login</title>",
 				"{   document.write(\"<link rel=\"STYLESHEET\" type=\"text/css\" href=\"./cfadmin_ns.css\">\");}",
@@ -27801,7 +27778,6 @@
 			"location": "body",
 			"keyword": [
 				"refresh",
-				"url",
 				"created by intellij idea.",
 				"/portal/include/script/dahuadefined/headcommon.js",
 				"<meta http-equiv=\"refresh\" content=\"1;url=\"/itc\"\"/>"
@@ -30419,7 +30395,6 @@
 			"location": "body",
 			"keyword": [
 				"classid='clsid:e77e049b-23fc-4db8-b756-60529a35fad5'",
-				"刻录",
 				"classid=\"clsid:e77e049b-23fc-4db8-b756-60529a35fad5\""
 			],
 			"confidence": 100,
@@ -32848,8 +32823,7 @@
 			"location": "body",
 			"keyword": [
 				"DuomiCms",
-				"duomicms_member",
-				"多米"
+				"duomicms_member"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -33231,14 +33205,6 @@
 			],
 			"logic": "or",
 			"confidence": 100
-		},
-		{
-			"cms": "D盾",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"D盾"
-			]
 		},
 		{
 			"cms": "e-cology 运维管理平台",
@@ -33815,7 +33781,6 @@
 			"keyword": [
 				"easypanel",
 				"vhost",
-				"login",
 				"/vhost/view/default/style/login.css"
 			],
 			"logic": "or",
@@ -34564,10 +34529,8 @@
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
-				"EDLCMS",
-				"易动力"
+				"EDLCMS"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -34575,11 +34538,9 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"EDLCMS",
-				"易动力"
+				"EDLCMS"
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "EDLM自助提卡系统",
@@ -37790,8 +37751,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"ewomail.com",
-				"邮箱"
+				"ewomail.com"
 			]
 		},
 		{
@@ -37858,10 +37818,8 @@
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
-				"OutlookSession",
-				"owa"
+				"OutlookSession"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -38330,14 +38288,6 @@
 			"location": "title",
 			"keyword": [
 				"e任丘文章管理系统"
-			]
-		},
-		{
-			"cms": "e创站",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"e创站"
 			]
 		},
 		{
@@ -39727,7 +39677,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"=fs",
 				"ReportServer"
 			],
 			"confidence": 100
@@ -43528,7 +43477,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"图书",
 				"金盘软件",
 				"class=\"jp-searchtabs",
 				"/opac/periodicals",
@@ -44166,7 +44114,6 @@
 			"location": "body",
 			"keyword": [
 				"Grafana",
-				"login",
 				"grafana-app",
 				"<title>Grafana</title>",
 				"background-image: url(\"public/img/grafana_icon.svg\"",
@@ -44555,7 +44502,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"login",
 				"v3/js/odm/odm.js"
 			]
 		},
@@ -44651,14 +44597,6 @@
 			],
 			"logic": "or",
 			"confidence": 100
-		},
-		{
-			"cms": "GuanXingTai",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"观星台"
-			]
 		},
 		{
 			"cms": "GuardSite-WatchGuard-AP100",
@@ -44942,8 +44880,7 @@
 			"location": "body",
 			"keyword": [
 				"ER3100",
-				"h3c.com",
-				"login"
+				"h3c.com"
 			],
 			"confidence": 100
 		},
@@ -44952,7 +44889,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"H3C",
 				"vld.bmp",
 				"dis_login",
 				"ER8300G2"
@@ -45819,8 +45755,7 @@
 			"location": "body",
 			"keyword": [
 				"ER6300G2",
-				"h3c.com",
-				"login"
+				"h3c.com"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -46898,10 +46833,8 @@
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
-				"HDCMS",
-				"后盾云"
+				"HDCMS"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -46909,11 +46842,9 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"HDCMS",
-				"后盾云"
+				"HDCMS"
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "HDHCMS",
@@ -47232,14 +47163,6 @@
 			],
 			"logic": "or",
 			"confidence": 100
-		},
-		{
-			"cms": "HFS",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"hfs"
-			]
 		},
 		{
 			"cms": "HFS (HTTP File Server)",
@@ -47648,14 +47571,6 @@
 			]
 		},
 		{
-			"cms": "Hikvision-TV-Wall",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"电视墙"
-			]
-		},
-		{
 			"cms": "hikvision-v23-control",
 			"method": "keyword",
 			"location": "body",
@@ -47893,8 +47808,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"/static/css/main.4672616b.chunk.css",
-				"智源"
+				"/static/css/main.4672616b.chunk.css"
 			]
 		},
 		{
@@ -49946,7 +49860,6 @@
 			"keyword": [
 				"esight_login_copy_right_font",
 				"location.replace(\"login.action?_=\"+ new date().gettime());",
-				"<a",
 				"<body onload=\"gotologin()\">",
 				"<a ,<body onload=\"gotologin()\">"
 			],
@@ -51397,8 +51310,7 @@
 			"location": "body",
 			"keyword": [
 				"Welcome to Hue",
-				"Query. Explore.",
-				"login"
+				"Query. Explore."
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -56472,14 +56384,6 @@
 			]
 		},
 		{
-			"cms": "IQ3",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"IQ3"
-			]
-		},
-		{
 			"cms": "IQeye-Netcam",
 			"method": "keyword",
 			"location": "body",
@@ -58855,8 +58759,7 @@
 			"location": "body",
 			"keyword": [
 				"九思软件",
-				"办公系统",
-				"oa"
+				"办公系统"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -59448,8 +59351,7 @@
 			"keyword": [
 				"jboss",
 				"jsessionid",
-				"servlet",
-				"jsp"
+				"servlet"
 			],
 			"logic": "or",
 			"confidence": 100
@@ -61765,7 +61667,6 @@
 			"keyword": [
 				"setkingoencypt.jsp",
 				"/jkingo.js",
-				"青果",
 				"kingosoft"
 			],
 			"confidence": 100,
@@ -62976,8 +62877,7 @@
 			"location": "body",
 			"keyword": [
 				"login_files",
-				"platform",
-				"欢迎"
+				"platform"
 			],
 			"confidence": 100
 		},
@@ -62988,8 +62888,7 @@
 			"keyword": [
 				"login_files",
 				"platform",
-				"欢迎登陆系统",
-				"欢迎"
+				"欢迎登陆系统"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -63162,10 +63061,8 @@
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
-				"lancom",
-				"vpn"
+				"lancom"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -63370,7 +63267,6 @@
 			"location": "body",
 			"keyword": [
 				"LanProxy",
-				"password",
 				"lanproxy-config"
 			]
 		},
@@ -64172,7 +64068,6 @@
 			"location": "body",
 			"keyword": [
 				"language/switchover\"+'/'+current_language",
-				"登录",
 				"language/switchover\"+\"/\"+current_language"
 			],
 			"confidence": 100,
@@ -70790,8 +70685,7 @@
 				"outlooksession",
 				"x-owa-version",
 				"Location: /owa/",
-				"Server: Microsoft",
-				"owa"
+				"Server: Microsoft"
 			],
 			"logic": "or",
 			"confidence": 100
@@ -75543,15 +75437,6 @@
 			"confidence": 100
 		},
 		{
-			"cms": "NETENTSEC-Log-analysis",
-			"method": "keyword",
-			"location": "body",
-			"keyword": [
-				"网康"
-			],
-			"confidence": 100
-		},
-		{
 			"cms": "NETENTSEC-NGFW",
 			"method": "keyword",
 			"location": "body",
@@ -78291,7 +78176,6 @@
 			"location": "title",
 			"keyword": [
 				"NetShare-VPN",
-				"vpn",
 				"netshare"
 			],
 			"logic": "or",
@@ -78302,7 +78186,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"vpn",
 				"netshare"
 			]
 		},
@@ -80045,9 +79928,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"nps",
-				"ehang",
-				"login"
+				"ehang"
 			]
 		},
 		{
@@ -81051,8 +80932,7 @@
 			"location": "body",
 			"keyword": [
 				"视频监控",
-				"NVS3000综合",
-				"login"
+				"NVS3000综合"
 			]
 		},
 		{
@@ -81996,11 +81876,9 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"<div class=\"extras\" id=\"password_extras\">",
-				"crm"
+				"<div class=\"extras\" id=\"password_extras\">"
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "Onshop",
@@ -87377,14 +87255,6 @@
 			],
 			"logic": "or",
 			"confidence": 100
-		},
-		{
-			"cms": "phpecms",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"凡诺"
-			]
 		},
 		{
 			"cms": "PHPEIP-CMS内容管理系统",
@@ -93250,8 +93120,7 @@
 				"深圳锐取信息技术股份有限公司",
 				"/reach/jquery.reach.js",
 				"<font size=4.5>锐取多媒体录播系统",
-				"多媒体录播系统",
-				"锐取"
+				"多媒体录播系统"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -94202,8 +94071,7 @@
 			"location": "body",
 			"keyword": [
 				"0;url=/webmail/",
-				"richmail.config.js",
-				"login"
+				"richmail.config.js"
 			],
 			"logic": "or",
 			"confidence": 100
@@ -95213,11 +95081,9 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"webui/images/ruijie",
-				"锐捷"
+				"webui/images/ruijie"
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "Ruijie-NPE",
@@ -95332,7 +95198,6 @@
 			"keyword": [
 				"document.cookie = \"rjsslvpn_encookie=yes;\"",
 				"SSLVPN",
-				"login",
 				"rjsslvpn",
 				"rjsslvpn_encookie"
 			],
@@ -95366,7 +95231,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"锐捷",
 				"webui/images/ruijie"
 			]
 		},
@@ -96644,8 +96508,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"login_psw.csp",
-				"VDI"
+				"login_psw.csp"
 			]
 		},
 		{
@@ -97285,8 +97148,7 @@
 			"location": "header",
 			"keyword": [
 				"p3p: cp=this is not a privacy policy",
-				"p3p: cp=this is not a privacy policy!",
-				"267"
+				"p3p: cp=this is not a privacy policy!"
 			],
 			"logic": "or",
 			"confidence": 100
@@ -97599,8 +97461,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"sdcms",
-				"login"
+				"sdcms"
 			]
 		},
 		{
@@ -98019,8 +97880,7 @@
 			"location": "body",
 			"keyword": [
 				"usbkey_plugin.cab",
-				"无服务权限",
-				"网神"
+				"无服务权限"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -98420,14 +98280,6 @@
 			],
 			"logic": "or",
 			"confidence": 100
-		},
-		{
-			"cms": "sentry-cloud",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"哨兵云"
-			]
 		},
 		{
 			"cms": "Seo-Panel",
@@ -98985,10 +98837,8 @@
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
-				"SHLCMS",
-				"深喉咙"
+				"SHLCMS"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -98996,10 +98846,8 @@
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
-				"SHLCMS",
-				"深喉咙"
+				"SHLCMS"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -99007,11 +98855,9 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"SHLCMS",
-				"深喉咙"
+				"SHLCMS"
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "Shock&Innovation!! netis setup",
@@ -103690,8 +103536,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"spon_base64.js",
-				"login"
+				"spon_base64.js"
 			]
 		},
 		{
@@ -106493,7 +106338,6 @@
 			"keyword": [
 				"content=\"synology diskstation",
 				"content=\"synology nas 提供功能完整的网络存储",
-				"nas",
 				"content=\"diskstation",
 				"modules/BackupReplicationApp"
 			],
@@ -108122,14 +107966,6 @@
 			"location": "title",
 			"keyword": [
 				"TerraGate"
-			]
-		},
-		{
-			"cms": "TerraMaster TOS",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"TOS"
 			]
 		},
 		{
@@ -109899,7 +109735,6 @@
 				"<a href=\"https://www.tongda2000.com/download",
 				"javascript:document.form1.uname.focus()",
 				"<a href=\"http://www.tongda2000.com/\" target=\"_black\">通达官网</a>",
-				"login",
 				"tongda2000"
 			],
 			"logic": "or",
@@ -112789,10 +112624,8 @@
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
-				"tp-link",
-				"vpn"
+				"tp-link"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -114152,7 +113985,6 @@
 			"keyword": [
 				"window.location.href = \"/wcm\";",
 				"forum.trs.com.cn",
-				"wcm",
 				"0;url=/wcm",
 				"/wcm\" target=\"_blank\">网站管理"
 			],
@@ -114267,7 +114099,6 @@
 				"forum.trs.com.cn",
 				"/wcm\" target=\"_blank\">管理",
 				"/wcm\" target=\"_blank\">网站管理",
-				"wcm",
 				"0;url=/wcm",
 				"/wcm/app/js",
 				"WCM_VERSION"
@@ -116072,7 +115903,6 @@
 				"wanlanswitch",
 				"gjs_producttype",
 				"uniview",
-				"宇视",
 				"<label for=\"autologin\" class=\"login_autologinlabel\">",
 				"<form id=loginform name=loginform action=cgi-bin/main.cgi method=post >",
 				"cgi-bin/main.cgi?web_id=1&langinfo=-3",
@@ -117551,7 +117381,6 @@
 			"keyword": [
 				"网御网络审计系统",
 				"天玥网络安全审计系统v6.0",
-				"天玥",
 				"天玥网络安全审计"
 			],
 			"logic": "or",
@@ -119021,10 +118850,8 @@
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
-				"飞鱼星科技volans",
-				"路由器"
+				"飞鱼星科技volans"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -119089,7 +118916,6 @@
 			"location": "body",
 			"keyword": [
 				"id=\"lgform\" action=\"/sso/login",
-				"vop",
 				"lgdynacodebtn"
 			],
 			"confidence": 100,
@@ -120081,18 +119907,7 @@
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
-				"WCM",
 				"拓尔思CMS (TRS"
-			],
-			"logic": "or",
-			"confidence": 100
-		},
-		{
-			"cms": "WCM(拓尔思CMS(TRS)",
-			"method": "keyword",
-			"location": "body",
-			"keyword": [
-				"WCM"
 			],
 			"confidence": 100
 		},
@@ -123541,7 +123356,6 @@
 			"keyword": [
 				"wp-admin",
 				"wp-content/",
-				"wp-",
 				"wp-content/themes/",
 				"name=\"generator\" content=\"wordpress",
 				"/wp-includes/",
@@ -125399,14 +125213,6 @@
 			]
 		},
 		{
-			"cms": "xunfeng",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"巡风"
-			]
-		},
-		{
 			"cms": "Xunruicms",
 			"method": "keyword",
 			"location": "body",
@@ -125807,7 +125613,6 @@
 			"keyword": [
 				"YApi",
 				"id=\"yapi\"",
-				"prd",
 				"可视化接口管理平台"
 			],
 			"confidence": 100,
@@ -127160,14 +126965,6 @@
 			]
 		},
 		{
-			"cms": "Yunjingwang-Web-filtering",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"云净网"
-			]
-		},
-		{
 			"cms": "YunKeMail",
 			"method": "keyword",
 			"location": "body",
@@ -128391,14 +128188,6 @@
 			"confidence": 100
 		},
 		{
-			"cms": "Zhu-Ji-Bao",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"主机宝"
-			]
-		},
-		{
 			"cms": "zhuangxiu",
 			"method": "keyword",
 			"location": "title",
@@ -128462,11 +128251,9 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"http://www.zhidesoft.com/",
-				"e8"
+				"http://www.zhidesoft.com/"
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "ZiGuangHuaYu-AttendanceManagementSystem",
@@ -130761,14 +130548,6 @@
 			]
 		},
 		{
-			"cms": "七牛云",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"七牛云"
-			]
-		},
-		{
 			"cms": "七色虎WAP2.0建站系统",
 			"method": "keyword",
 			"location": "title",
@@ -131499,8 +131278,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"loid_regist()",
-				"login"
+				"loid_regist()"
 			]
 		},
 		{
@@ -131614,7 +131392,6 @@
 				"c.alertmsg('磁盘空间剩余: ' + space_available + ' m",
 				"alert_msg');",
 				"中新金盾信息安全管理系统",
-				"login",
 				"useusbkey"
 			],
 			"confidence": 100,
@@ -131841,8 +131618,7 @@
 			"location": "body",
 			"keyword": [
 				"systemAction",
-				"zt_webframe",
-				"login"
+				"zt_webframe"
 			]
 		},
 		{
@@ -132237,7 +132013,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"短信",
 				"Simpla",
 				"chklogin.aspx"
 			]
@@ -132334,22 +132109,6 @@
 			]
 		},
 		{
-			"cms": "云盒子",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"云盒子"
-			]
-		},
-		{
-			"cms": "云盾",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"云盾"
-			]
-		},
-		{
 			"cms": "云站宝企业建站程序",
 			"method": "keyword",
 			"location": "title",
@@ -132379,14 +132138,6 @@
 			"location": "title",
 			"keyword": [
 				"Powered By chaosZ"
-			]
-		},
-		{
-			"cms": "云适配",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"云适配"
 			]
 		},
 		{
@@ -132764,8 +132515,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"templates/master/pc",
-				"订货易"
+				"templates/master/pc"
 			]
 		},
 		{
@@ -132866,14 +132616,6 @@
 			"location": "title",
 			"keyword": [
 				"企望制造ERP系统"
-			]
-		},
-		{
-			"cms": "众拓",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"众拓"
 			]
 		},
 		{
@@ -133439,8 +133181,7 @@
 			"location": "body",
 			"keyword": [
 				"全息AI",
-				"g_is_hk",
-				"login"
+				"g_is_hk"
 			]
 		},
 		{
@@ -134078,18 +133819,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"北方网",
 				"enorth webpublisher"
-			],
-			"confidence": 100,
-			"logic": "or"
-		},
-		{
-			"cms": "北方网(enorth webpublisher)",
-			"method": "keyword",
-			"location": "header",
-			"keyword": [
-				"北方网"
 			],
 			"confidence": 100
 		},
@@ -134108,10 +133838,8 @@
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
-				"北方网",
 				"enorth webpublisher"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -134328,7 +134056,6 @@
 			"location": "body",
 			"keyword": [
 				"reporter",
-				"login",
 				"action.php"
 			]
 		},
@@ -134845,14 +134572,6 @@
 			]
 		},
 		{
-			"cms": "又拍云",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"又拍云"
-			]
-		},
-		{
 			"cms": "友加畅捷U+财会通",
 			"method": "faviconhash",
 			"location": "body",
@@ -134993,10 +134712,8 @@
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
-				"KODExplorer",
-				"可道云"
+				"KODExplorer"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -135004,10 +134721,8 @@
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
-				"可道云",
 				"KODExplorer"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -135015,11 +134730,9 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"可道云",
 				"KODExplorer"
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "右手米表程序",
@@ -135182,23 +134895,6 @@
 			"keyword": [
 				"名典设备报修管理系统"
 			]
-		},
-		{
-			"cms": "后台",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"后台"
-			]
-		},
-		{
-			"cms": "后台",
-			"method": "keyword",
-			"location": "body",
-			"keyword": [
-				"后台"
-			],
-			"confidence": 100
 		},
 		{
 			"cms": "后盾云cms",
@@ -135500,7 +135196,6 @@
 			"keyword": [
 				"#commonTip",
 				"css/icomoon",
-				"login",
 				"wwLogin"
 			]
 		},
@@ -135583,7 +135278,6 @@
 			"location": "body",
 			"keyword": [
 				"考试系统",
-				"品德",
 				"login.aspx"
 			]
 		},
@@ -136053,14 +135747,6 @@
 			]
 		},
 		{
-			"cms": "多多客",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"多多客"
-			]
-		},
-		{
 			"cms": "多多返利淘宝客",
 			"method": "keyword",
 			"location": "title",
@@ -136090,14 +135776,6 @@
 			"location": "title",
 			"keyword": [
 				"多客服在线客服系统商业版本"
-			]
-		},
-		{
-			"cms": "多彩云",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"多彩云"
 			]
 		},
 		{
@@ -136177,14 +135855,6 @@
 			]
 		},
 		{
-			"cms": "大华DSS Digital Surveillance System系统",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"DSS"
-			]
-		},
-		{
 			"cms": "大华e眼远程视频监控平台",
 			"method": "keyword",
 			"location": "body",
@@ -136260,14 +135930,6 @@
 			"location": "body",
 			"keyword": [
 				"NVS3000综合视频监控平台"
-			]
-		},
-		{
-			"cms": "大商创",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"大商创"
 			]
 		},
 		{
@@ -136376,7 +136038,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"天喻",
 				"数据安全"
 			]
 		},
@@ -136566,7 +136227,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"天玥",
 				"venustech",
 				"func_login"
 			]
@@ -136577,8 +136237,7 @@
 			"location": "body",
 			"keyword": [
 				"css/fw/full.css",
-				"js/p/login.js",
-				"login"
+				"js/p/login.js"
 			]
 		},
 		{
@@ -136683,8 +136342,7 @@
 			"location": "body",
 			"keyword": [
 				"Login @ Reporter",
-				"topsec",
-				"login"
+				"topsec"
 			]
 		},
 		{
@@ -136775,8 +136433,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"TopAPP负载均衡系统",
-				"天融信"
+				"TopAPP负载均衡系统"
 			]
 		},
 		{
@@ -136858,8 +136515,7 @@
 				"class=\"logintop\"",
 				"web应用安全防护系统",
 				"module=login",
-				"topsec",
-				"login"
+				"topsec"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -137567,8 +137223,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"fumasoft",
-				"孚盟云"
+				"fumasoft"
 			]
 		},
 		{
@@ -137892,7 +137547,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"明御",
 				"综合日志审计分析平台"
 			]
 		},
@@ -138322,7 +137976,6 @@
 				"bt.cn",
 				"/login",
 				"站点创建成功",
-				"宝塔",
 				"宝塔Linux面板",
 				"<title>入口校验失败</title>",
 				"href=\"http://www.bt.cn/bbs\""
@@ -138519,14 +138172,6 @@
 			"location": "title",
 			"keyword": [
 				"小微OA"
-			]
-		},
-		{
-			"cms": "小淘客",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"小淘客"
 			]
 		},
 		{
@@ -138806,8 +138451,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"ReportServer",
-				"=fs"
+				"ReportServer"
 			]
 		},
 		{
@@ -139025,8 +138669,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"/ConsoleCommon/Content/weebox.css",
-				"广联达"
+				"/ConsoleCommon/Content/weebox.css"
 			]
 		},
 		{
@@ -139146,14 +138789,6 @@
 			"location": "title",
 			"keyword": [
 				"开单大师学习版"
-			]
-		},
-		{
-			"cms": "开普云",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"开普云"
 			]
 		},
 		{
@@ -139422,8 +139057,7 @@
 			"location": "body",
 			"keyword": [
 				"微擎 - 公众平台自助引擎",
-				"www.w7.cc",
-				"login"
+				"www.w7.cc"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -139814,7 +139448,6 @@
 			"location": "body",
 			"keyword": [
 				"Ajax/Login",
-				"思迪",
 				"canvas"
 			]
 		},
@@ -140127,7 +139760,6 @@
 			"location": "body",
 			"keyword": [
 				"用户管理登录",
-				"login",
 				"images/zh-CN/login_03.gif"
 			]
 		},
@@ -140283,14 +139915,6 @@
 			]
 		},
 		{
-			"cms": "护卫神",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"护卫神"
-			]
-		},
-		{
 			"cms": "护卫神-网站安全系统",
 			"method": "keyword",
 			"location": "body",
@@ -140351,8 +139975,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"/was5/web/",
-				"trs"
+				"/was5/web/"
 			]
 		},
 		{
@@ -140541,14 +140164,6 @@
 			"location": "title",
 			"keyword": [
 				"推广宝分类信息系统"
-			]
-		},
-		{
-			"cms": "推广易",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"推广易"
 			]
 		},
 		{
@@ -141266,8 +140881,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"login.jsp?login",
-				"登录"
+				"login.jsp?login"
 			]
 		},
 		{
@@ -141291,8 +140905,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"login.jsp?login",
-				"登录"
+				"login.jsp?login"
 			]
 		},
 		{
@@ -141392,7 +141005,6 @@
 			"location": "body",
 			"keyword": [
 				"PubPlatform",
-				"明源云",
 				"LoginHandler",
 				"#153290",
 				"明源软件"
@@ -141406,7 +141018,6 @@
 			"location": "body",
 			"keyword": [
 				"PubPlatform",
-				"明源云",
 				"LoginHandler",
 				"#153290",
 				"明源软件",
@@ -141491,14 +141102,6 @@
 			"location": "body",
 			"keyword": [
 				"content=\"YiqiCMS"
-			]
-		},
-		{
-			"cms": "易企邮",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"易企邮"
 			]
 		},
 		{
@@ -141596,14 +141199,6 @@
 			"location": "title",
 			"keyword": [
 				"易创思教育建站系统"
-			]
-		},
-		{
-			"cms": "易商宝",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"易商宝"
 			]
 		},
 		{
@@ -141963,8 +141558,7 @@
 			"location": "body",
 			"keyword": [
 				"styles/images/logo.png",
-				"login_form",
-				"防病毒"
+				"login_form"
 			]
 		},
 		{
@@ -143153,15 +142747,6 @@
 			]
 		},
 		{
-			"cms": "沃科网异网同显系统",
-			"method": "keyword",
-			"location": "body",
-			"keyword": [
-				"沃科网"
-			],
-			"confidence": 100
-		},
-		{
 			"cms": "沸腾展望新闻多媒体系统",
 			"method": "keyword",
 			"location": "title",
@@ -143619,8 +143204,7 @@
 			"location": "body",
 			"keyword": [
 				"流媒体管理服务器",
-				"MSHTML",
-				"login"
+				"MSHTML"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -143900,14 +143484,6 @@
 			]
 		},
 		{
-			"cms": "深优通",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"深优通"
-			]
-		},
-		{
 			"cms": "深信服 waf",
 			"method": "keyword",
 			"location": "body",
@@ -143941,8 +143517,7 @@
 			"location": "body",
 			"keyword": [
 				"SANGFOR",
-				"NGAF",
-				"login"
+				"NGAF"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -144043,8 +143618,7 @@
 			"location": "body",
 			"keyword": [
 				"NGAF",
-				"SANGFOR",
-				"login"
+				"SANGFOR"
 			]
 		},
 		{
@@ -144513,14 +144087,6 @@
 			]
 		},
 		{
-			"cms": "爱淘客",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"爱淘客"
-			]
-		},
-		{
 			"cms": "爱特内容管理系统_aitecms",
 			"method": "keyword",
 			"location": "body",
@@ -144583,14 +144149,6 @@
 			"location": "title",
 			"keyword": [
 				"爱站CMS内容管理系统"
-			]
-		},
-		{
-			"cms": "爱装网",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"爱装网"
 			]
 		},
 		{
@@ -144895,14 +144453,6 @@
 			"location": "body",
 			"keyword": [
 				"/images/raisecom/back.gif"
-			]
-		},
-		{
-			"cms": "瑞星",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"瑞星"
 			]
 		},
 		{
@@ -145349,14 +144899,6 @@
 			]
 		},
 		{
-			"cms": "电信云",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"电信云"
-			]
-		},
-		{
 			"cms": "电信天翼网关F460",
 			"method": "keyword",
 			"location": "body",
@@ -145487,37 +145029,13 @@
 			]
 		},
 		{
-			"cms": "登录页面",
-			"method": "keyword",
-			"location": "body",
-			"keyword": [
-				"登录",
-				"注册",
-				"忘记密码",
-				"Login",
-				"Sign up",
-				"Forgot password"
-			]
-		},
-		{
-			"cms": "登录页面",
-			"method": "regula",
-			"location": "body",
-			"keyword": [
-				"<input.*pass",
-				"<input.*user"
-			]
-		},
-		{
 			"cms": "登陆页面",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"type=\"password\"",
-				"登录"
+				"type=\"password\""
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "白狐微信公众号助手CMS",
@@ -145647,14 +145165,6 @@
 			"logic": "or"
 		},
 		{
-			"cms": "百度云",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"百度云"
-			]
-		},
-		{
 			"cms": "百度云主机",
 			"method": "keyword",
 			"location": "header",
@@ -145702,8 +145212,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"media/css/uniform.default.css",
-				"资管云"
+				"media/css/uniform.default.css"
 			]
 		},
 		{
@@ -145938,14 +145447,6 @@
 			"location": "title",
 			"keyword": [
 				"碧海云盒"
-			]
-		},
-		{
-			"cms": "碧海威",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"碧海威"
 			]
 		},
 		{
@@ -146308,8 +145809,7 @@
 			"location": "body",
 			"keyword": [
 				"Kemai",
-				"Login.aspx",
-				"科脉"
+				"Login.aspx"
 			]
 		},
 		{
@@ -146343,7 +145843,6 @@
 			"location": "body",
 			"keyword": [
 				"style1/css/ListRange.css",
-				"主账套",
 				"login.jsp"
 			]
 		},
@@ -146465,8 +145964,7 @@
 			"location": "body",
 			"keyword": [
 				"系统登录",
-				"res/icon/key.png",
-				"login"
+				"res/icon/key.png"
 			]
 		},
 		{
@@ -146678,17 +146176,7 @@
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
-				"订货易",
 				"管家婆分销ERP"
-			]
-		},
-		{
-			"cms": "管理后台登录",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"管理员",
-				"登录"
 			]
 		},
 		{
@@ -146696,11 +146184,9 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"管理易",
 				"minierp"
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "米号文章管理系统",
@@ -147358,8 +146844,7 @@
 			"location": "body",
 			"keyword": [
 				"安全系统",
-				"网御星云",
-				"login"
+				"网御星云"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -147605,9 +147090,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"网神信息技术",
-				"login",
-				"防火墙"
+				"网神信息技术"
 			]
 		},
 		{
@@ -147825,8 +147308,7 @@
 				"Synology",
 				"webman/",
 				"DiskStation",
-				"webman/modules",
-				"NAS"
+				"webman/modules"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -147840,7 +147322,6 @@
 				"webman/",
 				"DiskStation",
 				"webman/modules",
-				"NAS",
 				"modules"
 			],
 			"confidence": 100,
@@ -147856,8 +147337,7 @@
 				"modules",
 				"Synology",
 				"webman/",
-				"webman/modules",
-				"NAS"
+				"webman/modules"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -148662,8 +148142,6 @@
 			"location": "body",
 			"keyword": [
 				"ruoyi",
-				"若依",
-				"login",
 				"ruoyi/login.js"
 			],
 			"confidence": 100,
@@ -148902,10 +148380,8 @@
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
-				"蓝凌OA",
-				"EKP"
+				"蓝凌OA"
 			],
-			"logic": "or",
 			"confidence": 100,
 			"version_regex": "蓝凌[^0-9]*([\\d.]+)"
 		},
@@ -148914,11 +148390,9 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"蓝凌OA",
-				"EKP"
+				"蓝凌OA"
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "蓝凌智慧协同平台",
@@ -149119,9 +148593,7 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"防火墙",
 				"class=\"banquan\">蓝盾信息安全技术股份有限公司",
-				"蓝盾",
 				"Bluedon",
 				"default/js/act/login.js"
 			],
@@ -149247,8 +148719,7 @@
 			"location": "body",
 			"keyword": [
 				"ifw8",
-				"企业级流控云路由器",
-				"login"
+				"企业级流控云路由器"
 			]
 		},
 		{
@@ -149603,14 +149074,6 @@
 			]
 		},
 		{
-			"cms": "记事狗",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"记事狗"
-			]
-		},
-		{
 			"cms": "设备运维系统",
 			"method": "keyword",
 			"location": "body",
@@ -149960,7 +149423,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"usm",
 				"运维安全管理平台"
 			]
 		},
@@ -150048,8 +149510,7 @@
 			"location": "body",
 			"keyword": [
 				"DPSSLVPN",
-				"SSL VPN Service",
-				"login"
+				"SSL VPN Service"
 			]
 		},
 		{
@@ -150218,7 +149679,6 @@
 				"/images/tongda.ico",
 				"Office Anywhere",
 				"通达OA",
-				"login",
 				"<link rel=\"shortcut icon\" href=\"/images/tongda.ico\" />",
 				"Office Anywhere 2013"
 			],
@@ -150248,14 +149708,6 @@
 			"location": "title",
 			"keyword": [
 				"速网科技"
-			]
-		},
-		{
-			"cms": "速致",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"速致"
 			]
 		},
 		{
@@ -150551,14 +150003,6 @@
 			"confidence": 100
 		},
 		{
-			"cms": "金山云",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"金山云"
-			]
-		},
-		{
 			"cms": "金山毒霸企业版",
 			"method": "keyword",
 			"location": "header",
@@ -150779,7 +150223,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"金航",
 				"jsyj",
 				"衡水金航"
 			]
@@ -151191,7 +150634,6 @@
 			"keyword": [
 				"SSLVPN",
 				"rjweb",
-				"login",
 				"rjsslvpn_encookie"
 			],
 			"confidence": 100,
@@ -151266,7 +150708,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"锐捷",
 				"/static/img/title.ico",
 				"/js/app"
 			],
@@ -151307,7 +150748,6 @@
 			"keyword": [
 				"SSLVPN",
 				"rjweb",
-				"login",
 				"rjsslvpn_encookie"
 			],
 			"logic": "or",
@@ -151473,7 +150913,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"DNS",
 				"main.php?mod=member",
 				"DNS_"
 			]
