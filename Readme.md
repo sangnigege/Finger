@@ -130,45 +130,61 @@ FingerPrint_Update = False
 
 ## 指纹识别规则
 
-Finger的指纹规则学习之[EHole(棱洞)2.0 重构版-红队重点攻击系统指纹探测工具](https://github.com/EdgeSecurityTeam/EHole)。指纹格式如下:
+Finger的指纹规则学习之[EHole(棱洞)2.0 重构版-红队重点攻击系统指纹探测工具](https://github.com/EdgeSecurityTeam/EHole)。规则格式如下:
 
-```
-cms：系统名称
-method：识别方式 (支持三种识别方式，分别为：keyword、faviconhash、regula)
-location：位置（body/header/title/url）
-keyword：关键字（favicon图标hash、正则表达式、关键字）
-logic：匹配逻辑（and/or，默认and）
-```
+### 规则字段
 
-keyword支持多关键字匹配。
+| 字段 | 必填 | 说明 |
+|------|:---:|------|
+| `cms` | ✅ | 系统/产品名称 |
+| `method` | ✅ | 识别方式: `keyword` / `faviconhash` / `regula` |
+| `location` | ✅ | 匹配位置: `title` / `header` / `body` / `url` |
+| `keyword` | ✅ | 关键词列表（favicon hash / 正则 / 文本） |
+| `logic` | — | 匹配逻辑: `and`（默认，全部命中）/ `or`（任一命中） |
+| `version_regex` | — | 版本号提取正则，如 `Nginx/([\\d.]+)` |
+| `model_regex` | — | 设备型号提取正则，如 `DS-2\\w{2}\\d{4}\\w*[\\-\\w/]*` |
+| `expected_server` | — | 预期 Server 头列表，不匹配时自动降权 |
 
-一个简单例子:
+### 示例
 
 ```json
 {
-    "cms": "seeyon",
+    "cms": "Shiro",
     "method": "keyword",
-    "location": "body",
-    "keyword": ["/seeyon/USER-DATA/IMAGES/LOGIN/login.gif"]
+    "location": "header",
+    "keyword": ["rememberMe=", "=deleteMe", "shiroCookie"],
+    "logic": "or"
+}
+```
+
+```json
+{
+    "cms": "HP-LaserJet-Printer",
+    "method": "keyword",
+    "location": "title",
+    "keyword": ["HP LaserJet", "HP Color LaserJet"],
+    "logic": "or",
+    "model_regex": "HP\\s+(LaserJet|Color LaserJet)\\s+(?:MFP\\s+|Pro\\s+)?[\\w\\d]+",
+    "expected_server": ["Virata-EmWeb"]
 }
 ```
 
 ### 识别方式
 
-| method | 说明 | 示例 |
-|--------|------|------|
-| `keyword` | 关键词匹配，支持 AND/OR 逻辑 | `"keyword": ["Swagger UI"]` |
-| `faviconhash` | favicon 图标 hash 匹配，几乎零误报 | `"keyword": ["81586312"]` |
-| `regula` | 正则表达式匹配 | `"keyword": ["Apache/([\\d.]+)"]` |
+| method | 说明 | 精度 | 示例 |
+|--------|------|------|------|
+| `keyword` | 关键词匹配，支持 AND/OR 逻辑 | title/header 精准，body 取决于关键词质量 | `"keyword": ["Swagger UI"]` |
+| `faviconhash` | favicon 图标 hash 匹配（EHole + FOFA 双 hash 兼容） | **极高**（密码学哈希，几乎零误报） | `"keyword": ["81586312"]` |
+| `regula` | 正则表达式匹配 | 取决于正则质量 | `"keyword": ["Apache/([\\d.]+)"]` |
 
 ### 匹配位置
 
 | location | 说明 |
 |----------|------|
-| `header` | HTTP 响应头（多格式兼容，含 EHole 格式） |
-| `title` | 页面 `<title>` 标签 |
-| `body` | 页面 HTML 全文 |
-| `url` | 🆕 URL 路径匹配（与 dirsearch 联动友好） |
+| `title` | 页面 `<title>` 标签内容（最可靠的位置） |
+| `header` | HTTP 响应头（多格式兼容：`Server: nginx` / `(Server: nginx`） |
+| `url` | 🆕 URL 路径匹配（与 dirsearch 联动，精确度等同 title） |
+| `body` | 页面 HTML 全文（最不可靠，需谨慎使用关键词） |
 
 ---
 
