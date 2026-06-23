@@ -17475,6 +17475,19 @@
 			]
 		},
 		{
+			"cms": "catchAdmin",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"-869874861",
+				"-1463693458",
+				"1624098486",
+				"-14565506"
+			],
+			"confidence": 100,
+			"logic": "or"
+		},
+		{
 			"cms": "CatCMS",
 			"method": "keyword",
 			"location": "header",
@@ -33902,6 +33915,15 @@
 			"confidence": 100
 		},
 		{
+			"cms": "eladmin",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"1467799162"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "elascticsearch",
 			"method": "keyword",
 			"location": "body",
@@ -36002,6 +36024,15 @@
 				"Powered by <A HREF=\"http://www.evological.com/evocam.html\">EvoCam</A>"
 			],
 			"logic": "or",
+			"confidence": 100
+		},
+		{
+			"cms": "evoa",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"-1699356011"
+			],
 			"confidence": 100
 		},
 		{
@@ -54904,6 +54935,15 @@
 			]
 		},
 		{
+			"cms": "J2eeFAST",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"125734503"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "jabberd",
 			"method": "keyword",
 			"location": "header",
@@ -55942,6 +55982,15 @@
 			]
 		},
 		{
+			"cms": "JFinalOA",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"-1893457175"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "JfinalUIB",
 			"method": "keyword",
 			"location": "title",
@@ -56717,6 +56766,15 @@
 			"keyword": [
 				"JPress"
 			]
+		},
+		{
+			"cms": "jpress",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"-2042524686"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "jqPlot",
@@ -60165,6 +60223,15 @@
 			"keyword": [
 				"https://itunes.apple.com/us/app/ismart-viewer/"
 			]
+		},
+		{
+			"cms": "ktg-mes",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"2044046982"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "kuaipu-M6",
@@ -77794,6 +77861,15 @@
 			]
 		},
 		{
+			"cms": "oasys",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"354465068"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "OAuth2",
 			"method": "keyword",
 			"location": "header",
@@ -89668,6 +89744,15 @@
 			]
 		},
 		{
+			"cms": "rebuild",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"871154672"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "Red-Lion-HMI",
 			"method": "keyword",
 			"location": "body",
@@ -100188,6 +100273,15 @@
 			"keyword": [
 				"srun_gateway"
 			]
+		},
+		{
+			"cms": "SSCMS",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"-773012525"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "SSYCMS",
@@ -122241,6 +122335,15 @@
 			]
 		},
 		{
+			"cms": "YuebonNetCore",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"1804648988"
+			],
+			"confidence": 100
+		},
+		{
 			"cms": "yuge-telemedicine",
 			"method": "keyword",
 			"location": "body",
@@ -128796,6 +128899,15 @@
 			"keyword": [
 				"北京勤云科技"
 			]
+		},
+		{
+			"cms": "勾股OA",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"-1258073583"
+			],
+			"confidence": 100
 		},
 		{
 			"cms": "化视私云CDN直播加速服务器",
