@@ -97,12 +97,14 @@ class Request:
             favicon_headers.pop('Upgrade-Insecure-Requests', None)
             favicon_headers.pop('Sec-Fetch-User', None)
             response = requests.get(favicon_url, headers=favicon_headers, timeout=4)
-            favicon = base64.encodebytes(response.content)
-            hash = mmh3.hash(favicon)
-            return hash
+            favicon_raw = response.content
+            # 兼容 Finger/EHole 现有规则（MIME base64）
+            hash_ehole = mmh3.hash(base64.encodebytes(favicon_raw))
+            # 同时也返回 fofa 兼容 hash 用于匹配
+            return {'ehole': hash_ehole, 'fofa': mmh3.hash(base64.b64encode(favicon_raw))}
         except Exception as e:
             logging.warning("favicon 获取失败: {0} → {1}".format(favicon_url, str(e)))
-            return 0
+            return {'ehole': 0, 'fofa': 0}
 
     def _find_favicon_in_soup(self, soup, base_url):
         """从已解析的 HTML soup 中提取 favicon 路径"""

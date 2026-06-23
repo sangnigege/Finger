@@ -130,8 +130,13 @@ class Identify:
             matched = False
 
             if method == "faviconhash":
-                if str(self.datas.get("faviconhash", "")) == line["keyword"][0]:
-                    matched = True
+                fav = self.datas.get("faviconhash", {})
+                target = line["keyword"][0]
+                if isinstance(fav, dict):
+                    matched = (str(fav.get('ehole', '')) == target or
+                               str(fav.get('fofa', '')) == target)
+                else:
+                    matched = str(fav) == target
 
             elif method == "keyword":
                 logic = line.get('logic', 'and')

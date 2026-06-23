@@ -249,11 +249,12 @@ class Finger:
             h.pop('Upgrade-Insecure-Requests', None)
             h.pop('Sec-Fetch-User', None)
             resp = requests.get(target, headers=h, timeout=4)
-            favicon = base64.encodebytes(resp.content)
-            return mmh3.hash(favicon)
+            raw = resp.content
+            return {'ehole': mmh3.hash(base64.encodebytes(raw)),
+                    'fofa': mmh3.hash(base64.b64encode(raw))}
         except Exception as e:
             logging.warning(f"favicon 获取失败: {favicon_url} → {e}")
-            return 0
+            return {'ehole': 0, 'fofa': 0}
 
     def _find_favicon(self, soup, base_url):
         try:
