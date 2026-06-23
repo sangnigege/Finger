@@ -7,7 +7,7 @@ import base64
 import mmh3
 from lib.ip_factory import IPFactory
 from urllib.parse import urlsplit, urljoin
-from config.data import Urls, Webinfo, Urlerror, logging
+from config.data import Urls, Webinfo, Urlerror, logging, Extra
 from config import settings
 from lib.identify import Identify
 from bs4 import BeautifulSoup
@@ -73,11 +73,14 @@ class Request:
             favicon_url_hint = self._find_favicon_in_soup(soup, base)
 
         faviconhash = self.get_faviconhash(url, favicon_url_hint)
-        iscdn, iplist = self.ipFactory.factory(url)
-        # CIDR 未检测到 CDN 时，用响应头二次确认
-        if iscdn == 0 and self.ipFactory.check_cdn_headers(response.headers):
-            iscdn = 1
-        iplist = ','.join(set(iplist))
+        # CDN 检测：默认关闭，--cdn 开启
+        if Extra.cdn:
+            iscdn, iplist = self.ipFactory.factory(url)
+            if iscdn == 0 and self.ipFactory.check_cdn_headers(response.headers):
+                iscdn = 1
+            iplist = ','.join(set(iplist))
+        else:
+            iscdn, iplist = 0, ""
         datas = {"url": url, "title": title, "body": html, "status": status, "Server": server, "size": size,
                  "header": response.headers, "faviconhash": faviconhash, "iscdn": iscdn, "ip": iplist,
                  "address": "", "isp": ""}

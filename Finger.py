@@ -3,6 +3,7 @@
 # author = EASY
 import warnings
 from config import settings
+from config.data import Extra
 from lib.cmdline import cmdline
 from lib.checkenv import CheckEnv
 from lib.req import Request
@@ -25,7 +26,8 @@ if __name__ == '__main__':
     # 加载参数
     options = initoptions(cmdline())
     run = Request()
-    IpAttributable()
+    if Extra.geo:
+        IpAttributable()
     save = Output()
 
 

@@ -19,7 +19,7 @@ from urllib.parse import urlsplit, urljoin
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from bs4 import BeautifulSoup
-from config.data import path, logging
+from config.data import path, logging, Extra
 from config import settings
 from lib.identify import Identify
 from lib.ip_factory import IPFactory
@@ -181,13 +181,16 @@ class Finger:
             favicon_url_hint = self._find_favicon(soup, base)
         faviconhash = self._get_faviconhash(url, favicon_url_hint)
 
-        # CDN/IP
-        try:
-            iscdn, iplist = self.ip_factory.factory(url)
-            if iscdn == 0 and self.ip_factory.check_cdn_headers(response.headers):
-                iscdn = 1
-            iplist_str = ','.join(set(iplist))
-        except Exception:
+        # CDN/IP (默认关闭，--cdn 开启)
+        if Extra.cdn:
+            try:
+                iscdn, iplist = self.ip_factory.factory(url)
+                if iscdn == 0 and self.ip_factory.check_cdn_headers(response.headers):
+                    iscdn = 1
+                iplist_str = ','.join(set(iplist))
+            except Exception:
+                iscdn, iplist_str = 0, ""
+        else:
             iscdn, iplist_str = 0, ""
 
         # 指纹匹配

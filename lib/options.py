@@ -4,7 +4,7 @@
 import os
 from api.fofa import Fofa
 from api.quake import Quake
-from config.data import Urls, logging, Save, Ips, Proxy
+from config.data import Urls, logging, Save, Ips, Proxy, Extra
 
 
 class initoptions:
@@ -13,6 +13,8 @@ class initoptions:
         Urls.url = []
         Ips.ip = []
         Proxy.url = ""
+        Extra.cdn = args.cdn
+        Extra.geo = args.geo
         self._url = args.url
         self._file = args.file
         self._ip = args.ip
