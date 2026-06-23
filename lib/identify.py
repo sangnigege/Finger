@@ -147,28 +147,28 @@ class Identify:
                 else:  # and (默认，向后兼容)
                     matched = all(k in data_str for k in line["keyword"])
 
-                # 自动降权：body 规则以最短关键词为准评估误报风险
-                # OR 逻辑和多关键词等价——任一命中即匹配，最短关键词决定精度
-                if matched and loc == "body":
-                    kw_list = line.get("keyword", [])
-                    kw_count = len(kw_list)
-                    min_len = min((len(k) for k in kw_list), default=0)
-                    effective_count = 1 if logic == 'or' else kw_count
-                    if effective_count == 1:
-                        if min_len < 5:
-                            confidence = max(confidence - 60, 5)   # e.g. "<a " 每页都有
-                        elif min_len < 8:
-                            confidence = max(confidence - 40, 10)
-                        else:
-                            confidence = max(confidence - 20, 20)
-                    # AND 多关键词 → 保持原置信度（所有关键词必须同时命中）
+#                # 自动降权：body 规则以最短关键词为准评估误报风险
+#                # OR 逻辑和多关键词等价——任一命中即匹配，最短关键词决定精度
+#                if matched and loc == "body":
+#                    kw_list = line.get("keyword", [])
+#                    kw_count = len(kw_list)
+#                    min_len = min((len(k) for k in kw_list), default=0)
+#                    effective_count = 1 if logic == 'or' else kw_count
+#                    if effective_count == 1:
+#                        if min_len < 5:
+#                            confidence = max(confidence - 60, 5)   # e.g. "<a " 每页都有
+#                        elif min_len < 8:
+#                            confidence = max(confidence - 40, 10)
+#                        else:
+#                            confidence = max(confidence - 20, 20)
+#                    # AND 多关键词 → 保持原置信度（所有关键词必须同时命中）
 
             elif method == "regula":
                 if line.get("keyword") and hasattr(line["keyword"], 'search'):
                     matched = bool(line["keyword"].search(
                         self.datas.get(line["location"], "")))
 
-            if matched and confidence >= 50:
+            if matched:
                 ver_num = self._extract_version(line)
                 version = f"{line['cms']} {ver_num}" if ver_num else None
                 matches.append({
