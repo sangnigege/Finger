@@ -65577,7 +65577,8 @@
 				"owapage = asp.auth_logon_aspx",
 				"aria-label=\"outlook web app",
 				"outlooksession",
-				"x-owa-version"
+				"x-owa-version",
+				"/owa/"
 			],
 			"logic": "or",
 			"expected_server": [
@@ -65600,7 +65601,9 @@
 				"window.location.replace(\"/owa/\" + window.location.hash);</script></head><body></body>",
 				"<!-- owapage = asp.auth_logon_aspx",
 				"owalgnbdy",
-				"<meta http-equiv=\"refresh\" content=\"0;url=/owa\">"
+				"<meta http-equiv=\"refresh\" content=\"0;url=/owa\">",
+				"/exchweb/bin/auth/owalogon.asp",
+				"href=\"/owa/auth/"
 			],
 			"logic": "or",
 			"expected_server": [
