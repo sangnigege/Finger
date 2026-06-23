@@ -42189,18 +42189,6 @@
 			]
 		},
 		{
-			"cms": "H3C-Web-managerment-Home",
-			"method": "keyword",
-			"location": "body",
-			"keyword": [
-				"/wnm/ssl/web/frame/login.html"
-			],
-			"expected_server": [
-				"H3C",
-				"h3c"
-			]
-		},
-		{
 			"cms": "H3C-WebManager",
 			"method": "keyword",
 			"location": "title",
@@ -42231,14 +42219,6 @@
 			"keyword": [
 				"class=\"dl_margin0\" align=\"left\">web网管用户登录</div>",
 				"/php/common/checknum_creat.php?module=config_authnum"
-			]
-		},
-		{
-			"cms": "h3c-安全产品管理平台",
-			"method": "keyword",
-			"location": "body",
-			"keyword": [
-				"/wnm/ssl/web/frame/login.html"
 			]
 		},
 		{
@@ -42273,18 +42253,6 @@
 			"location": "title",
 			"keyword": [
 				"H3C ME8600"
-			]
-		},
-		{
-			"cms": "H3CRouter",
-			"method": "keyword",
-			"location": "body",
-			"keyword": [
-				"/wnm/ssl/web/frame/login.html"
-			],
-			"expected_server": [
-				"H3C",
-				"h3c"
 			]
 		},
 		{
@@ -65605,14 +65573,11 @@
 				"microsoft outlook web access",
 				"owalogocontainer",
 				"<div class=\"signinheader\">outlook</div>",
-				"/owa/",
 				"/exchweb/bin/auth/owalogon.asp?url=",
 				"owapage = asp.auth_logon_aspx",
 				"aria-label=\"outlook web app",
 				"outlooksession",
-				"x-owa-version",
-				"Location: /owa/",
-				"Server: Microsoft"
+				"x-owa-version"
 			],
 			"logic": "or",
 			"expected_server": [
@@ -65633,9 +65598,6 @@
 				"themes/resources/segoeui-semibold.ttf",
 				"<meta http-equiv=\"refresh\" contect=\"0;url=/owa\">",
 				"window.location.replace(\"/owa/\" + window.location.hash);</script></head><body></body>",
-				"href=\"/owa/auth/",
-				"/exchweb/bin/auth/owalogon.asp?url=",
-				"/exchweb/bin/auth/owalogon.asp",
 				"<!-- owapage = asp.auth_logon_aspx",
 				"owalgnbdy",
 				"<meta http-equiv=\"refresh\" content=\"0;url=/owa\">"
