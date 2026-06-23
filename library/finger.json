@@ -43772,14 +43772,6 @@
 			"logic": "or"
 		},
 		{
-			"cms": "Hikvision IP Camera",
-			"method": "faviconhash",
-			"location": "body",
-			"keyword": [
-				"999357577"
-			]
-		},
-		{
 			"cms": "Hikvision SPON IP网络对讲广播系统",
 			"method": "faviconhash",
 			"location": "body",
