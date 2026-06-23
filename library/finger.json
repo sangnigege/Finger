@@ -2010,11 +2010,9 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"Aardvark Topsites",
-				"powered by"
+				"Aardvark Topsites"
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "Aardvark-Topsites",
@@ -5936,14 +5934,6 @@
 			]
 		},
 		{
-			"cms": "Alt-Svc",
-			"method": "keyword",
-			"location": "header",
-			"keyword": [
-				"Alt-Svc"
-			]
-		},
-		{
 			"cms": "Altenergy电力系统控制软件",
 			"method": "keyword",
 			"location": "title",
@@ -9241,7 +9231,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"arris",
 				"strhtml=\"<title>\"+i1+\"</title>\";",
 				"content=\"arris 2307\"",
 				"/arris_style.css",
@@ -27774,8 +27763,6 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"refresh",
-				"created by intellij idea.",
 				"/portal/include/script/dahuadefined/headcommon.js",
 				"<meta http-equiv=\"refresh\" content=\"1;url=\"/itc\"\"/>"
 			],
@@ -54400,10 +54387,8 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"workflow",
 				"<input type=\"submit\" name=\"cmdsubmit\" value=\" 登 录 \" onclick=\"javascript:webform_dopostbackwithoptions(new webform_postbackoptions(&quot;cmdsubmit&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))\" id=\"cmdsubmit\" class=\"colorbutton"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -62873,8 +62858,7 @@
 			"location": "body",
 			"keyword": [
 				"login_files",
-				"platform",
-				"欢迎登陆系统"
+				"platform"
 			],
 			"confidence": 100,
 			"logic": "or"
@@ -70310,11 +70294,9 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"metronic. admin dashboard template.",
-				"<div class=\"copyright\">"
+				"metronic. admin dashboard template."
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "Metronic-Admin-Theme-Framework",
@@ -92486,8 +92468,7 @@
 				"content=\"ruby on rails",
 				"alt=\"ruby on rails\"",
 				"type=\"hidden\" name=\"authenticity_token",
-				"href=\"/assets/",
-				"/users/sign_in"
+				"href=\"/assets/"
 			],
 			"logic": "or",
 			"confidence": 100
@@ -96048,11 +96029,9 @@
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
-				"digest realm=\"net-i\", nonce",
-				"must-revalidate"
+				"digest realm=\"net-i\", nonce"
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "SAMSUNG-Wireless-Enterprise",
@@ -106376,10 +106355,8 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"id=\"paragraph\">web station has been enabled. to finish setting up your website, please see the \"web service",
-				"web service"
+				"id=\"paragraph\">web station has been enabled. to finish setting up your website, please see the \"web service"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -134108,8 +134085,7 @@
 			"location": "body",
 			"keyword": [
 				"OAapp/WebObjects/OAapp.woa",
-				"/htoa/js/jquery.js",
-				"window.location"
+				"/htoa/js/jquery.js"
 			],
 			"logic": "or",
 			"confidence": 100
@@ -144527,9 +144503,7 @@
 			"location": "body",
 			"keyword": [
 				"platform/pub/welcome.do",
-				"<title> Application </title>",
 				"src=\"../../../../platform/resource/yonyou-yyy.js",
-				"Application",
 				"../../../../platform/resource/yonyou-yyy.js",
 				"大型企业数字化平台"
 			],
@@ -147303,11 +147277,11 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"Synology",
 				"webman/",
-				"DiskStation",
 				"webman/modules",
-				"modules"
+				"modules",
+				"Synology",
+				"DiskStation"
 			],
 			"confidence": 100,
 			"logic": "or"
