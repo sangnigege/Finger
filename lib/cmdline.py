@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# author = EASY
+# author = sangnigege
 import argparse
 
 def cmdline():
-    parser = argparse.ArgumentParser(description="Finger 一款红队在大量的资产中存活探测与重点攻击系统指纹探测工具 --by EASY")
+    parser = argparse.ArgumentParser(description="Finger V6.0 — 红队资产存活探测与重点攻击系统指纹识别工具")
     target = parser.add_argument_group('Target')
     target.add_argument('-u',dest='url',type=str,help="Input your url target")
     target.add_argument('-f',dest='file',type=str,help="Input your target's file")

@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# author = EASY
+# author = sangnigege
 
 import random
 
-Version = "V5.2"
-Author = "EASY"
-Website = "https://www.easy233.top"
+Version = "V6.0"
+Author = "sangnigege"
 Banner = '\033[1;31m\n' + r'''
 ______ _
 |  ___(_)
@@ -15,7 +14,7 @@ ______ _
 | |   | | | | | (_| |  __/ |
 \_|   |_|_| |_|\__, |\___|_|
                 __/ |
-               |___/           ''' + '\033[1;34mVersion: {0}\n\n    Author: {1}\n    Website: {2}\033[0m                   \n'.format(Version, Author, Website)
+               |___/           ''' + '\033[1;34mVersion: {0}\n\n    Author: {1}\033[0m                   \n'.format(Version, Author)
 
 # 设置线程数，默认30
 threads = 30

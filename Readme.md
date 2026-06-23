@@ -3,9 +3,9 @@
 <h4 align="center">红队资产存活探测与重点攻击系统指纹识别工具</h4>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Author-EASY-da282a">
+  <img src="https://img.shields.io/badge/Author-sangnigege-da282a">
   <img src="https://img.shields.io/badge/Language-Python%203.10+-da282a">
-  <img src="https://img.shields.io/badge/Version-V5.2-da282a">
+  <img src="https://img.shields.io/badge/Version-V6.0-da282a">
   <img src="https://img.shields.io/badge/Rules-16,277-da282a">
 </p>
 
@@ -247,7 +247,7 @@ Finger/
 
 ## 更新日志
 
-### V5.2（2026-06）
+### V6.0（2026-06）
 
 - **指纹库**：合并 16 个来源，254K 原始规则去重 → 16,277 条，覆盖 11,600 产品
 - **置信度系统**：自动降权 body 单关键词，过滤低置信度匹配，同名 CMS 去重
