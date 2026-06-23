@@ -193,9 +193,17 @@ class Finger:
         }
         match_info = self.identify.match(datas)
 
-        # 控制台实时输出（仅指纹匹配成功时输出，与旧版行为一致）
+        # 控制台实时输出（贴近 V5.1，增加置信度）
         if match_info["cms"]:
-            logging.success(f"{match_info['cms']} {server} {str(title)[:40]:40s} {url}")
+            from config.color import color
+            logging.success("{0} {1} {2} {4} {3}  [{5}]".format(
+                color.green(match_info['cms']),
+                color.blue(server),
+                str(title)[:50],
+                color.yellow(str(response.status_code)),
+                url,
+                color.cyan(str(match_info['confidence'])),
+            ))
 
         # Server header 版本兜底提取
         version = match_info["version"] if match_info["version"] != "-" else ""
