@@ -13,7 +13,6 @@ from colorama import init as wininit
 from lib.options import initoptions
 
 # 过滤第三方库在新版 Python 下的 DeprecationWarning
-warnings.filterwarnings("ignore", category=DeprecationWarning, module="bs4")
 warnings.filterwarnings("ignore", category=DeprecationWarning, module="xlsxwriter")
 
 wininit(autoreset=True)

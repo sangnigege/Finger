@@ -18,7 +18,7 @@ import urllib3
 from urllib.parse import urlsplit, urljoin
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from bs4 import BeautifulSoup
+import re
 from config.data import path, logging, Extra
 from config import settings
 from lib.identify import Identify
@@ -168,17 +168,16 @@ class Finger:
             html = response.content.decode(response.encoding, "ignore")
             size = len(response.text)
 
-        soup = BeautifulSoup(html, 'html.parser') if html else None
-        title = self._get_title(soup)
+        title = self._get_title(html)
         server = response.headers.get("Server", "")
         server = "" if len(server) > 50 else server
 
-        # favicon
+        # favicon 正则提取
         favicon_url_hint = None
-        if soup:
+        if html:
             parsed = urlsplit(url)
             base = f"{parsed.scheme}://{parsed.netloc}"
-            favicon_url_hint = self._find_favicon(soup, base)
+            favicon_url_hint = self._find_favicon_href(html, base)
         faviconhash = self._get_faviconhash(url, favicon_url_hint)
 
         # CDN/IP (默认关闭，--cdn 开启)
@@ -260,12 +259,14 @@ class Finger:
             logging.warning(f"favicon 获取失败: {favicon_url} → {e}")
             return {'ehole': 0, 'fofa': 0}
 
-    def _find_favicon(self, soup, base_url):
+    def _find_favicon_href(self, html, base_url):
+        """正则提取 favicon 路径"""
         try:
-            for link in soup.find_all('link', rel=['icon', 'shortcut icon', 'apple-touch-icon']):
-                href = link.get('href')
-                if href and not href.startswith('data:'):
-                    return urljoin(base_url, href)
+            m = re.search(
+                r'<link[^>]+rel=["\'](?:icon|shortcut icon|apple-touch-icon)["\'][^>]+href=["\']([^"\']+)["\']',
+                html, re.I)
+            if m and not m.group(1).startswith('data:'):
+                return urljoin(base_url, m.group(1))
         except Exception:
             pass
         return None
@@ -273,23 +274,20 @@ class Finger:
     # ── HTML 解析 ─────────────────────────
 
     @staticmethod
-    def _get_title(soup):
-        if soup is None:
+    def _get_title(html):
+        """正则提取标题"""
+        if not html:
             return ''
-        title = soup.title
-        if title and title.text:
-            return title.text.strip().replace('\r', '').replace('\n', '')
+        m = re.search(r'<title[^>]*>([^<]+)</title>', html, re.I | re.S)
+        if m: return m.group(1).strip().replace('\r', '').replace('\n', '')
         for tag in ('h1', 'h2', 'h3'):
-            el = getattr(soup, tag)
-            if el and el.text:
-                return el.text.strip().replace('\r', '').replace('\n', '')
-        desc = soup.find('meta', attrs={'name': 'description'})
-        if desc and desc.get('content'):
-            return desc['content']
-        kw = soup.find('meta', attrs={'name': 'keywords'})
-        if kw and kw.get('content'):
-            return kw['content']
-        text = soup.text
+            m = re.search(rf'<{tag}[^>]*>([^<]+)</{tag}>', html, re.I)
+            if m: return m.group(1).strip().replace('\r', '').replace('\n', '')
+        m = re.search(r'<meta[^>]+name=["\']description["\'][^>]+content=["\']([^"\']+)["\']', html, re.I)
+        if m: return m.group(1).strip()
+        m = re.search(r'<meta[^>]+name=["\']keywords["\'][^>]+content=["\']([^"\']+)["\']', html, re.I)
+        if m: return m.group(1).strip()
+        text = re.sub(r'<[^>]+>', ' ', html).strip()
         return text if len(text) <= 200 else ''
 
     # ── 输出 ──────────────────────────────

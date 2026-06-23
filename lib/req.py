@@ -3,6 +3,7 @@
 # author = EASY
 import requests
 import random
+import re
 import base64
 import mmh3
 from lib.ip_factory import IPFactory
@@ -10,7 +11,6 @@ from urllib.parse import urlsplit, urljoin
 from config.data import Urls, Webinfo, Urlerror, logging, Extra
 from config import settings
 from lib.identify import Identify
-from bs4 import BeautifulSoup
 import urllib3
 
 urllib3.disable_warnings()
@@ -57,20 +57,17 @@ class Request:
             html = response.content.decode(response.encoding,"ignore")
             size = len(response.text)
 
-        # 只解析一次 HTML，共用给标题提取和 favicon 路径发现
-        soup = BeautifulSoup(html, 'html.parser') if html else None
-
-        title = self.get_title(soup, html).strip().replace('\r', '').replace('\n', '')
+        title = self.get_title(html).strip().replace('\r', '').replace('\n', '')
         status = response.status_code
         server = response.headers["Server"] if "Server" in response.headers else ""
         server = "" if len(server) > 50 else server
 
-        # 从 html soup 中提取 favicon 路径，回退到 /favicon.ico
+        # 正则提取 favicon 路径，回退到 /favicon.ico
         favicon_url_hint = None
-        if soup:
+        if html:
             parsed = urlsplit(url)
             base = parsed.scheme + "://" + parsed.netloc
-            favicon_url_hint = self._find_favicon_in_soup(soup, base)
+            favicon_url_hint = self._find_favicon_href(html, base)
 
         faviconhash = self.get_faviconhash(url, favicon_url_hint)
         # CDN 检测：默认关闭，--cdn 开启
@@ -109,41 +106,38 @@ class Request:
             logging.warning("favicon 获取失败: {0} → {1}".format(favicon_url, str(e)))
             return {'ehole': 0, 'fofa': 0}
 
-    def _find_favicon_in_soup(self, soup, base_url):
-        """从已解析的 HTML soup 中提取 favicon 路径"""
+    def _find_favicon_href(self, html, base_url):
+        """正则提取 favicon 路径"""
         try:
-            for link in soup.find_all('link', rel=['icon', 'shortcut icon', 'apple-touch-icon']):
-                href = link.get('href')
-                if href and not href.startswith('data:'):
-                    return urljoin(base_url, href)
+            m = re.search(
+                r'<link[^>]+rel=["\'](?:icon|shortcut icon|apple-touch-icon)["\'][^>]+href=["\']([^"\']+)["\']',
+                html, re.I)
+            if m and not m.group(1).startswith('data:'):
+                return urljoin(base_url, m.group(1))
         except Exception:
             pass
         return None
 
-    def get_title(self, soup, html):
-        if soup is None:
+    @staticmethod
+    def get_title(html):
+        if not html:
             return ''
-        title = soup.title
-        if title and title.text:
-            return title.text
-        if soup.h1:
-            return soup.h1.text
-        if soup.h2:
-            return soup.h2.text
-        if soup.h3:
-            return soup.h3.text
-        desc = soup.find('meta', attrs={'name': 'description'})
-        if desc:
-            return desc['content']
-
-        word = soup.find('meta', attrs={'name': 'keywords'})
-        if word:
-            return word['content']
-
-        text = soup.text
-        if len(text) <= 200:
-            return text
-        return ''
+        # <title>...</title>
+        m = re.search(r'<title[^>]*>([^<]+)</title>', html, re.I | re.S)
+        if m: return m.group(1).strip()
+        # <h1>
+        for tag in ('h1', 'h2', 'h3'):
+            m = re.search(rf'<{tag}[^>]*>([^<]+)</{tag}>', html, re.I)
+            if m: return m.group(1).strip()
+        # <meta name="description" content="...">
+        m = re.search(r'<meta[^>]+name=["\']description["\'][^>]+content=["\']([^"\']+)["\']', html, re.I)
+        if m: return m.group(1).strip()
+        # <meta name="keywords" content="...">
+        m = re.search(r'<meta[^>]+name=["\']keywords["\'][^>]+content=["\']([^"\']+)["\']', html, re.I)
+        if m: return m.group(1).strip()
+        # 纯文本兜底
+        text = re.sub(r'<[^>]+>', ' ', html).strip()
+        return text if len(text) <= 200 else ''
 
     def get_headers(self):
         """
