@@ -47,7 +47,7 @@ class CheckEnv:
             logging.info("正在在线更新指纹库。。")
             Fingerprint_Page = "https://cdn.jsdelivr.net/gh/EASY233/Finger/library/finger.json"
             response = requests.get(Fingerprint_Page, timeout=10, headers=get_random_headers(),
-                                   proxies=get_proxies())
+                                   verify=False, proxies=get_proxies())
             filepath = os.path.join(path.library,"finger.json")
             bakfilepath = os.path.join(path.library,"finger_{}.json.bak".format(nowTime))
             with open(filepath,"rb") as file:

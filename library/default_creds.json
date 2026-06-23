@@ -1,0 +1,110 @@
+{
+	"Nacos": [
+		"nacos/nacos"
+	],
+	"MinIO": [
+		"minioadmin/minioadmin"
+	],
+	"RabbitMQ": [
+		"guest/guest"
+	],
+	"Jenkins": [
+		"admin/(无密码)"
+	],
+	"Tomcat": [
+		"admin/admin",
+		"tomcat/tomcat"
+	],
+	"JBoss": [
+		"admin/admin"
+	],
+	"Weblogic": [
+		"weblogic/welcome1",
+		"weblogic/weblogic1"
+	],
+	"phpMyAdmin": [
+		"root/(无密码)"
+	],
+	"Grafana": [
+		"admin/admin"
+	],
+	"Zabbix": [
+		"Admin/zabbix"
+	],
+	"Portainer": [
+		"admin/(首次设置)"
+	],
+	"Harbor": [
+		"admin/Harbor12345"
+	],
+	"GitLab": [
+		"root/(首次设置)"
+	],
+	"Confluence": [
+		"admin/admin"
+	],
+	"Jira": [
+		"admin/admin"
+	],
+	"SonarQube": [
+		"admin/admin"
+	],
+	"Kibana": [
+		"elastic/changeme"
+	],
+	"Elasticsearch": [
+		"elastic/changeme"
+	],
+	"WordPress": [
+		"admin/admin"
+	],
+	"Drupal": [
+		"admin/admin"
+	],
+	"Joomla": [
+		"admin/admin"
+	],
+	"Cacti": [
+		"admin/admin"
+	],
+	"Webmin": [
+		"root/(系统root密码)"
+	],
+	"Cockpit": [
+		"root/(系统root密码)"
+	],
+	"Supervisor": [
+		"(无密码/可RCE)"
+	],
+	"XXL-Job": [
+		"admin/123456"
+	],
+	"DolphinScheduler": [
+		"admin/dolphinscheduler123"
+	],
+	"Hikvision-Cameras": [
+		"admin/12345",
+		"admin/ADMIN12345"
+	],
+	"Dahua-Cameras": [
+		"admin/admin"
+	],
+	"H3C-Web-managerment-Home": [
+		"admin/admin",
+		"admin/Admin@123"
+	],
+	"锐捷网络设备": [
+		"admin/admin",
+		"admin/ruijie"
+	],
+	"iKuai爱快路由": [
+		"admin/admin"
+	],
+	"深信服-SSL-VPN": [
+		"admin/admin"
+	],
+	"天融信防火墙": [
+		"superman/talent",
+		"superman/talent!23"
+	]
+}

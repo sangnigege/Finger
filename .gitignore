@@ -20,7 +20,9 @@ build/
 # Project output
 output/
 *.xlsx
+*.csv
 *.bak
+library/finger.json.backup-*
 
 # OS
 .DS_Store

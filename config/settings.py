@@ -19,6 +19,9 @@ ______ _
 # 设置线程数，默认30
 threads = 30
 
+# HTTP请求超时（秒），默认5
+timeout = 5
+
 
 # 设置Fofa key信息
 Fofa_email = ""

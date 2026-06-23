@@ -17,6 +17,7 @@ def cmdline():
     extra = parser.add_argument_group('Extra')
     extra.add_argument('--cdn',action="store_true",default=False,help="Enable CDN detection (default: off)")
     extra.add_argument('--geo',action="store_true",default=False,help="Enable IP geolocation (default: off)")
+    extra.add_argument('--audit',action="store_true",default=False,help="Enable rule quality audit after scan")
     proxy = parser.add_argument_group('Proxy')
     proxy.add_argument('--proxy',dest='proxy',type=str,default="",help="Proxy (http://127.0.0.1:8080 or socks5://127.0.0.1:1080)")
     output = parser.add_argument_group('Output')

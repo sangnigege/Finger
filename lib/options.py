@@ -15,6 +15,7 @@ class initoptions:
         Proxy.url = ""
         Extra.cdn = args.cdn
         Extra.geo = args.geo
+        Extra.audit = args.audit
         self._url = args.url
         self._file = args.file
         self._ip = args.ip

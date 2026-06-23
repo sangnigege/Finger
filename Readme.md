@@ -1,12 +1,12 @@
 
-
 <h4 align="center">红队资产存活探测与重点攻击系统指纹识别工具</h4>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Author-sangnigege-da282a">
   <img src="https://img.shields.io/badge/Language-Python%203.10+-da282a">
   <img src="https://img.shields.io/badge/Version-V6.0-da282a">
-  <img src="https://img.shields.io/badge/Rules-16347-da282a">
+  <img src="https://img.shields.io/badge/Rules-16858-da282a">
+  <img src="https://img.shields.io/badge/Products-11945-da282a">
 </p>
 
 ---
@@ -15,15 +15,20 @@
 
 Finger 是一款面向红队的资产指纹探测工具，在大量资产中快速识别重点攻击系统（OA、CMS、框架、防火墙、路由器、CDN 等），协助渗透测试人员快速定位高价值目标。
 
+本分支在原项目基础上进行了大量优化：规则质量提升、置信度引擎重写、Server 版本提取、默认口令标注、规则审计、架构统一等。详见 [改进说明](#本分支改进)。
 
 ### 核心能力
 
 - **存活探测** — 并发 HTTP 扫描，自动处理 URL 格式异常
-- **指纹识别** — 上万条规则，覆盖 CMS、OA、框架、防火墙、路由器、摄像头、CDN 等
+- **指纹识别** — 16,858 条规则，覆盖 11,945 产品（CMS、OA、框架、防火墙、路由器、摄像头、CDN 等）
+- **智能置信度** — 算法自动计算置信度，根据匹配位置/命中率/关键词质量分级着色
 - **CDN 检测** — 三层检测：多 IP 判定 + CIDR 范围匹配 + 响应头特征
 - **IP 归属地** — 基于 ip2region 数据库，自动获取 IP 地理位置和运营商
 - **资产收集** — 支持 FOFA / 360 Quake API 资产搜集
 - **库模式调用** — `from lib.finger import Finger` 可被其他工具直接引用
+- **规则质量审计** — `--audit` 自动检测潜在误报规则
+- **Server 版本提取** — 自动从 Server 头提取 nginx/Apache/IIS 等版本号
+- **默认口令** — 输出标注已知产品的默认口令
 
 ---
 
@@ -55,6 +60,9 @@ python Finger.py -f targets.txt
 
 # 指定输出格式 (json / xlsx，默认 xlsx)
 python Finger.py -f targets.txt -o json
+
+# 启用规则质量审计
+python Finger.py -f targets.txt --audit
 
 # IP 资产收集（自动调 FOFA 获取 web 资产）
 python Finger.py -i 192.168.1.0/24
@@ -94,10 +102,28 @@ for r in results:
 | `--proxy URL` | HTTP/SOCKS5 代理 |
 | `--cdn` | 启用 CDN 检测（默认关闭） |
 | `--geo` | 启用 IP 归属地查询（默认关闭） |
+| `--audit` | 🆕 启用规则质量审计，扫描后生成审计报告 |
 
 支持的 URL 格式：`www.baidu.com`、`127.0.0.1`、`http://www.baidu.com` 均可自动处理。
 
 支持的 IP 格式：`192.168.1.1`、`192.168.1.0/24`、`192.168.1.10-192.168.1.50`。
+
+### 输出列说明
+
+| 列 | 说明 |
+|------|------|
+| Url | 目标 URL |
+| Title | 页面标题 |
+| CMS | 识别到的产品指纹（**红色** ≥80分，**黄色** ≥50分） |
+| Confidence | 置信度分数 (0-100)，算法自动计算 |
+| Version | 产品版本号 / 设备型号 |
+| Server | 原始 Server 响应头 |
+| Status | HTTP 状态码 |
+| Size | 响应体大小 |
+| IP | IP 地址 |
+| Address | IP 归属地（需 --geo） |
+| ISP | 运营商（需 --geo） |
+| DefaultCreds | 🆕 已知默认口令 |
 
 ---
 
@@ -108,6 +134,9 @@ for r in results:
 ```python
 # 线程数，默认 30
 threads = 30
+
+# HTTP请求超时（秒），默认 5
+timeout = 5
 
 # FOFA API 配置
 Fofa_email = ""
@@ -131,10 +160,9 @@ FingerPrint_Update = False
 {
     "cms": "Shiro",
     "method": "keyword",
-    "location": "header",
-    "keyword": ["rememberMe=", "=deleteMe", "shiroCookie"],
-    "logic": "or",
-    "confidence": 100
+    "location": "title",
+    "keyword": ["Apache Shiro", "apache shiro quickstart"],
+    "logic": "and"
 }
 ```
 
@@ -153,22 +181,22 @@ FingerPrint_Update = False
 | `header` | HTTP 响应头（多格式兼容，含 EHole 格式） |
 | `title` | 页面 `<title>` 标签 |
 | `body` | 页面 HTML 全文 |
+| `url` | 🆕 URL 路径匹配（dirsearch 联动友好） |
 
-### 匹配逻辑
+### 置信度算法（本分支改进）
 
-- 同名 CMS 去重后全部输出，按置信度降序排列
-- 规则可指定 `confidence`（0-100），默认 100
-- 双 favicon hash（EHole + FOFA 兼容）
+置信度不再由规则预设，而是从匹配过程**自动推导**：
 
-### 规则规模
-
-| 类型 | 数量 |
+| 因素 | 影响 |
 |------|------|
-| keyword（关键词） | 15,750 |
-| faviconhash（图标哈希） | 596 |
-| regula（正则） | 1 |
-| **总计** | **16347** |
-| 覆盖产品数 | 11,617 |
+| 匹配位置 | title/url +25, header +10, body +0 |
+| 匹配方法 | faviconhash → 直接 95 分 |
+| AND 多关键词 | +15（全部命中 → 极低FP） |
+| OR 命中率 | 按 `命中数/总关键词` 比例加分 |
+| 短通用词 | 如 "php" "asp" ≤3字符 → -20 |
+| HTML 标签 | 如 `<span>` → -15 |
+| URL 路径在 body | 短路径在 body 中出现 → -10 |
+| Server 交叉校验 | 预期 Server 不匹配 → -20 |
 
 ---
 
@@ -193,15 +221,76 @@ FingerPrint_Update = False
 - favicon 请求使用正确的 `Accept: image/*` 头
 - UA 池为 2025 年 Chrome 131 / Firefox 135
 - 不发送 Cookie（已移除 `rememberMe=test`）
-- `verify=False` 跳过 SSL 证书验证
-
+- `verify=False` 跳过 SSL 证书验证（主页 **和** favicon）
 
 ---
 
+## 架构
+
+```
+Finger.py          CLI 入口 → Finger 类统一引擎
+lib/finger.py      扫描引擎（CLI + 库模式共用）
+lib/identify.py    指纹匹配 + 置信度计算
+lib/output.py      xlsx/json 输出
+lib/audit.py       🆕 规则质量审计
+lib/options.py     URL 预处理
+lib/checkenv.py    环境检测
+config/settings.py 配置文件
+library/           指纹库 + 默认口令库 + CDN/IP数据
+```
+
+---
+
+## 本分支改进
+
+基于原项目 V6.0，本分支增加了以下改进：
+
+### 规则优化
+- **删除 32 个通用误报关键词**（`body`、`/login`、`download`、`self.location`、`username` 等）
+- **新增 ~500 条指纹规则**（OA/ERP/打印机/安全设备/AI 平台等 60+ 类别）
+- **URL 路径匹配** 新增 130 条 `location: url` 规则
+- **产品型号提取** 支持 HP/海康/Dell/Canon/Lenovo 等硬件型号
+- **Server 交叉校验** 对 17 个易误报产品配置预期 Server 头
+
+### 引擎改进
+- **置信度算法重写** — 从人工标注改为自动推导（位置/命中率/关键词质量）
+- **favicon SSL 修复** — favicon 请求增加 `verify=False`
+- **Server 版本自动提取** — 从 Server 头提取 nginx/Apache/IIS 等版本
+- **超时优化** — 默认从 10s 降为 5s，扫描速度提升 ~40%
+
+### 输出增强
+- **默认口令列** — xlsx 新增 `DefaultCreds` 列，覆盖 34 个常见产品
+- **置信度分级着色** — ≥80 红色（高置信），50-79 黄色（中置信）
+- **JSON 中文输出** — 修复 `ensure_ascii=False`
+
+### 质量保障
+- **规则审计** — `--audit` 四维自动检测（Server 多样性/404命中率/命中率异常/关键词质量）
+- **架构统一** — `req.py` 废弃，CLI + 库模式共用 `Finger` 类
+
+### 性能
+- 6000 URL 扫描从 ~21 分钟降至 ~12 分钟
+- favicon SSL 错误从 100+ 降至 2
+- favicon 总失败率 ~1.6%
+
+---
 
 ## 更新日志
 
-### V6.0（2026-06）
+### 本分支
+
+- **规则库**：16,359→16,858 条规则，新增 OA/ERP/打印机/AI/安全等 60+ 类别
+- **置信度引擎**：重写为算法自动计算，零维护成本
+- **URL 路径匹配**：新增 `location: url`，与 dirsearch 联动
+- **Server 版本提取**：自动提取 nginx/Apache/IIS/PHP 等版本号
+- **模型提取**：HP 打印机/海康摄像头等硬件型号自动提取
+- **默认口令**：34 产品默认口令标注
+- **规则审计**：`--audit` 自动检测潜在 FP 规则
+- **架构统一**：CLI + 库模式共用 `Finger` 类，`req.py` 废弃
+- **质量修复**：删除 32 个通用误报关键词，favicon SSL 修复
+- **性能优化**：默认超时 10→5s
+- **输出增强**：置信度分级着色、JSON 中文修复
+
+### V6.0（2026-06，上游）
 
 - **指纹库**：合并 17 个来源（含 EHole + MUKI），254K 原始规则去重清洗 → 16,347 条，覆盖 11,617 产品
 - **匹配引擎**：keyword + faviconhash + regula 三种方式，OR/AND 逻辑，双 hash 兼容（EHole + FOFA）
@@ -213,8 +302,8 @@ FingerPrint_Update = False
 - **Bug 修复**：CaseInsensitiveDict 兼容、ip2region 文件泄漏、logger 未定义
 - **库模式**：`from lib.finger import Finger` 可供其他工具直接引用
 - **跨平台**：修复 Python 3.10-3.13 兼容性，移除 Windows 专用依赖
-- **ip2region 升级**：v1 → v3.16.0 xdb 格式（更小 7MB vs 11MB，更准，2025年数据）
-- **依赖精简**：12→4 个直接依赖，移除 lxml/urllib3/pyreadline/beautifulsoup4 等冗余，HTML解析改用正则
+- **ip2region 升级**：v1 → v3.16.0 xdb 格式
+- **依赖精简**：12→4 个直接依赖
 - **输出增强**：XLSX 按置信度红/橙着色，新增 Confidence/Version 列
 
 ### V5.1（2022-03）
@@ -234,4 +323,5 @@ FingerPrint_Update = False
 - [Finger](https://github.com/EASY233/Finger) — 本项目上游，由 EASY 开发的 V5.1 版本
 - [EHole(棱洞)](https://github.com/EdgeSecurityTeam/EHole) — 指纹识别思路与规则格式
 - [ip2region](https://github.com/lionsoul2014/ip2region) — IP 归属地数据库与查询引擎
-
+- [ObserverWard](https://github.com/0x727/ObserverWard) — 指纹库参考
+- [FingerprintHub](https://github.com/0x727/FingerprintHub) — ObserverWard 指纹库

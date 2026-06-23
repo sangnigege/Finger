@@ -94,6 +94,10 @@ class Identify:
             vr = line.get("version_regex", "")
             if vr:
                 line["_version_re"] = re.compile(vr, re.I)
+            # 预编译设备型号正则
+            mr = line.get("model_regex", "")
+            if mr:
+                line["_model_re"] = re.compile(mr, re.I)
 
     def _prepare_pattern(self, pattern):
         regex, _, rest = pattern.partition('\\;')
@@ -109,8 +113,16 @@ class Identify:
         - Finger 原生: 关键字匹配 dict 的 str() 结果
         - EHole 系列: 关键字用 HTTP 头格式 "Server: nginx"
         - 部分魔改版: 关键字前带 '(' 前缀 "(Server: nginx"
+        - url 匹配: 同时生成完整 URL / 路径+查询 / 纯路径三行，覆盖各种路径关键词
         """
         data = self.datas.get(location, "")
+        if location == "url":
+            url = str(data)
+            parsed = urlsplit(url)
+            path_qs = parsed.path + ('?' + parsed.query if parsed.query else '')
+            # 兼容带/不带尾部斜杠: /actuator 和 /actuator/ 互相匹配
+            path = parsed.path.rstrip('/')
+            return '\n'.join([url, path_qs, parsed.path, path, path + '/'])
         if location == "header" and hasattr(data, 'items'):
             # 兼容 CaseInsensitiveDict (requests) 和普通 dict
             header_dict = dict(data)
@@ -125,10 +137,11 @@ class Identify:
     def _match_app(self):
         matches = []
         for line in self.obj:
-            confidence = line.get('confidence', 100)
             method = line['method']
             matched = False
+            matched_keywords = []
 
+            # ── faviconhash: 密码学哈希 → 直接 95 分，不走算法 ──
             if method == "faviconhash":
                 fav = self.datas.get("faviconhash", {})
                 target = line["keyword"][0]
@@ -138,39 +151,48 @@ class Identify:
                 else:
                     matched = str(fav) == target
 
+                if matched:
+                    ver_num = self._extract_version(line)
+                    version = f"{line['cms']} {ver_num}" if ver_num else None
+                    model = self._extract_model(line)
+                    if model:
+                        version = (version + ' ' if version else '') + f"[{model}]"
+                    matches.append({
+                        "cms": line["cms"],
+                        "confidence": 95,
+                        "version": version,
+                    })
+                    continue
+
+            # ── keyword: 统计命中关键词 → 算法计算置信度 ──
             elif method == "keyword":
                 logic = line.get('logic', 'and')
                 loc = line.get("location", "body")
                 data_str = self._get_match_string(loc)
+
                 if logic == 'or':
-                    matched = any(k in data_str for k in line["keyword"])
-                else:  # and (默认，向后兼容)
+                    # 统计所有命中的关键词（不再用 any() 提前退出）
+                    matched_keywords = [k for k in line["keyword"] if k in data_str]
+                    matched = bool(matched_keywords)
+                else:  # and
                     matched = all(k in data_str for k in line["keyword"])
+                    if matched:
+                        matched_keywords = list(line["keyword"])
 
-#                # 自动降权：body 规则以最短关键词为准评估误报风险
-#                # OR 逻辑和多关键词等价——任一命中即匹配，最短关键词决定精度
-#                if matched and loc == "body":
-#                    kw_list = line.get("keyword", [])
-#                    kw_count = len(kw_list)
-#                    min_len = min((len(k) for k in kw_list), default=0)
-#                    effective_count = 1 if logic == 'or' else kw_count
-#                    if effective_count == 1:
-#                        if min_len < 5:
-#                            confidence = max(confidence - 60, 5)   # e.g. "<a " 每页都有
-#                        elif min_len < 8:
-#                            confidence = max(confidence - 40, 10)
-#                        else:
-#                            confidence = max(confidence - 20, 20)
-#                    # AND 多关键词 → 保持原置信度（所有关键词必须同时命中）
-
+            # ── regula: 正则匹配 → 算法计算置信度 ──
             elif method == "regula":
                 if line.get("keyword") and hasattr(line["keyword"], 'search'):
                     matched = bool(line["keyword"].search(
                         self.datas.get(line["location"], "")))
 
+            # ── 统一计算置信度 ──
             if matched:
+                confidence = self._compute_confidence(line, matched_keywords)
                 ver_num = self._extract_version(line)
                 version = f"{line['cms']} {ver_num}" if ver_num else None
+                model = self._extract_model(line)
+                if model:
+                    version = (version + ' ' if version else '') + f"[{model}]"
                 matches.append({
                     "cms": line["cms"],
                     "confidence": confidence,
@@ -178,6 +200,67 @@ class Identify:
                 })
 
         return matches
+
+    def _compute_confidence(self, rule, matched_keywords):
+        """完全自动化的置信度计算——不依赖规则中预设的 confidence 字段。
+
+        原则: 置信度从匹配过程本身推导，不从事先标注。
+         - faviconhash 已在 _match_app 中直接返回 95，不进入此方法
+         - keyword 匹配根据 位置/逻辑/命中率/关键词质量 计算
+         - regula 匹配取保守值
+        """
+        method = rule.get('method', 'keyword')
+        loc = rule.get('location', 'body')
+        logic = rule.get('logic', 'and')
+        total_kw = len(rule.get('keyword', []))
+        hit_count = len(matched_keywords)
+
+        # ── Step 1: 方法基础分 ──
+        if method == 'regula':
+            base = 50   # 正则: 特异性取决于正则质量，取保守值
+        else:
+            base = 55   # keyword: 基线
+
+        # ── Step 2: 位置调整 (title/url 最可靠, header 次之, body 最弱) ──
+        if loc == 'title':
+            base += 25
+        elif loc == 'url':
+            base += 25   # URL 路径匹配与 title 同等可靠
+        elif loc == 'header':
+            base += 10
+
+        # ── Step 3: 逻辑 + 命中率 (AND全命中 > OR高命中率 > OR低命中率) ──
+        if logic == 'and':
+            if total_kw >= 2:
+                base += 15   # 多关键词 AND: 全部命中 → 误报概率极低
+            else:
+                base += 5    # 单关键词 AND: 等同单点匹配
+        else:  # OR
+            if total_kw >= 2:
+                ratio = hit_count / total_kw
+                base += int(ratio * 15)  # 命中1/10≈+1, 5/10≈+7, 10/10=+15
+            # 单关键词 OR: 最不可靠, +0
+
+        # ── Step 4: 关键词风险惩罚 ──
+        for kw in matched_keywords:
+            # ≤3 字符纯英文 → 如 "php" "asp" "body" → 几乎每页都有
+            if len(kw) <= 3 and kw.isascii() and kw.isalpha():
+                base -= 20
+            # 短 HTML 标签 → "<span>" "<div>" 等
+            elif kw.startswith('<') and len(kw) < 15:
+                base -= 15
+            # 短 URL 路径在 body 中 → 是链接而非页面本身 (url location 不惩罚)
+            elif kw.startswith('/') and loc == 'body' and len(kw) < 30:
+                base -= 10
+
+        # ── Step 5: Server header 交叉校验（仅对配置了 expected_server 的规则生效） ──
+        expected = rule.get('expected_server', [])
+        if expected:
+            server = str(self.datas.get('Server', '')).lower()
+            if not any(e.lower() in server for e in expected):
+                base -= 20  # Server 不匹配 → 大概率 FP
+
+        return max(10, min(100, base))
 
     def _extract_version(self, rule):
         """从响应中提取版本号"""
@@ -188,3 +271,13 @@ class Identify:
         data_str = str(self.datas.get(loc, ""))
         m = version_re.search(data_str)
         return m.group(1) if m else None
+
+    def _extract_model(self, rule):
+        """从响应中提取设备型号（硬件指纹）"""
+        model_re = rule.get("_model_re")
+        if not model_re:
+            return None
+        loc = rule.get("model_location", rule.get("location", "body"))
+        data_str = str(self.datas.get(loc, ""))
+        m = model_re.search(data_str)
+        return m.group(0) if m else None

@@ -12,9 +12,11 @@ Finger 库接口 — 可被 dirsearch_bypass403 等工具直接 import 使用
 import os
 import random
 import base64
+import json
 import requests
 import mmh3
 import urllib3
+import xlsxwriter
 from urllib.parse import urlsplit, urljoin
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -45,19 +47,18 @@ class Finger:
 
     # ── 公开 API ──────────────────────────
 
-    def scan(self, urls, timeout=10):
+    def scan(self, urls, timeout=None):
         """扫描 URL 列表，返回识别结果列表。
 
         Args:
             urls: URL 字符串列表
-            timeout: HTTP 请求超时（秒）
+            timeout: HTTP 请求超时（秒），None 则使用 settings.timeout
 
         Returns:
-            list[dict]: 每个 URL 一个结果，包含:
-                url, cms, confidence, version, title,
-                status, Server, size, faviconhash,
-                iscdn, ip, address, isp
+            list[dict]
         """
+        if timeout is None:
+            timeout = getattr(settings, 'timeout', 10)
         results = []
         errors = []
         unique_urls = list(set(urls))
@@ -88,7 +89,7 @@ class Finger:
                      reverse=True)
         return results + errors
 
-    def scan_and_save(self, urls, output_dir=None, fmt="xlsx", timeout=10):
+    def scan_and_save(self, urls, output_dir=None, fmt="xlsx", timeout=None):
         """扫描并保存结果到文件。
 
         Args:
@@ -110,10 +111,9 @@ class Finger:
         ts = _time.strftime("%Y%m%d%H%M%S", _time.localtime())
 
         if fmt == "json":
-            import json as _json
             filepath = os.path.join(output_dir, f"{ts}.json")
-            with open(filepath, 'w') as f:
-                _json.dump(results, f, ensure_ascii=False, indent=2)
+            with open(filepath, 'w', encoding='utf-8') as f:
+                json.dump(results, f, ensure_ascii=False, indent=2)
         else:
             filepath = self._save_xlsx(results, output_dir, ts)
 
@@ -157,7 +157,7 @@ class Finger:
             )
             response.encoding = "utf-8" if response.encoding is None else response.encoding
             html = response.content.decode(response.encoding, "ignore")
-            size = len(response.text)
+            size = len(html)
 
         title = self._get_title(html)
         server = response.headers.get("Server", "")
@@ -193,11 +193,18 @@ class Finger:
         }
         match_info = self.identify.match(datas)
 
+        # Server header 版本兜底提取
+        version = match_info["version"] if match_info["version"] != "-" else ""
+        if not version and server:
+            version = self._extract_server_version(server)
+        if version:
+            version = version.strip()
+
         return {
             "url": url,
             "cms": match_info["cms"],
             "confidence": match_info["confidence"],
-            "version": match_info["version"],
+            "version": version or "-",
             "title": title,
             "status": response.status_code,
             "Server": server,
@@ -242,7 +249,7 @@ class Finger:
             h['Sec-Fetch-Site'] = 'same-origin'
             h.pop('Upgrade-Insecure-Requests', None)
             h.pop('Sec-Fetch-User', None)
-            resp = requests.get(target, headers=h, timeout=4, proxies=settings.get_proxies())
+            resp = requests.get(target, headers=h, timeout=3, verify=False, proxies=settings.get_proxies())
             raw = resp.content
             return {'ehole': mmh3.hash(base64.encodebytes(raw)),
                     'fofa': mmh3.hash(base64.b64encode(raw))}
@@ -251,16 +258,57 @@ class Finger:
             return {'ehole': 0, 'fofa': 0}
 
     def _find_favicon_href(self, html, base_url):
-        """正则提取 favicon 路径"""
+        """正则提取 favicon 路径，兼容 href/rel 任意顺序"""
         try:
+            # 方案1: 提取 link[rel=icon] 中的 href
             m = re.search(
-                r'<link[^>]+rel=["\'](?:icon|shortcut icon|apple-touch-icon)["\'][^>]+href=["\']([^"\']+)["\']',
+                r'<link[^>]+?rel=["\'](?:icon|shortcut icon|apple-touch-icon)["\'][^>]*?href=["\']([^"\']+)["\']',
+                html, re.I)
+            if m and not m.group(1).startswith('data:'):
+                return urljoin(base_url, m.group(1))
+            # 方案2: rel 和 href 顺序相反
+            m = re.search(
+                r'<link[^>]+?href=["\']([^"\']+)["\'][^>]*?rel=["\'](?:icon|shortcut icon|apple-touch-icon)["\']',
                 html, re.I)
             if m and not m.group(1).startswith('data:'):
                 return urljoin(base_url, m.group(1))
         except Exception:
             pass
         return None
+
+    def _extract_server_version(self, server):
+        """从 Server header 提取版本号，作为兜底"""
+        # Apache-Coyote/1.1 (必须在 Apache/... 之前匹配)
+        m = re.match(r'Apache-Coyote/([\d.]+)', server, re.I)
+        if m: return f'Apache-Coyote {m.group(1)}'
+        # Apache/2.4.47 (Win64)
+        m = re.match(r'Apache/([\d.]+)', server, re.I)
+        if m: return f'Apache {m.group(1)}'
+        # nginx/1.18.0, nginx/1.24.0 (Ubuntu)
+        m = re.match(r'nginx/([\d.]+)', server, re.I)
+        if m: return f'nginx {m.group(1)}'
+        # Microsoft-IIS/10.0
+        m = re.match(r'Microsoft-IIS/([\d.]+)', server, re.I)
+        if m: return f'IIS {m.group(1)}'
+        # Virata-EmWeb/R6_2_1 (HP printers)
+        m = re.match(r'Virata-EmWeb/([\w\d_.]+)', server, re.I)
+        if m: return f'Virata-EmWeb {m.group(1)}'
+        # OpenResty/1.21.4
+        m = re.match(r'[Oo]pen[Rr]esty/([\d.]+)', server)
+        if m: return f'OpenResty {m.group(1)}'
+        # lighttpd/1.4.56
+        m = re.match(r'lighttpd/([\d.]+)', server, re.I)
+        if m: return f'lighttpd {m.group(1)}'
+        # gSOAP/2.8
+        m = re.match(r'gSOAP/([\d.]+)', server)
+        if m: return f'gSOAP {m.group(1)}'
+        # PHP/8.0.5
+        m = re.search(r'PHP/([\d.]+)', server, re.I)
+        if m: return f'PHP {m.group(1)}'
+        # Generic fallback: Product/NumericVersion
+        m = re.match(r'([^\s/]+)/(\d+[.\d]*)', server)
+        if m: return f'{m.group(1)} {m.group(2)}'
+        return ''
 
     # ── HTML 解析 ─────────────────────────
 
@@ -285,7 +333,6 @@ class Finger:
 
     @staticmethod
     def _save_xlsx(results, output_dir, timestamp):
-        import xlsxwriter
         filepath = os.path.join(output_dir, f"{timestamp}.xlsx")
         wb = xlsxwriter.Workbook(filepath)
         ws = wb.add_worksheet('Finger scan')
@@ -294,18 +341,27 @@ class Finger:
         yellow = wb.add_format({"bold": True, "font_color": "#FF8C00"})
 
         headers = ['Url', 'Title', 'CMS', 'Confidence', 'Version',
-                   'Server', 'Status', 'Size', 'IP', 'Address', 'ISP']
-        for i, h in enumerate(headers):
-            ws.set_column(i, i, max(len(h) + 5, 12))
+                   'Server', 'Status', 'Size', 'IP', 'Address', 'ISP', 'DefaultCreds']
+        col_widths = [30, 40, 30, 10, 15, 10, 6, 6, 12, 25, 25, 18]
+        for i, (h, w) in enumerate(zip(headers, col_widths)):
+            ws.set_column(i, i, w)
             ws.write(0, i, h, bold)
+
+        # 加载默认口令库
+        default_creds = {}
+        creds_file = os.path.join(path.library, 'default_creds.json')
+        if os.path.exists(creds_file):
+            with open(creds_file, 'r') as f:
+                default_creds = json.load(f)
 
         for row, v in enumerate(results, start=1):
             ws.write(row, 0, v.get("url", ""))
             ws.write(row, 1, v.get("title", ""))
-            cms, conf = v.get("cms", "-"), v.get("confidence", 0)
-            fmt = red if conf >= 90 else (yellow if conf >= 50 else None)
+            cms = v.get("cms", "-")
+            conf = v.get("confidence", 0)
+            fmt = red if conf >= 80 else (yellow if conf >= 50 else None)
             ws.write(row, 2, cms, fmt)
-            ws.write(row, 3, conf if cms else "")
+            ws.write(row, 3, conf if cms != "-" else "")
             ws.write(row, 4, v.get("version", ""))
             ws.write(row, 5, v.get("Server", ""))
             ws.write(row, 6, v.get("status", ""))
@@ -313,6 +369,14 @@ class Finger:
             ws.write(row, 8, v.get("ip", ""))
             ws.write(row, 9, v.get("address", ""))
             ws.write(row, 10, v.get("isp", ""))
+            # 默认口令
+            creds = []
+            if cms and cms != "-":
+                for fp in cms.split(','):
+                    fp = fp.strip()
+                    if fp in default_creds:
+                        creds.extend(default_creds[fp])
+            ws.write(row, 11, ' | '.join(creds) if creds else "")
 
         wb.close()
         return filepath

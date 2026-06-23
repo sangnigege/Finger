@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # author = EASY
+# DEPRECATED: 已统一到 lib/finger.py，请使用 Finger 类替代 Request
+# 保留此文件仅用于向后兼容
 import requests
 import random
 import re
@@ -40,7 +42,7 @@ class Request:
     def apply(self, url):
         try:
             #proxies = { "http": "127.0.0.1:8080","https": "127.0.0.1:8080"}
-            with requests.get(url, timeout=10, headers=self.get_headers(), verify=False,
+            with requests.get(url, timeout=settings.timeout, headers=self.get_headers(), verify=False,
                               allow_redirects=True, stream=True, proxies=settings.get_proxies()) as response:
                 if int(response.headers.get("content-length", default=1000)) > 100000:
                     self.response(url, response, True)
@@ -104,7 +106,7 @@ class Request:
             favicon_headers['Sec-Fetch-Site'] = 'same-origin'
             favicon_headers.pop('Upgrade-Insecure-Requests', None)
             favicon_headers.pop('Sec-Fetch-User', None)
-            response = requests.get(favicon_url, headers=favicon_headers, timeout=4, proxies=settings.get_proxies())
+            response = requests.get(favicon_url, headers=favicon_headers, timeout=4, verify=False, proxies=settings.get_proxies())
             favicon_raw = response.content
             # 兼容 Finger/EHole 现有规则（MIME base64）
             hash_ehole = mmh3.hash(base64.encodebytes(favicon_raw))
