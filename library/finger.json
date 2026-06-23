@@ -5435,11 +5435,9 @@
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
-				"x-cache",
 				"server: tengine"
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "Ali-Monitoring-System",
@@ -9401,8 +9399,7 @@
 			"keyword": [
 				"/images/arubalogo.gif",
 				"aruba networks",
-				"<form id=\"login-form\" method=\"post\" autocomplete=\"off\" action=\"/screens/wms/wms.login\">",
-				"copyright"
+				"<form id=\"login-form\" method=\"post\" autocomplete=\"off\" action=\"/screens/wms/wms.login\">"
 			],
 			"logic": "or",
 			"confidence": 100
@@ -31063,10 +31060,8 @@
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
-				"dhp-",
-				"server"
+				"dhp-"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -37551,11 +37546,9 @@
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
-				"huawei eudemon8000e-x8",
-				"set-cookie:"
+				"huawei eudemon8000e-x8"
 			],
-			"confidence": 100,
-			"logic": "or"
+			"confidence": 100
 		},
 		{
 			"cms": "EUESOFT-HR",
@@ -45048,8 +45041,7 @@
 			"keyword": [
 				"icg_helpscript.js",
 				"h3c corporation",
-				"service@h3c.com",
-				"copyright"
+				"service@h3c.com"
 			],
 			"logic": "or",
 			"confidence": 100
@@ -50426,10 +50418,8 @@
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
-				"s5730",
-				"server"
+				"s5730"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -50448,10 +50438,8 @@
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
-				"s7700",
-				"server"
+				"s7700"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -50491,10 +50479,8 @@
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
-				"secoway usg2230",
-				"set-cookie"
+				"secoway usg2230"
 			],
-			"logic": "or",
 			"confidence": 100
 		},
 		{
@@ -117876,8 +117862,7 @@
 				"fgetquery",
 				"var webvirtualdiretory = viewgood\";",
 				"var webvirtualdiretory = 'viewgood';",
-				"src='/viewgood/pc/",
-				"location.href"
+				"src='/viewgood/pc/"
 			],
 			"logic": "or",
 			"confidence": 100
