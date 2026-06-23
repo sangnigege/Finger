@@ -164,7 +164,8 @@ class Identify:
                         self.datas.get(line["location"], "")))
 
             if matched and confidence >= 50:
-                version = self._extract_version(line)
+                ver_num = self._extract_version(line)
+                version = f"{line['cms']} {ver_num}" if ver_num else None
                 matches.append({
                     "cms": line["cms"],
                     "confidence": confidence,
