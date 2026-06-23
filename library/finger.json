@@ -51302,6 +51302,10 @@
 			"location": "header",
 			"keyword": [
 				"iOffice(红帆oa)"
+			],
+			"expected_server": [
+				"Microsoft-IIS",
+				"Microsoft-HTTPAPI"
 			]
 		},
 		{
@@ -51310,6 +51314,10 @@
 			"location": "title",
 			"keyword": [
 				"iOffice(红帆oa)"
+			],
+			"expected_server": [
+				"Microsoft-IIS",
+				"Microsoft-HTTPAPI"
 			]
 		},
 		{
@@ -136800,6 +136808,10 @@
 			"location": "body",
 			"keyword": [
 				"630899054"
+			],
+			"expected_server": [
+				"Microsoft-IIS",
+				"Microsoft-HTTPAPI"
 			]
 		},
 		{
@@ -136809,6 +136821,10 @@
 			"keyword": [
 				"./config/pc-app-config.js",
 				"<title>HFOffice</title>"
+			],
+			"expected_server": [
+				"Microsoft-IIS",
+				"Microsoft-HTTPAPI"
 			]
 		},
 		{
@@ -136817,6 +136833,10 @@
 			"location": "title",
 			"keyword": [
 				"iOffice.net"
+			],
+			"expected_server": [
+				"Microsoft-IIS",
+				"Microsoft-HTTPAPI"
 			]
 		},
 		{
@@ -136825,6 +136845,10 @@
 			"location": "body",
 			"keyword": [
 				"iOffice.net"
+			],
+			"expected_server": [
+				"Microsoft-IIS",
+				"Microsoft-HTTPAPI"
 			]
 		},
 		{
@@ -136836,7 +136860,11 @@
 				"/iOffice/prg/welcome/welcomeShow.aspx?mode=login",
 				"<title>iOffice.net</title>"
 			],
-			"logic": "or"
+			"logic": "or",
+			"expected_server": [
+				"Microsoft-IIS",
+				"Microsoft-HTTPAPI"
+			]
 		},
 		{
 			"cms": "红海eHR人力资源管理系统",
@@ -142269,7 +142297,6 @@
 			"keyword": [
 				"飞牛 fnOS",
 				"飞牛私有云",
-				"fnOS",
 				"飞牛"
 			],
 			"logic": "or"
@@ -146402,10 +146429,7 @@
 			"cms": "Jetty",
 			"method": "keyword",
 			"location": "title",
-			"keyword": [
-				"Error 404",
-				"Error 403"
-			],
+			"keyword": [],
 			"logic": "or",
 			"version_regex": "Jetty/([\\d.]+)",
 			"version_location": "header"
