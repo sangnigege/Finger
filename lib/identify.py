@@ -147,7 +147,8 @@ class Identify:
                 target = line["keyword"][0]
                 if isinstance(fav, dict):
                     matched = (str(fav.get('ehole', '')) == target or
-                               str(fav.get('fofa', '')) == target)
+                               str(fav.get('fofa', '')) == target or
+                               str(fav.get('md5', '')) == target)
                 else:
                     matched = str(fav) == target
 

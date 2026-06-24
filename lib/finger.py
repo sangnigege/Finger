@@ -12,6 +12,7 @@ Finger 库接口 — 可被 dirsearch_bypass403 等工具直接 import 使用
 import os
 import random
 import base64
+import hashlib
 import json
 import requests
 import mmh3
@@ -264,7 +265,8 @@ class Finger:
             resp = requests.get(target, headers=h, timeout=3, verify=False, proxies=settings.get_proxies())
             raw = resp.content
             return {'ehole': mmh3.hash(base64.encodebytes(raw)),
-                    'fofa': mmh3.hash(base64.b64encode(raw))}
+                    'fofa': mmh3.hash(base64.b64encode(raw)),
+                    'md5': hashlib.md5(raw).hexdigest()}
         except Exception as e:
             logging.warning(f"favicon 获取失败: {favicon_url} → {e}")
             return {'ehole': 0, 'fofa': 0}

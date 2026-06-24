@@ -133532,17 +133532,6 @@
 		},
 		{
 			"cms": "泛微OA",
-			"method": "faviconhash",
-			"location": "body",
-			"keyword": [
-				"1578525679",
-				"/wui/common/page/sysRemind.jsp",
-				"ecology_JSessionid"
-			],
-			"logic": "or"
-		},
-		{
-			"cms": "泛微OA",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
