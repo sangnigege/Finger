@@ -8406,9 +8406,34 @@
 	],
 	"Nexus Repository Manager": [
 		"admin/admin123",
-		"admin/admin"
+		"admin/admin",
+		"admin/nexus"
 	],
 	"汉王人脸考勤管理系统": [
 		"万能密码: or'  or 1=1--"
+	],
+	"Redis": [
+		"(无密码; 可写SSH Key)"
+	],
+	"Docker_Daemon": [
+		"(无密码; 2375端口可RCE)"
+	],
+	"Memcached": [
+		"(无密码; 11211端口)"
+	],
+	"etcd": [
+		"(无密码; 2379端口)"
+	],
+	"Swagger UI": [
+		"(API文档泄露)"
+	],
+	"Swagger": [
+		"(API文档泄露)"
+	],
+	"Kubernetes-Dashboard": [
+		"(无密码; 可RCE)"
+	],
+	"Spring-Boot-Admin": [
+		"admin/admin"
 	]
 }
