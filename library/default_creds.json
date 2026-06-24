@@ -6229,10 +6229,6 @@
 		"root/(空密码)",
 		"superdba/admin"
 	],
-	"mySQL-Error": [
-		"root/(空密码)",
-		"superdba/admin"
-	],
 	"搜索动力2014(php+mysql)": [
 		"root/(空密码)",
 		"superdba/admin"
@@ -6354,9 +6350,6 @@
 	"Panasonic-Maintenance-Utility": [
 		"admin/1234",
 		"admin/12345"
-	],
-	"Parallels Default page": [
-		"admin/setup"
 	],
 	"Parallels-Plesk-Panel": [
 		"admin/setup"
