@@ -3561,8 +3561,6 @@
 	"Apache Tomcat": [
 		"admin/(空密码)",
 		"admin/admin",
-		"admin/j5Brn9",
-		"admin/jboss4",
 		"admin/tomcat"
 	],
 	"Apache RocketMQ": [
@@ -3596,8 +3594,6 @@
 	"Apache-Tomcat": [
 		"admin/(空密码)",
 		"admin/admin",
-		"admin/j5Brn9",
-		"admin/jboss4",
 		"admin/tomcat"
 	],
 	"apache-ambari": [
@@ -6017,141 +6013,121 @@
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft-SCCM": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft-ADFS": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft-Windows-Business-Server": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft-Exchange": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft IIS": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft-Dynamics": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft-Ajax-CDN": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft-Cassini": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft(ISAServer)": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft OWA": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft-Silverlight": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft-Forefront-TMG": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft-Skype-for-Business": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"RemObjects SDK / Remoting SDK for .NET HTTP Server Microsoft": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"ISAServer(Microsoft)": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft-Remote-Web-Workplace": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft-SharePoint": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft Outlook": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"Microsoft-UrlScan": [
 		"Administrator/(空密码)",
 		"Administrator/Administrator",
 		"Guest/(空密码)",
-		"Guest/Guest",
-		"IS_$hostname/IS_$hostname"
+		"Guest/Guest"
 	],
 	"mikrotik": [
 		"admin/(空密码)"

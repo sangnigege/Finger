@@ -67,12 +67,15 @@ class Output:
             for cell, text in headers:
                 worksheet.write(cell, text, bold)
 
-            # 加载默认口令库
+            # 加载默认口令库 (大小写不敏感索引 + 保留原始key用于标注)
             default_creds = {}
+            creds_orig_keys = {}
             creds_file = os.path.join(path.library, 'default_creds.json')
             if os.path.exists(creds_file):
                 with open(creds_file, 'r', encoding='utf-8') as f:
-                    default_creds = json.load(f)
+                    raw = json.load(f)
+                default_creds = {k.lower(): v for k, v in raw.items()}
+                creds_orig_keys = {k.lower(): k for k in raw}
 
             for row, value in enumerate(Webinfo.result, start=1):
                 worksheet.write(row, 0, value.get("url", ""))
@@ -97,10 +100,29 @@ class Output:
                 # 默认口令列
                 creds = []
                 if cms and cms != "-":
+                    seen = set()
                     for fp in cms.split(','):
                         fp = fp.strip()
-                        if fp in default_creds:
-                            creds.extend(default_creds[fp])
+                        fp_lower = fp.lower()
+                        # 1. 精确匹配
+                        if fp_lower in default_creds:
+                            label = creds_orig_keys.get(fp_lower, fp)
+                            for c in default_creds[fp_lower]:
+                                if '$hostname' in c: continue  # 跳过占位符
+                                entry = f"[{label}] {c}"
+                                if entry not in seen:
+                                    creds.append(entry)
+                                    seen.add(entry)
+                        # 2. 模糊匹配: key是产品名子串(来源标注)
+                        for k, v in default_creds.items():
+                            if k != fp_lower and len(k) >= 4 and k in fp_lower:
+                                label = creds_orig_keys.get(k, k)
+                                for c in v:
+                                    if '$hostname' in c: continue
+                                    entry = f"[{label}] {c}"
+                                    if entry not in seen:
+                                        creds.append(entry)
+                                        seen.add(entry)
                 worksheet.write(row, 11, ' | '.join(creds) if creds else "")
 
         print()
