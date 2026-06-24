@@ -127,7 +127,7 @@ class Finger:
         """扫描单个 URL，返回结果 dict"""
         try:
             with requests.get(
-                url, timeout=timeout,
+                url, timeout=(3, timeout),  # (连接3s, 读取timeout)
                 headers=self._get_headers(),
                 verify=False,
                 allow_redirects=True,
