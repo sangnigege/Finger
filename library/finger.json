@@ -133474,7 +133474,7 @@
 			]
 		},
 		{
-			"cms": "汉王人脸考勤管理系统[+]万能密码or' or 1=1--/or",
+			"cms": "汉王人脸考勤管理系统",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
