@@ -146407,15 +146407,6 @@
 		{
 			"cms": "Jetty",
 			"method": "keyword",
-			"location": "title",
-			"keyword": [],
-			"logic": "or",
-			"version_regex": "Jetty/([\\d.]+)",
-			"version_location": "header"
-		},
-		{
-			"cms": "Jetty",
-			"method": "keyword",
 			"location": "header",
 			"keyword": [
 				"Jetty"
