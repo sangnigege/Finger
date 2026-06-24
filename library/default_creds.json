@@ -200,5 +200,131 @@
 	],
 	"Nexpose漏洞扫描": [
 		"nxadmin/nxadmin"
+	],
+	"Apache-ActiveMQ": [
+		"admin/admin"
+	],
+	"Apache-Druid": [
+		"admin/admin"
+	],
+	"Azkaban-Web-Client": [
+		"azkaban/azkaban"
+	],
+	"Azkaban": [
+		"admin/admin"
+	],
+	"BladeX开发平台": [
+		"admin/admin",
+		"hr/hr",
+		"boss/boss",
+		"manager/manager"
+	],
+	"DataEase": [
+		"admin/DataEase@123"
+	],
+	"ERPNext": [
+		"administrator/admin"
+	],
+	"H3C-ER2100n": [
+		"admin/admin"
+	],
+	"H3C-ER3100": [
+		"admin/adminer3100"
+	],
+	"H3C-ER3200": [
+		"admin/adminer3200"
+	],
+	"H3C-ER3260": [
+		"admin/adminer3260"
+	],
+	"H3C-IMC": [
+		"admin/admin"
+	],
+	"Hikvision-摄像头": [
+		"admin/{12345"
+	],
+	"iKuai": [
+		"admin/admin"
+	],
+	"Jboss": [
+		"admin/admin"
+	],
+	"JEECG-VUE2版": [
+		"jeecg/{123456"
+	],
+	"JEECG-VUE3版": [
+		"jeecg/{123456"
+	],
+	"JieLink+智能终端操作平台": [
+		"9999/123456"
+	],
+	"kubernetes": [
+		"admin/kuboard123"
+	],
+	"Litemall": [
+		"admin123/admin123",
+		"mall123/mall123",
+		"promotion123/promotion123"
+	],
+	"o2oa": [
+		"xadmin/o2"
+	],
+	"Panabit-Panalog": [
+		"admin/panabit"
+	],
+	"panabit智能网关": [
+		"admin/ixcache"
+	],
+	"Pwning-CCTV-cameras": [
+		"空/admin"
+	],
+	"SDWAN智能网关应用系统": [
+		"admin/admin"
+	],
+	"ShowDoc": [
+		"showdoc/123456"
+	],
+	"xxl-job": [
+		"admin/123456"
+	],
+	"zabbix": [
+		"admin/zabbix"
+	],
+	"中移铁通-禹路由": [
+		"空/admin"
+	],
+	"佑友防火墙": [
+		"admin/hicomadmin"
+	],
+	"天锐绿盾审批系统": [
+		"sysadmin/空"
+	],
+	"安网科技-智能路由": [
+		"admin/admin"
+	],
+	"微议管理系统": [
+		"admin/admin"
+	],
+	"思迅商旗": [
+		"1001/1001"
+	],
+	"时间精细化管理平台": [
+		"admin/{admin"
+	],
+	"海康威视联网网关": [
+		"admin/12345"
+	],
+	"百傲瑞达": [
+		"admin/admin"
+	],
+	"若依": [
+		"admin/admin123",
+		"ry/admin123"
+	],
+	"金山终端安全系统": [
+		"admin/admin"
+	],
+	"铭飞MCMS": [
+		"msopen/msopen"
 	]
 }

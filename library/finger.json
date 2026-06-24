@@ -6592,7 +6592,7 @@
 			"version_location": "title"
 		},
 		{
-			"cms": "Apache-ActiveMQ[+]默认口令admin/admin",
+			"cms": "Apache-ActiveMQ",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -6602,7 +6602,7 @@
 			"version_location": "body"
 		},
 		{
-			"cms": "Apache-ActiveMQ[+]默认口令admin/admin",
+			"cms": "Apache-ActiveMQ",
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
@@ -6668,7 +6668,7 @@
 			]
 		},
 		{
-			"cms": "Apache-Druid[+]默认口令admin/admin",
+			"cms": "Apache-Druid",
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
@@ -6676,7 +6676,7 @@
 			]
 		},
 		{
-			"cms": "Apache-Druid[+]默认口令admin/admin",
+			"cms": "Apache-Druid",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -11417,7 +11417,7 @@
 			]
 		},
 		{
-			"cms": "Azkaban-Web-Client[+]默认密码:azkaban/azkaban",
+			"cms": "Azkaban-Web-Client",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -11425,7 +11425,7 @@
 			]
 		},
 		{
-			"cms": "Azkaban[+]默认密码:admin/admin",
+			"cms": "Azkaban",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -13494,7 +13494,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "BladeX开发平台[+]默认口令admin/admin;hr/hr;boss/boss;manager/manager",
+			"cms": "BladeX开发平台",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -25736,7 +25736,7 @@
 			]
 		},
 		{
-			"cms": "DataEase[+]默认口令{admin/demo}/database",
+			"cms": "DataEase",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -34205,7 +34205,7 @@
 			]
 		},
 		{
-			"cms": "ERPNext[+]默认密码:administrator/admin",
+			"cms": "ERPNext",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -41634,7 +41634,7 @@
 			]
 		},
 		{
-			"cms": "H3C-ER2100n[+]默认密码admin/admin,123456",
+			"cms": "H3C-ER2100n",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -41684,7 +41684,7 @@
 			]
 		},
 		{
-			"cms": "H3C-ER3100[+]默认密码admin/adminer3100",
+			"cms": "H3C-ER3100",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -41743,7 +41743,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "H3C-ER3200[+]默认密码:admin/adminer3200",
+			"cms": "H3C-ER3200",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -41775,7 +41775,7 @@
 			]
 		},
 		{
-			"cms": "H3C-ER3260[+]默认密码admin/adminer3260",
+			"cms": "H3C-ER3260",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -41925,7 +41925,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "H3C-IMC[+]默认密码admin/admin",
+			"cms": "H3C-IMC",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -43138,7 +43138,7 @@
 			]
 		},
 		{
-			"cms": "Harbor[+]默认口令admin/Harbor12345",
+			"cms": "Harbor",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -44042,7 +44042,7 @@
 			]
 		},
 		{
-			"cms": "Hikvision-摄像头[+]默认口令admin/{12345/ADMIN12345}",
+			"cms": "Hikvision-摄像头",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -44060,7 +44060,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "Hikvision-摄像头[+]默认口令admin/{12345/ADMIN12345}",
+			"cms": "Hikvision-摄像头",
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
@@ -49562,7 +49562,7 @@
 			]
 		},
 		{
-			"cms": "iKuai[+]默认密码admin/admin;万能密码'or''=''or''='",
+			"cms": "iKuai",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -49572,7 +49572,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "iKuai[+]默认密码admin/admin;万能密码'or''=''or''='",
+			"cms": "iKuai",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -53409,7 +53409,7 @@
 			]
 		},
 		{
-			"cms": "Jboss[+]默认密码admin/admin",
+			"cms": "Jboss",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -53488,7 +53488,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "JEECG-VUE2版[+]默认口令jeecg/{123456/jeecj#123456}",
+			"cms": "JEECG-VUE2版",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -53496,7 +53496,7 @@
 			]
 		},
 		{
-			"cms": "JEECG-VUE3版[+]默认口令jeecg/{123456/jeecj#123456}",
+			"cms": "JEECG-VUE3版",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -54088,7 +54088,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "JieLink+智能终端操作平台[+]默认口令9999/123456",
+			"cms": "JieLink+智能终端操作平台",
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
@@ -58135,7 +58135,7 @@
 			]
 		},
 		{
-			"cms": "kubernetes[+]默认口令admin/kuboard123",
+			"cms": "kubernetes",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -61494,7 +61494,7 @@
 			]
 		},
 		{
-			"cms": "Litemall[+]默认口令admin123/admin123;mall123/mall123;promotion123/promotion123",
+			"cms": "Litemall",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -69152,7 +69152,7 @@
 			]
 		},
 		{
-			"cms": "Nacos[+]默认口令nacos/nacos",
+			"cms": "Nacos",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -75155,7 +75155,7 @@
 			]
 		},
 		{
-			"cms": "o2oa[+]默认密码xadmin/o2",
+			"cms": "o2oa",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -75165,7 +75165,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "o2oa[+]默认密码xadmin/o2",
+			"cms": "o2oa",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -78802,7 +78802,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "Panabit-Panalog[+]默认密码admin/panabit",
+			"cms": "Panabit-Panalog",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -78811,7 +78811,7 @@
 			]
 		},
 		{
-			"cms": "Panabit-Panalog[+]默认密码admin/panabit",
+			"cms": "Panabit-Panalog",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -78833,7 +78833,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "panabit智能网关[+]默认密码admin/ixcache",
+			"cms": "panabit智能网关",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -78841,7 +78841,7 @@
 			]
 		},
 		{
-			"cms": "panabit智能网关[+]默认密码admin/ixcache",
+			"cms": "panabit智能网关",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -84789,7 +84789,7 @@
 			]
 		},
 		{
-			"cms": "Pwning-CCTV-cameras[+]默认口令:空/admin",
+			"cms": "Pwning-CCTV-cameras",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -90735,7 +90735,7 @@
 			]
 		},
 		{
-			"cms": "SDWAN智能网关应用系统[+]默认口令admin/admin@123",
+			"cms": "SDWAN智能网关应用系统",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -92515,7 +92515,7 @@
 			]
 		},
 		{
-			"cms": "ShowDoc[+]默认密码:showdoc/123456",
+			"cms": "ShowDoc",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -92523,7 +92523,7 @@
 			]
 		},
 		{
-			"cms": "ShowDoc[+]默认密码:showdoc/123456",
+			"cms": "ShowDoc",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -116811,7 +116811,7 @@
 			]
 		},
 		{
-			"cms": "xxl-job[+]默认口令admin/123456",
+			"cms": "xxl-job",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -118634,7 +118634,7 @@
 			"version_location": "title"
 		},
 		{
-			"cms": "zabbix[+]默认口令admin/zabbix",
+			"cms": "zabbix",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -122672,7 +122672,7 @@
 			]
 		},
 		{
-			"cms": "中移铁通-禹路由[+]默认密码:空/admin",
+			"cms": "中移铁通-禹路由",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -123848,7 +123848,7 @@
 			]
 		},
 		{
-			"cms": "佑友防火墙[+]默认密码admin/hicomadmin",
+			"cms": "佑友防火墙",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -127702,7 +127702,7 @@
 			]
 		},
 		{
-			"cms": "天锐绿盾审批系统[+]默认口令sysadmin/空",
+			"cms": "天锐绿盾审批系统",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -128610,7 +128610,7 @@
 			]
 		},
 		{
-			"cms": "安网科技-智能路由[+]默认口令admin/admin",
+			"cms": "安网科技-智能路由",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -130021,7 +130021,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "微议管理系统[+]默认口令admin/admin",
+			"cms": "微议管理系统",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -130241,7 +130241,7 @@
 			]
 		},
 		{
-			"cms": "思迅商旗[+]默认口令1001/1001",
+			"cms": "思迅商旗",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -131703,7 +131703,7 @@
 			]
 		},
 		{
-			"cms": "时间精细化管理平台[+]默认口令admin/{admin,123456,111111}",
+			"cms": "时间精细化管理平台",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -133959,7 +133959,7 @@
 			]
 		},
 		{
-			"cms": "海康威视联网网关[+]默认口令admin/12345",
+			"cms": "海康威视联网网关",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -135703,7 +135703,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "百傲瑞达[+]默认口令admin/admin",
+			"cms": "百傲瑞达",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -138642,7 +138642,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "若依[+]默认密码admin/admin123,ry/admin123",
+			"cms": "若依",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -140478,7 +140478,7 @@
 			]
 		},
 		{
-			"cms": "金山终端安全系统[+]默认口令admin/admin",
+			"cms": "金山终端安全系统",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -140489,7 +140489,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "金山终端安全系统[+]默认口令admin/admin",
+			"cms": "金山终端安全系统",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -140887,7 +140887,7 @@
 			]
 		},
 		{
-			"cms": "铭飞MCMS[+]默认密码:msopen/msopen",
+			"cms": "铭飞MCMS",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
