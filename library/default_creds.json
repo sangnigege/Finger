@@ -9,7 +9,8 @@
 		"guest/guest"
 	],
 	"Jenkins": [
-		"admin/(无密码)"
+		"admin/(无密码)",
+		"admin/admin"
 	],
 	"Tomcat": [
 		"admin/admin",
@@ -20,7 +21,10 @@
 	],
 	"Weblogic": [
 		"weblogic/welcome1",
-		"weblogic/weblogic1"
+		"weblogic/weblogic1",
+		"weblogic/weblogic",
+		"system/weblogic",
+		"admin/weblogic"
 	],
 	"phpMyAdmin": [
 		"root/(无密码)",
@@ -33,13 +37,15 @@
 		"Admin/zabbix"
 	],
 	"Portainer": [
-		"admin/(首次设置)"
+		"admin/(首次设置)",
+		"admin/portainer"
 	],
 	"Harbor": [
 		"admin/Harbor12345"
 	],
 	"GitLab": [
-		"root/(首次设置)"
+		"root/(首次设置)",
+		"root/5iveL!fe"
 	],
 	"Confluence": [
 		"admin/admin"
@@ -172,7 +178,9 @@
 	],
 	"致远OA-Seeyon": [
 		"admin/admin",
-		"system/system"
+		"system/system",
+		"seeyon/123456",
+		"admin/seeyon"
 	],
 	"蓝凌OA-Landray": [
 		"admin/admin"
@@ -201,10 +209,13 @@
 		"nxadmin/nxadmin"
 	],
 	"Apache-ActiveMQ": [
-		"admin/admin"
+		"admin/admin",
+		"admin/activemq"
 	],
 	"Apache-Druid": [
-		"admin/admin"
+		"admin/admin",
+		"admin/123456",
+		"druid/druid"
 	],
 	"Azkaban-Web-Client": [
 		"azkaban/azkaban"
@@ -7388,7 +7399,9 @@
 		"user/pass"
 	],
 	"BEA-WebLogic-Server": [
-		"system/weblogic"
+		"system/weblogic",
+		"weblogic/weblogic",
+		"admin/weblogic"
 	],
 	"Westell-Secure": [
 		"CSG/SESAME",
@@ -8343,5 +8356,56 @@
 		"Admin/atc456",
 		"admin/(空密码)",
 		"admin/0000"
+	],
+	"Weblogic_interface_7001": [
+		"weblogic/weblogic",
+		"system/weblogic",
+		"admin/weblogic"
+	],
+	"WeblogicServer": [
+		"weblogic/weblogic",
+		"system/weblogic",
+		"admin/weblogic"
+	],
+	"GeoServer": [
+		"admin/geoserver"
+	],
+	"Alibaba-Druid连接池": [
+		"admin/123456",
+		"druid/druid"
+	],
+	"Tomcat默认页面": [
+		"admin/admin",
+		"tomcat/tomcat",
+		"admin/tomcat"
+	],
+	"Tomcat Manager Application": [
+		"admin/admin",
+		"tomcat/tomcat",
+		"admin/tomcat"
+	],
+	"ruoyi-System": [
+		"admin/admin123",
+		"ry/admin123"
+	],
+	"若依ruoyi管理系统": [
+		"admin/admin123",
+		"ry/admin123"
+	],
+	"RuoYi": [
+		"admin/admin123",
+		"ry/admin123"
+	],
+	"ActiveMQ": [
+		"admin/admin",
+		"admin/activemq"
+	],
+	"ActiveMQ消息队列": [
+		"admin/admin",
+		"admin/activemq"
+	],
+	"Nexus Repository Manager": [
+		"admin/admin123",
+		"admin/admin"
 	]
 }
