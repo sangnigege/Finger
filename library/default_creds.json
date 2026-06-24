@@ -23,7 +23,8 @@
 		"weblogic/weblogic1"
 	],
 	"phpMyAdmin": [
-		"root/(无密码)"
+		"root/(无密码)",
+		"root/(空密码)"
 	],
 	"Grafana": [
 		"admin/admin"
@@ -190,7 +191,8 @@
 		"admin/umami"
 	],
 	"Apache-CouchDB": [
-		"admin/admin"
+		"admin/admin",
+		"admin/password"
 	],
 	"Apache-Superset": [
 		"admin/admin"
@@ -326,5 +328,3044 @@
 	],
 	"铭飞MCMS": [
 		"msopen/msopen"
+	],
+	"搜索动力2014(php+mysql)": [
+		"admin@example.com/admin",
+		"root/(空密码)",
+		"superdba/admin"
+	],
+	"Yearning MYSQL SQL语句审核平台": [
+		"admin@example.com/admin",
+		"root/(空密码)",
+		"superdba/admin"
+	],
+	"搜啊搜索SOOUA_PHP+MYSQL": [
+		"admin@example.com/admin",
+		"root/(空密码)",
+		"superdba/admin"
+	],
+	"mySQL-Error": [
+		"admin@example.com/admin",
+		"root/(空密码)",
+		"superdba/admin"
+	],
+	"postgresql": [
+		"postgres/(空密码)"
+	],
+	"Gitlab": [
+		"admin/5iveL!fe",
+		"admin@local.host/5iveL!fe",
+		"root/5iveL!fe"
+	],
+	"gitlab": [
+		"admin/5iveL!fe",
+		"admin@local.host/5iveL!fe",
+		"root/5iveL!fe"
+	],
+	"Cisco-Adaptive-Security-Appliance": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco VEN401": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-Codian-Video-Conferencing": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-MWEB": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-CVR328W-K9-CN": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-ASDM": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-Integrated-Management-Controller": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-ISE": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco Expert Talks": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco 8600路由器": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-UCS-Manager": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO ASR": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-WRVS5110": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-Wireless-LAN-Controller": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-IOx": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-ACS": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-ECDS": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-CX20": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-RV016-VPN-Router": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-IMC-Supervisor": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco XNC": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-VPN-3000-Concentrator": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco UCC": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-WLC无线控制器": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-Prime-Infrastructure": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-Catalyst-WS-C3750G": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-VOS": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-WebEx": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-M670": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-switch": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-Expressway": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-NAM": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco Meraki Dashboard": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-RVS5000": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-RV340W": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco ASA": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-SX80": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-CSCSSM": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-SA520": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-Catalyst-switch": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-Email-Security-Appliance-C690": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-VPN": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco IOS-XR": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco (eg:Conference Room Login Page)": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-MDS": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco AWARE": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-CDS": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-SIPGateway": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-Phone-Adapter-Configuration-Utility": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-M690": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-Video-conferencing": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-Community-Network-Management-System": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-M300V": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-Broadband-Access-Center": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-Systems-WS-Switch": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-Rimes": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-VDS": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-SX20": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco GCT": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Rimes-Cisco": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-DOCSIS-Gateway": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Load Balancer Cisco ACE": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-CVR100W": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco Acceleration": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-M100V": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-WSA": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-RV345": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-ACE": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-UCS-KVM": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco IronPort": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-DPC3848-DOCSIS-Gateway": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-Prime-Network-Registrar": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco Router": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-Meeting-App": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-M600V": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-Company's-product": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-UCM": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-DPC3848VM": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-SA520W": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-Nexus-Data-Broker": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco VCI": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-M1070": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-M680": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-Email-Security-Virtual-Appliance-C600V": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-IP-Phone": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco IOS": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-RV345P": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-SA540-K9": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco Meraki": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-ASA-5500-X": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-DLT": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-Femtocell": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco-Unified-IP-Phone": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-M660": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-Data-Center-Network-Manager": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Cisco xSeries": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"CISCO-RV340": [
+		"Administrator/admin",
+		"Administrator/changeme",
+		"CISCO15/otbu+1",
+		"Cisco/Cisco",
+		"EAdmin/(空密码)"
+	],
+	"Fortinet-Firewall": [
+		"admin/(空密码)",
+		"maintainer/admin",
+		"maintainer/bcpb[SERIAL NO.]",
+		"maintainer/pbcpbn(add-serial-number)"
+	],
+	"Fortinet-FortiWeb": [
+		"admin/(空密码)",
+		"maintainer/admin",
+		"maintainer/bcpb[SERIAL NO.]",
+		"maintainer/pbcpbn(add-serial-number)"
+	],
+	"FORTINET-enSilo": [
+		"admin/(空密码)",
+		"maintainer/admin",
+		"maintainer/bcpb[SERIAL NO.]",
+		"maintainer/pbcpbn(add-serial-number)"
+	],
+	"Fortinet-sslvpn": [
+		"admin/(空密码)",
+		"maintainer/admin",
+		"maintainer/bcpb[SERIAL NO.]",
+		"maintainer/pbcpbn(add-serial-number)"
+	],
+	"fortinet-fortimail": [
+		"admin/(空密码)",
+		"maintainer/admin",
+		"maintainer/bcpb[SERIAL NO.]",
+		"maintainer/pbcpbn(add-serial-number)"
+	],
+	"Fortinet-FortiGuard": [
+		"admin/(空密码)",
+		"maintainer/admin",
+		"maintainer/bcpb[SERIAL NO.]",
+		"maintainer/pbcpbn(add-serial-number)"
+	],
+	"fortinet-forticlient": [
+		"admin/(空密码)",
+		"maintainer/admin",
+		"maintainer/bcpb[SERIAL NO.]",
+		"maintainer/pbcpbn(add-serial-number)"
+	],
+	"Fortinet-WAF": [
+		"admin/(空密码)",
+		"maintainer/admin",
+		"maintainer/bcpb[SERIAL NO.]",
+		"maintainer/pbcpbn(add-serial-number)"
+	],
+	"FORTINET-Product": [
+		"admin/(空密码)",
+		"maintainer/admin",
+		"maintainer/bcpb[SERIAL NO.]",
+		"maintainer/pbcpbn(add-serial-number)"
+	],
+	"Fortinet-FortiGate-SSL-VPN": [
+		"admin/(空密码)",
+		"maintainer/admin",
+		"maintainer/bcpb[SERIAL NO.]",
+		"maintainer/pbcpbn(add-serial-number)"
+	],
+	"fortinet-fortigate": [
+		"admin/(空密码)",
+		"maintainer/admin",
+		"maintainer/bcpb[SERIAL NO.]",
+		"maintainer/pbcpbn(add-serial-number)"
+	],
+	"Fortinet-CoyotePoint-Load-Balancer": [
+		"admin/(空密码)",
+		"maintainer/admin",
+		"maintainer/bcpb[SERIAL NO.]",
+		"maintainer/pbcpbn(add-serial-number)"
+	],
+	"Oracle-Application-Server": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-DMS": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-XDB": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-Enterprise-Manager": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-Real-User-Experience-Insight": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-iPlanet": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-Primerva": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-Enterprise-Performance-Management-System": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-Siebel-CRM": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-Access-Manager": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"oracle-tns": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-OPERA": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-Database-Firewall": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-database": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-ADF-Faces": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-ILOM-Web-Server": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle Solaris": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-Commerce-Cloud": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-WebDb": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-Fusion-Middleware": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Oracle-EBS": [
+		"ADAMS/WOOD",
+		"ADLDEMO/ADLDEMO",
+		"ADMIN/JETSPEED",
+		"ADMIN/WELCOME",
+		"ADMINISTRATOR/ADMINISTRATOR"
+	],
+	"Supermicro Intelligent Management (IPMI)": [
+		"ADMIN/admin"
+	],
+	"Dahua-DH-NVR4104HS": [
+		"admin/admin"
+	],
+	"Dahua-Cameras-and-Surveillance": [
+		"admin/admin"
+	],
+	"Dahua-TV-Wall": [
+		"admin/admin"
+	],
+	"dahua-VIID": [
+		"admin/admin"
+	],
+	"Dahua Storm (DVR)": [
+		"admin/admin"
+	],
+	"dahua-DH-NVR2108HS": [
+		"admin/admin"
+	],
+	"dahua-wpms": [
+		"admin/admin"
+	],
+	"Dahua": [
+		"admin/admin"
+	],
+	"dahua-WP": [
+		"admin/admin"
+	],
+	"Dahua-embedded-Multi-screen-controller": [
+		"admin/admin"
+	],
+	"Dahua-DSS": [
+		"admin/admin"
+	],
+	"Dahua Storm (IP Camera)": [
+		"admin/admin"
+	],
+	"NETGEAR WNDR3700v3": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Netgear DG834G": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR R6200v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-GS108T": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR ROUTER": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR R7900": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DG834GUv5": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGN2200MB": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR CG3700EMR-1CMNDS": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Netgear N300": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Netgear DGN1000SP": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR VEGN2610": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR MBR1210": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGN1000B": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-GS724Tv4": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGN2200v4": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR3500": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DG834NBv2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DG834GV": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-R6850": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNDR3300": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DG834N": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNDR3800": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR wnr2000v3": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Netgear EVG1500": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR R6200": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Netgear WNDR3700v4": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-JWNR2010v5": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNDR4300v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-R6400": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGN3500": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR wnr2200": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-FS728TP": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WGR614SS": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGN2200v2BEZEQ": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGN1000": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR MBR1517v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Netgear WAG302v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNDR3700v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR XAU2511": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-GS748Tv5": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR834Bv2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR JNR3210": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Netgear": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Netgear DM111PUSPv2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR C3000-100NAS": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-R8000P": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DM111PSP": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR JR6150": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR1000v4": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR C3700-100NAS": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WGR614v9": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR3500L": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR JWNR2010": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNDR4700": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-GS716T": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-R7000": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR C6300": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR JWNR2000v3": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DG834GB": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WPN824N": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WPNT834": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR wnr2000v4": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR D500": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WN3000RPv3": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-FVS318Gv2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NetGear-Print-Server": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR D6220": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR R7500": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGN2200v3": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR R6100": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WGR614v8": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR PLW1010": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNHD3004": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-WNR2020": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR3500Lv2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WN2000RPT": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-WNDR3400v3": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NetGear WNHD3004v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR JWNR2000v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGN2200Bv3": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR EVG2000": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DG834GL": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DM111": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR MBR1310": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR R7100LG": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR R6700": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-X6-R8000": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WN2000RPTv2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR612ERT": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR D6400": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-GS748T": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR MBRN3000": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR854T": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-GS724TR": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR R6050": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR R8000": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGN3500_SSH": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR R7300": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Netgear CWGE111": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNDR4500v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR1000v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR ReadyNAS": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DM111P": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR D8500": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR618": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WN1000RP": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-GS510TP": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR EX2700": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR JNR3000": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR C7000-100NAS": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR1000v2-VC": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DG834PNB": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR XWN5021": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DG834GTB": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR3500v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WGR614v10": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR MBR1516": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-ProSafe-VPN-Firewall-FVS336GV3": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR612v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR JWNR2000Tv3": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Netgear WGR614L": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NetGear [WIFI5GHz]": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Netgear Nighthawk": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNDR4500": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-DGN2200": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR2500": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-WNDR3400": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR R8300": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR JNDR3000": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR PS121v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNDR4300": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGND3700v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-Prosafe-Click-Switch": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NetGear DVG1000": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR R6250": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-GS724T": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-GS716Tv3": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-GS748TR": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNHD3002G": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DG834": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-R6020": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Netgear-Company's-product": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Netgear-NAS": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR VVG2000": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR XAVN2001v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR MVBR1210C": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR500": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR PLW1000": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DM111PUSP": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGN2000B": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-Prosafe-Plus-Switch": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR2000": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGND4000": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-JWNR2000v5": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-R6080": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR612v3": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-WNDR3400v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WN3100RP": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR R6300": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR JNR1010v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR R6300v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGN2000": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Netgear WNR3500Lv1": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR2000v2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-WNR2000v5": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR614": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGND3300": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DM111PSPv2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR AC1450": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DG834GT": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR MBR1515": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-R6220": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR R8500": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DC112A": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNDR3600": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNDR4300SW": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Netgear (Network)": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNDR4000": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGN2200Mv2TELKOM": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGN1000v3": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DG834Gv5": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WN2000RPTv3": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR D6200": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR D6300": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGN2200Bv4": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR D1500": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR1500": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR1000v3": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DST6501": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGN3500B": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR VEVG2660": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-XR500": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNDR3700v5": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR C6250-100NAS": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DG834PN": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR JWNR2000T": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Netgear WNR834B": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-DGND3700": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR R6900": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNDR4300-TN": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WGT624v4": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR DGN2200M": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR JNR1010": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNR1000": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-XWN5001": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WN3000RPv2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-GSM7224V2": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NetGear DD-wrt": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR-SRX5308": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR MBR624GU": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR WNDR3700": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"NETGEAR JNR3300": [
+		"Admin/password",
+		"Gearguy/Geardog",
+		"admin/(空密码)",
+		"admin/1234",
+		"admin/admin"
+	],
+	"Huawei-Switch": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-Agile-Controller": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-FusionCloud-Desktop": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"华为(HUAWEI)Secoway设备": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-HS8545M": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-s6720": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-iBMC": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-HG630": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-IVS": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-USG5120": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-S5730": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-ASG5530": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-USG5150": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-S5720": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-ISM": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"huawei-esight": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-Video-Device": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-S5728C": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-HG8120C": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-Intelligent-Call-Center": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-FusionInsight": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-EchoLife-HG850a": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-S9306": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"华为（HUAWEI）安全设备": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-Company's-product": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"Huawei-Quidway-Switch": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-Auth-Server": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-HG8240": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"Huawei": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"huawei-安全设备": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-USG5550": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-HW9303": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"Huawei – Claro": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"huawei-ssl-vpn": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-HG532e": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-AP5030DN": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-ManageOne": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"Huawei (Network)": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-anyoffice": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"huawei-rbt网关管理系统": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-Eudemon1000E": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-VPN": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-Inner-Web": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-HMM": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-USG6350": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-Security-Device": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-NetOpen": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-Camera": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-HG8245H": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-VPP-EWS": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-300Mbps-Wireless-ADSL2+Router": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"huawei-usg防火墙": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-7706": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-Eudemon-Firewall": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-S12708": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-USG6620": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-S9303": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-S5700": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-HG8121H": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-RBT": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-USG2250": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-ASG2100": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"Huawei-AR敏捷网关": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-USG6320": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-USG5530": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-Router": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-eSpace-product": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-FusionCompute": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-S7700": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-Server": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-SSL-VPN": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-SRG1220": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-HG8540M": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-UPortal2800": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-X6781-Z37": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-Enterprise-proxy-server": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-VCT": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"Huawei user-login": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-SRG3250": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-HG8546M": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"Huawei – ADSL/Router": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-HMS": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-MCU": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-Secoway-Firewall": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-HW9306": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-honorBox": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"Huawei SmartAX": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-USG2130": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-Tecal-E6000": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"huawei-HG531": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-USG2220": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-S5720S": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-Video-Conferencing": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HuaWei-USG-Firewall": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"Huawei-Firewall": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-Secoway-USG2230": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-S7706": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"HUAWEI-USG6306": [
+		"TMAR#HWMT8007079/(空密码)",
+		"admin/admin"
+	],
+	"JUNIPer-srx1500": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"JUNIPer-EX4200-48px": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"JUNIPer-EX4200-24t": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"JUNIPer-srx650": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"Juniper-VPN": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"JUNIPer-EX4200-48t": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"JUNIPer-EX4200-24f": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"JUNIPer-ScreenOS": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"JUNIPer-HDR": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"JUNIPer-QFX5100-48s-6q": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"JUNIPer-srx3600": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"JUNIPer-srx550m": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"JUNIPer-mx960": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"JUNIPer-QFX5100-48t-6q": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"JUNIPer-EX4200-48p": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"JUNIPer-EX4500": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"Juniper Device Manager": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"JUNIPer-SRX550": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"Juniper-NetScreen-Secure-Access": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"Juniper-DX": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"JUNIPer-EX2300": [
+		"admin/abc123",
+		"admin/netscreen",
+		"admin/peribit",
+		"netscreen/netscreen",
+		"redline/redline"
+	],
+	"SonicWALL-GMS": [
+		"admin/password"
+	],
+	"SonicWALL": [
+		"admin/password"
+	],
+	"SonicWALL-SSL-VPN": [
+		"admin/password"
+	],
+	"SonicWall-SSL-VPN": [
+		"admin/password"
+	],
+	"SonicWALL-Company's-product": [
+		"admin/password"
+	],
+	"Dell SonicWALL": [
+		"admin/password"
+	],
+	"Splunk": [
+		"admin/changeme"
+	],
+	"Minio Browser": [
+		"minioadmin/minioadmin"
+	],
+	"alibaba-nacos": [
+		"nacos/nacos"
+	],
+	"Keycloak": [
+		"keycloak-admin/datical"
+	],
+	"pfSense": [
+		"admin/pfsense"
+	],
+	"CouchDB": [
+		"admin/password"
+	],
+	"neo4j-browser": [
+		"neo4j/neo4j"
 	]
 }
