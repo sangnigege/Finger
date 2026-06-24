@@ -142960,7 +142960,9 @@
 				"致远协同",
 				"Seeyon"
 			],
-			"logic": "or"
+			"logic": "or",
+			"version_regex": "(?:致远|Seeyon)[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "致远OA-Seeyon",
@@ -142984,7 +142986,9 @@
 				"Landray",
 				"蓝凌EKP"
 			],
-			"logic": "or"
+			"logic": "or",
+			"version_regex": "(?:蓝凌|Landray)[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "蓝凌OA-Landray",
@@ -143047,7 +143051,9 @@
 				"U8+",
 				"用友ERP-U8"
 			],
-			"logic": "or"
+			"logic": "or",
+			"version_regex": "(?:用友|UFIDA|Yonyou)[^0-9]*U8[^0-9]*([\\d.]+)?",
+			"version_location": "title"
 		},
 		{
 			"cms": "用友U8-ERP",
@@ -143070,7 +143076,9 @@
 				"Kingdee",
 				"金蝶EAS"
 			],
-			"logic": "or"
+			"logic": "or",
+			"version_regex": "(?:金蝶|Kingdee)[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "金蝶云星空",
