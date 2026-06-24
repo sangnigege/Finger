@@ -6035,9 +6035,7 @@
 	],
 	"Microsoft-Exchange": [
 		"Administrator/(空密码)",
-		"Administrator/Administrator",
-		"Guest/(空密码)",
-		"Guest/Guest"
+		"Administrator/Administrator"
 	],
 	"Microsoft IIS": [
 		"Administrator/(空密码)",
