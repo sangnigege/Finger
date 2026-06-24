@@ -147897,6 +147897,283 @@
 				"syntax error, expect {, actual error, pos 0"
 			],
 			"logic": "and"
+		},
+		{
+			"cms": "JeecgBoot",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"dc7a0b69060a0262530b47b46ba7f9b6"
+			]
+		},
+		{
+			"cms": "JumpServer",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"20334371817c7368907b5ea52aab2d9e"
+			]
+		},
+		{
+			"cms": "Rancher",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"51c2a7a38f5eb8b2c5577375a2633827"
+			]
+		},
+		{
+			"cms": "Odoo",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"a342fe863a8e41dff2a55410c7f118c5"
+			]
+		},
+		{
+			"cms": "Roundcube-Webmail",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"ef9c0362bf20a086bb7c2e8ea346b9f0"
+			]
+		},
+		{
+			"cms": "Jupyter-Notebook",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"97c6417ed01bdc0ae3ef32ae4894fd03"
+			]
+		},
+		{
+			"cms": "Apache-CouchDB",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"2ab2aae806e8393b70970b2eaace82e0"
+			]
+		},
+		{
+			"cms": "Elasticsearch",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"6177bfb75b498e0bb356223ed76ffe43"
+			]
+		},
+		{
+			"cms": "Elastic",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"7d0688b40ba64da737b12a3257e6c7b3"
+			]
+		},
+		{
+			"cms": "Spring-Framework",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"0488faca4c19046b94d07c3ee83cf9d6"
+			]
+		},
+		{
+			"cms": "Grav-CMS",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"0b11a9699ae33de62a1d05be8f733486"
+			]
+		},
+		{
+			"cms": "Tableau",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"783f669ae8336979325ef497a5e43037"
+			]
+		},
+		{
+			"cms": "Icinga监控",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"466b3dcce4a3c13f44dd0dc824b1e328"
+			]
+		},
+		{
+			"cms": "Nexpose漏洞扫描",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"f64ce96bbacc76d6db4d4eb0e78881da"
+			]
+		},
+		{
+			"cms": "Roxy-WI管理面板",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"115a65bda90efe228d692227dc196f74"
+			]
+		},
+		{
+			"cms": "GoCD",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"423a583332e4232659690dead75184e6"
+			]
+		},
+		{
+			"cms": "JBoss",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"799f70b71314a7508326d1d2f68f7519"
+			]
+		},
+		{
+			"cms": "Jenkins",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"23e8c7bd78e8cd826c5a6073b15068b1"
+			]
+		},
+		{
+			"cms": "若依ruoyi",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"e49fd30ea870c7a820464ca56a113e6e"
+			]
+		},
+		{
+			"cms": "AVTECH视频服务器",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"ed8cf53ef6836184587ee3a987be074a"
+			]
+		},
+		{
+			"cms": "华为跳板机",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"1f2d27250647de902d396b75d9a2b0cf"
+			]
+		},
+		{
+			"cms": "Asynqmon任务队列",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"7d56c3bcc4d9522bdc958785f1866776"
+			]
+		},
+		{
+			"cms": "ShopXO商城",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"6774ad0b380e1ffeee4e380352e51f15"
+			]
+		},
+		{
+			"cms": "Leadshop商城",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"34e851938a4a941ce6318d62253892ec"
+			]
+		},
+		{
+			"cms": "CRMEB商城",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"699adaf4da1b0dc76ea5464df13755d7"
+			]
+		},
+		{
+			"cms": "NiuShop商城",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"4b320a972023a99c21bffa7267ba6546"
+			]
+		},
+		{
+			"cms": "APISIX-Dashboard",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"6d07440dcda38480ac6fd8c32edf0102"
+			]
+		},
+		{
+			"cms": "华为跳板机",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"event_onusbkeychange=OnUsbKeyChange",
+				"id=mTokenPlugin"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "Nexpose漏洞扫描",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"nexposeccusername",
+				"Username"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "天融信防火墙-TopSec",
+			"method": "keyword",
+			"location": "title",
+			"keyword": [
+				"天融信",
+				"TopSec",
+				"防火墙"
+			],
+			"logic": "or"
+		},
+		{
+			"cms": "深信服上网行为管理",
+			"method": "keyword",
+			"location": "title",
+			"keyword": [
+				"上网行为管理",
+				"深信服"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "启明星辰-天阗",
+			"method": "keyword",
+			"location": "title",
+			"keyword": [
+				"天阗",
+				"启明星辰"
+			],
+			"logic": "or"
+		},
+		{
+			"cms": "山石网科-Hillstone",
+			"method": "keyword",
+			"location": "header",
+			"keyword": [
+				"Hillstone",
+				"Server: Hillstone"
+			],
+			"logic": "or"
 		}
 	]
 }

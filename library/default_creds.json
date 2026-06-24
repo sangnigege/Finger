@@ -106,5 +106,42 @@
 	"天融信防火墙": [
 		"superman/talent",
 		"superman/talent!23"
+	],
+	"JumpServer": [
+		"admin/admin"
+	],
+	"若依ruoyi": [
+		"admin/admin123",
+		"ry/admin123"
+	],
+	"Odoo": [
+		"admin/admin"
+	],
+	"Jupyter-Notebook": [
+		"(token认证)"
+	],
+	"Roundcube-Webmail": [
+		"(取决于邮件服务器)"
+	],
+	"GoCD": [
+		"admin/(首次设置)"
+	],
+	"Icinga监控": [
+		"icingaadmin/icingaadmin"
+	],
+	"Tableau": [
+		"admin/admin"
+	],
+	"Rancher": [
+		"admin/admin"
+	],
+	"Gitea": [
+		"(首次安装设置)"
+	],
+	"深信服上网行为管理": [
+		"admin/admin"
+	],
+	"天融信防火墙-TopSec": [
+		"superman/talent"
 	]
 }
