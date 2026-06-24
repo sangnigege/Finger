@@ -65575,7 +65575,9 @@
 				"aria-label=\"outlook web app",
 				"outlooksession",
 				"x-owa-version",
-				"/owa/"
+				"/owa/",
+				"Location: /owa/",
+				"outlook"
 			],
 			"logic": "or",
 			"expected_server": [
