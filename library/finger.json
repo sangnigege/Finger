@@ -6565,7 +6565,8 @@
 			"keyword": [
 				"1766699363"
 			],
-			"version_regex": "Apache ActiveMQ\\s*([\\d.]+)"
+			"version_regex": "Apache ActiveMQ\\s*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Apache-ActiveMQ",
@@ -6577,7 +6578,8 @@
 				"<title>Apache ActiveMQ</title>"
 			],
 			"logic": "or",
-			"version_regex": "Apache ActiveMQ\\s*([\\d.]+)"
+			"version_regex": "Apache ActiveMQ\\s*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Apache-ActiveMQ",
@@ -6586,7 +6588,8 @@
 			"keyword": [
 				"apache activemq"
 			],
-			"version_regex": "Apache ActiveMQ\\s*([\\d.]+)"
+			"version_regex": "Apache ActiveMQ\\s*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "Apache-ActiveMQ[+]默认口令admin/admin",
@@ -6595,7 +6598,8 @@
 			"keyword": [
 				"<title>Apache ActiveMQ</title>"
 			],
-			"version_regex": "Apache ActiveMQ\\s*([\\d.]+)"
+			"version_regex": "Apache ActiveMQ\\s*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Apache-ActiveMQ[+]默认口令admin/admin",
@@ -6604,7 +6608,8 @@
 			"keyword": [
 				"realm=\"activemqrealm"
 			],
-			"version_regex": "Apache ActiveMQ[^0-9]*([\\d.]+)"
+			"version_regex": "Apache ActiveMQ[^0-9]*([\\d.]+)",
+			"version_location": "header"
 		},
 		{
 			"cms": "apache-ambari",
@@ -29744,7 +29749,8 @@
 				"1747282642"
 			],
 			"logic": "or",
-			"version_regex": "Drupal[^0-9]*([\\d.]+)"
+			"version_regex": "Drupal[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Drupal",
@@ -29789,7 +29795,8 @@
 			"keyword": [
 				"drupal"
 			],
-			"version_regex": "Drupal[^0-9]*([\\d.]+)"
+			"version_regex": "Drupal[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Drupal(水滴)",
@@ -29798,7 +29805,8 @@
 			"keyword": [
 				"Drupal(水滴)"
 			],
-			"version_regex": "Drupal[^0-9]*([\\d.]+)"
+			"version_regex": "Drupal[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "DrWebAntiVirus",
@@ -31374,7 +31382,8 @@
 				"szfeatures"
 			],
 			"logic": "or",
-			"version_regex": "e-office[^0-9]*([\\d.]+)"
+			"version_regex": "e-office[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "ecology泛微云桥e-bridge",
@@ -31388,7 +31397,8 @@
 				"content=\"泛微云桥e-bridge\""
 			],
 			"logic": "or",
-			"version_regex": "e-bridge[^0-9]*([\\d.]+)"
+			"version_regex": "e-bridge[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "ecology泛微协同办公oa",
@@ -32704,7 +32714,8 @@
 				"\"tagline\" : \"You Know, for Search\"}"
 			],
 			"logic": "or",
-			"version_regex": "Elasticsearch[^0-9]*([\\d.]+)"
+			"version_regex": "Elasticsearch[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Elasticsearch",
@@ -32715,7 +32726,8 @@
 				"realm=\"elasticsearch"
 			],
 			"logic": "or",
-			"version_regex": "elasticsearch[^0-9]*([\\d.]+)"
+			"version_regex": "elasticsearch[^0-9]*([\\d.]+)",
+			"version_location": "header"
 		},
 		{
 			"cms": "ElasticSearch-HQ",
@@ -32724,7 +32736,8 @@
 			"keyword": [
 				"elastic search - hq"
 			],
-			"version_regex": "Elasticsearch[^0-9]*([\\d.]+)"
+			"version_regex": "Elasticsearch[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "Elasticsearch-sql",
@@ -32733,7 +32746,8 @@
 			"keyword": [
 				"elasticsearchsqlapp"
 			],
-			"version_regex": "Elasticsearch[^0-9]*([\\d.]+)"
+			"version_regex": "Elasticsearch[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Elasticsearch-sql",
@@ -32742,7 +32756,8 @@
 			"keyword": [
 				"elasticsearch-sql client"
 			],
-			"version_regex": "Elasticsearch[^0-9]*([\\d.]+)"
+			"version_regex": "Elasticsearch[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "Elcodi",
@@ -36744,7 +36759,8 @@
 				"csrfmiddlewaretoken",
 				"<a href=\"/users/password/forgot/\">"
 			],
-			"version_regex": "Jump[Ss]erver[^0-9]*([\\d.]+)"
+			"version_regex": "Jump[Ss]erver[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "FITELnet-Router",
@@ -41196,7 +41212,8 @@
 			"keyword": [
 				"gunicorn"
 			],
-			"version_regex": "gunicorn/([\\d.]+)"
+			"version_regex": "gunicorn/([\\d.]+)",
+			"version_location": "header"
 		},
 		{
 			"cms": "GuoBaoJinTai-Prodcut",
@@ -55165,7 +55182,8 @@
 			"keyword": [
 				"-1162630024"
 			],
-			"version_regex": "Jump[Ss]erver[^0-9]*([\\d.]+)"
+			"version_regex": "Jump[Ss]erver[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "JumpServer",
@@ -55176,7 +55194,8 @@
 				"Jumpserver开源堡垒机"
 			],
 			"logic": "or",
-			"version_regex": "Jump[Ss]erver[^0-9]*([\\d.]+)"
+			"version_regex": "Jump[Ss]erver[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Jumpserver-Fortres-Machine",
@@ -55188,7 +55207,8 @@
 				"<a href=\"/users/password/forgot/\">"
 			],
 			"logic": "or",
-			"version_regex": "Jump[Ss]erver[^0-9]*([\\d.]+)"
+			"version_regex": "Jump[Ss]erver[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Jumpserver-Fortres-Machine",
@@ -55197,7 +55217,8 @@
 			"keyword": [
 				"jumpserver"
 			],
-			"version_regex": "Jump[Ss]erver[^0-9]*([\\d.]+)"
+			"version_regex": "Jump[Ss]erver[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "Jumpserver堡垒机",
@@ -55208,7 +55229,8 @@
 				"3132337272"
 			],
 			"logic": "or",
-			"version_regex": "Jump[Ss]erver[^0-9]*([\\d.]+)"
+			"version_regex": "Jump[Ss]erver[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Jumpserver堡垒机",
@@ -55217,7 +55239,8 @@
 			"keyword": [
 				"static/css/jumpserver.css"
 			],
-			"version_regex": "Jump[Ss]erver[^0-9]*([\\d.]+)"
+			"version_regex": "Jump[Ss]erver[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Jumpserver堡垒机",
@@ -55234,7 +55257,8 @@
 			"keyword": [
 				"Jumpserver堡垒机"
 			],
-			"version_regex": "Jump[Ss]erver[^0-9]*([\\d.]+)"
+			"version_regex": "Jump[Ss]erver[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "JUNA-Camera",
@@ -56827,7 +56851,8 @@
 				"4027536161"
 			],
 			"logic": "or",
-			"version_regex": "Kibana[^0-9]*([\\d.]+)"
+			"version_regex": "Kibana[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Kibana",
@@ -56836,7 +56861,8 @@
 			"keyword": [
 				"Kibana"
 			],
-			"version_regex": "Kibana[^0-9]*([\\d.]+)"
+			"version_regex": "Kibana[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "Kibana",
@@ -56847,7 +56873,8 @@
 				"<body kibana ng-class"
 			],
 			"logic": "or",
-			"version_regex": "Kibana[^0-9]*([\\d.]+)"
+			"version_regex": "Kibana[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Kibana",
@@ -58664,7 +58691,8 @@
 				"<a href=\"https://github.com/laravel/laravel\">GitHub</a>"
 			],
 			"logic": "or",
-			"version_regex": "Laravel[^0-9]*([\\d.]+)"
+			"version_regex": "Laravel[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Laravel",
@@ -58685,7 +58713,8 @@
 				"欢迎登录laravel-admin</p>"
 			],
 			"logic": "or",
-			"version_regex": "Laravel[^0-9]*([\\d.]+)"
+			"version_regex": "Laravel[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Laravel-Framework",
@@ -85827,7 +85856,8 @@
 				"-1015107330"
 			],
 			"logic": "or",
-			"version_regex": "RabbitMQ\\s*([\\d.]+)"
+			"version_regex": "RabbitMQ\\s*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "RabbitMQ",
@@ -85836,7 +85866,8 @@
 			"keyword": [
 				"<title>RabbitMQ Management</title>"
 			],
-			"version_regex": "RabbitMQ\\s*([\\d.]+)"
+			"version_regex": "RabbitMQ\\s*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "RabbitMQ",
@@ -85857,7 +85888,8 @@
 				"rabbitmq management"
 			],
 			"logic": "or",
-			"version_regex": "RabbitMQ\\s*([\\d.]+)"
+			"version_regex": "RabbitMQ\\s*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "RackCache",
@@ -86259,7 +86291,8 @@
 				"<meta name=\"ui/configs/asset-manifest\" content="
 			],
 			"logic": "or",
-			"version_regex": "Rancher[^0-9]*([\\d.]+)"
+			"version_regex": "Rancher[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Rancher",
@@ -91961,7 +91994,8 @@
 				"shiroCookie"
 			],
 			"logic": "or",
-			"version_regex": "Apache Shiro[^0-9]*([\\d.]+)"
+			"version_regex": "Apache Shiro[^0-9]*([\\d.]+)",
+			"version_location": "header"
 		},
 		{
 			"cms": "Shiro",
@@ -91973,7 +92007,8 @@
 				"=deleteMe"
 			],
 			"version_regex": "Apache Shiro[^0-9]*([\\d.]+)",
-			"logic": "or"
+			"logic": "or",
+			"version_location": "body"
 		},
 		{
 			"cms": "Shiro",
@@ -96465,7 +96500,8 @@
 			"keyword": [
 				"116323821"
 			],
-			"version_regex": "Spring Boot[^0-9]*([\\d.]+)"
+			"version_regex": "Spring Boot[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "spring-boot",
@@ -96474,7 +96510,8 @@
 			"keyword": [
 				"No message available"
 			],
-			"version_regex": "Spring Boot[^0-9]*([\\d.]+)"
+			"version_regex": "Spring Boot[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "spring-boot",
@@ -96483,7 +96520,8 @@
 			"keyword": [
 				"Spring Boot"
 			],
-			"version_regex": "Spring Boot[^0-9]*([\\d.]+)"
+			"version_regex": "Spring Boot[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "Spring-Cloud-Netflix",
@@ -96511,7 +96549,8 @@
 				"whitelabel error page"
 			],
 			"logic": "or",
-			"version_regex": "Spring[^0-9]*([\\d.]+)"
+			"version_regex": "Spring[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Spring-Framework",
@@ -97409,7 +97448,8 @@
 				"no result defined for action,result input"
 			],
 			"logic": "or",
-			"version_regex": "Struts[^0-9]*([\\d.]+)"
+			"version_regex": "Struts[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Struts2",
@@ -97422,7 +97462,8 @@
 				"servlet"
 			],
 			"version_regex": "Struts[^0-9]*([\\d.]+)",
-			"logic": "or"
+			"logic": "or",
+			"version_location": "header"
 		},
 		{
 			"cms": "Struts2",
@@ -114975,7 +115016,8 @@
 			"keyword": [
 				"<a href=\"https://cn.wordpress.org/\" title="
 			],
-			"version_regex": "WordPress\\s*([\\d.]+)"
+			"version_regex": "WordPress\\s*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Wordpress Admin",
@@ -114992,7 +115034,8 @@
 			"keyword": [
 				"191654058"
 			],
-			"version_regex": "WordPress\\s*([\\d.]+)"
+			"version_regex": "WordPress\\s*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "WordPress-Plugin All-in-one-SEO-Pack",
@@ -115003,7 +115046,8 @@
 				"/wp-includes/"
 			],
 			"logic": "or",
-			"version_regex": "WordPress\\s*([\\d.]+)"
+			"version_regex": "WordPress\\s*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "WordPress-PluginWooCommerce",
@@ -115038,7 +115082,8 @@
 			"keyword": [
 				"WordPress VIP"
 			],
-			"version_regex": "WordPress\\s*([\\d.]+)"
+			"version_regex": "WordPress\\s*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "Workday",
@@ -118560,7 +118605,8 @@
 			"keyword": [
 				"892542951"
 			],
-			"version_regex": "Zabbix[^0-9]*([\\d.]+)"
+			"version_regex": "Zabbix[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Zabbix",
@@ -118574,7 +118620,8 @@
 				"href=\"https://www.zabbix.com/support\""
 			],
 			"logic": "or",
-			"version_regex": "Zabbix[^0-9]*([\\d.]+)"
+			"version_regex": "Zabbix[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Zabbix",
@@ -118593,7 +118640,8 @@
 			"keyword": [
 				"meta name=\"author\" content=\"zabbix sia\""
 			],
-			"version_regex": "Zabbix[^0-9]*([\\d.]+)"
+			"version_regex": "Zabbix[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Zanox",
@@ -121667,7 +121715,8 @@
 				"2467445972"
 			],
 			"logic": "or",
-			"version_regex": "ez[Oo]ffice[^0-9]*([\\d.]+)"
+			"version_regex": "ez[Oo]ffice[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "万户ezOFFICE",
@@ -121692,7 +121741,8 @@
 			"keyword": [
 				"万户ezSITE"
 			],
-			"version_regex": "ez[Ss]ite[^0-9]*([\\d.]+)"
+			"version_regex": "ez[Ss]ite[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "万户OA",
@@ -133486,7 +133536,8 @@
 			"keyword": [
 				"泛微e-cology"
 			],
-			"version_regex": "e-cology[^0-9]*([\\d.]+)"
+			"version_regex": "e-cology[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "泛微e-mobile",
@@ -133503,7 +133554,8 @@
 			"keyword": [
 				"3514039281"
 			],
-			"version_regex": "e-office[^0-9]*([\\d.]+)"
+			"version_regex": "e-office[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "泛微E-office",
@@ -133520,7 +133572,8 @@
 			"keyword": [
 				"泛微E-office"
 			],
-			"version_regex": "e-office[^0-9]*([\\d.]+)"
+			"version_regex": "e-office[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "泛微emp-移动管理平台",
@@ -133584,7 +133637,8 @@
 			"keyword": [
 				"泛微云桥e-Bridge"
 			],
-			"version_regex": "e-bridge[^0-9]*([\\d.]+)"
+			"version_regex": "e-bridge[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "泛微协同办公OA",
@@ -135193,7 +135247,8 @@
 			"keyword": [
 				"用友 E-HR"
 			],
-			"version_regex": "用友[^0-9]*([\\d.]+)"
+			"version_regex": "用友[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "用友erp-nc",
@@ -135226,7 +135281,8 @@
 			"keyword": [
 				"用友 FE协同办公平台"
 			],
-			"version_regex": "用友[^0-9]*([\\d.]+)"
+			"version_regex": "用友[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "用友FE管理系统",
@@ -135243,7 +135299,8 @@
 			"keyword": [
 				"用友GRP-U8行政事业内控管理软件"
 			],
-			"version_regex": "用友[^0-9]*([\\d.]+)"
+			"version_regex": "用友[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "用友GRP-U8",
@@ -135252,7 +135309,8 @@
 			"keyword": [
 				"3995446927"
 			],
-			"version_regex": "用友[^0-9]*([\\d.]+)"
+			"version_regex": "用友[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "用友GRP-U8 新政府会计制度专版",
@@ -135263,7 +135321,8 @@
 				"3995446927"
 			],
 			"logic": "or",
-			"version_regex": "用友[^0-9]*([\\d.]+)"
+			"version_regex": "用友[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "用友GRP-U8(财务系统)",
@@ -135280,7 +135339,8 @@
 			"keyword": [
 				"用友GRP-U8(财务系统)"
 			],
-			"version_regex": "用友[^0-9]*([\\d.]+)"
+			"version_regex": "用友[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "用友nc",
@@ -135289,7 +135349,8 @@
 			"keyword": [
 				"用友NC"
 			],
-			"version_regex": "用友[^0-9]*NC[^0-9]*([\\d.]+)"
+			"version_regex": "用友[^0-9]*NC[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "用友nc",
@@ -135395,7 +135456,8 @@
 				"Login_Owner"
 			],
 			"logic": "or",
-			"version_regex": "用友[^0-9]*([\\d.]+)"
+			"version_regex": "用友[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "用友商战实践平台",
@@ -135404,7 +135466,8 @@
 			"keyword": [
 				"用友 商战实践平台"
 			],
-			"version_regex": "用友[^0-9]*([\\d.]+)"
+			"version_regex": "用友[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "用友致远oa",
@@ -138784,7 +138847,8 @@
 			"keyword": [
 				"蓝凌OA"
 			],
-			"version_regex": "蓝凌[^0-9]*([\\d.]+)"
+			"version_regex": "蓝凌[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "蓝凌智慧协同平台",
@@ -140026,7 +140090,8 @@
 				"-759108386"
 			],
 			"logic": "or",
-			"version_regex": "通达[^0-9]*([\\d.]+)"
+			"version_regex": "通达[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "通达OA",
@@ -140055,7 +140120,8 @@
 			"keyword": [
 				"通达OA系统"
 			],
-			"version_regex": "通达[^0-9]*([\\d.]+)"
+			"version_regex": "通达[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "速成_SuCMS影视管理系统",
@@ -140614,7 +140680,8 @@
 			"keyword": [
 				"欢迎使用Apusic应用服务器"
 			],
-			"version_regex": "金蝶[^0-9]*([\\d.]+)"
+			"version_regex": "金蝶[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "金蝶EAS",
@@ -140643,7 +140710,8 @@
 			"keyword": [
 				"金蝶K/3 Cloud"
 			],
-			"version_regex": "金蝶[^0-9]*([\\d.]+)"
+			"version_regex": "金蝶[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "金蝶OA",
@@ -140653,7 +140721,8 @@
 				"EAS系统登录",
 				"金蝶国际软件集团有限公司"
 			],
-			"version_regex": "金蝶[^0-9]*([\\d.]+)"
+			"version_regex": "金蝶[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "金蝶OA",
@@ -140662,7 +140731,8 @@
 			"keyword": [
 				"金蝶OA"
 			],
-			"version_regex": "金蝶[^0-9]*([\\d.]+)"
+			"version_regex": "金蝶[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "金蝶云星空",
@@ -140673,7 +140743,8 @@
 				"/ClientBin/Kingdee.BOS.XPF.App.xap"
 			],
 			"logic": "or",
-			"version_regex": "金蝶[^0-9]*([\\d.]+)"
+			"version_regex": "金蝶[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "金蝶云星空移动应用管理平台",
@@ -140690,7 +140761,8 @@
 			"keyword": [
 				"金蝶云星空 移动应用管理平台"
 			],
-			"version_regex": "金蝶[^0-9]*([\\d.]+)"
+			"version_regex": "金蝶[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "金蝶协作办公系统",
@@ -140699,7 +140771,8 @@
 			"keyword": [
 				"金蝶协作办公系统"
 			],
-			"version_regex": "金蝶[^0-9]*([\\d.]+)"
+			"version_regex": "金蝶[^0-9]*([\\d.]+)",
+			"version_location": "title"
 		},
 		{
 			"cms": "金蝶政务GSiS",
@@ -140708,7 +140781,8 @@
 			"keyword": [
 				"/kdgs/script/kdgs.js"
 			],
-			"version_regex": "金蝶[^0-9]*([\\d.]+)"
+			"version_regex": "金蝶[^0-9]*([\\d.]+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "金诺华美国移民网",
