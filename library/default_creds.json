@@ -329,37 +329,15 @@
 	"铭飞MCMS": [
 		"msopen/msopen"
 	],
-	"搜索动力2014(php+mysql)": [
-		"admin@example.com/admin",
-		"root/(空密码)",
-		"superdba/admin"
-	],
-	"Yearning MYSQL SQL语句审核平台": [
-		"admin@example.com/admin",
-		"root/(空密码)",
-		"superdba/admin"
-	],
-	"搜啊搜索SOOUA_PHP+MYSQL": [
-		"admin@example.com/admin",
-		"root/(空密码)",
-		"superdba/admin"
-	],
-	"mySQL-Error": [
-		"admin@example.com/admin",
-		"root/(空密码)",
-		"superdba/admin"
-	],
 	"postgresql": [
 		"postgres/(空密码)"
 	],
 	"Gitlab": [
 		"admin/5iveL!fe",
-		"admin@local.host/5iveL!fe",
 		"root/5iveL!fe"
 	],
 	"gitlab": [
 		"admin/5iveL!fe",
-		"admin@local.host/5iveL!fe",
 		"root/5iveL!fe"
 	],
 	"Cisco-Adaptive-Security-Appliance": [
@@ -2950,10 +2928,6 @@
 		"TMAR#HWMT8007079/(空密码)",
 		"admin/admin"
 	],
-	"HUAWEI-Eudemon1000E": [
-		"TMAR#HWMT8007079/(空密码)",
-		"admin/admin"
-	],
 	"HuaWei-VPN": [
 		"TMAR#HWMT8007079/(空密码)",
 		"admin/admin"
@@ -2999,10 +2973,6 @@
 		"admin/admin"
 	],
 	"HUAWEI-7706": [
-		"TMAR#HWMT8007079/(空密码)",
-		"admin/admin"
-	],
-	"HuaWei-Eudemon-Firewall": [
 		"TMAR#HWMT8007079/(空密码)",
 		"admin/admin"
 	],
