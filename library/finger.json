@@ -148163,6 +148163,513 @@
 				"Server: Hillstone"
 			],
 			"logic": "or"
+		},
+		{
+			"cms": "紫光档案管理系统",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"3e2ee25dc73811fe2a697deefe447017"
+			]
+		},
+		{
+			"cms": "anwang-wayosac",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"715c49c5512d763084a4082c27d935e1"
+			]
+		},
+		{
+			"cms": "cool-admin",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"0a1a4905050aeb5bcc9d0c124bb96eb6"
+			]
+		},
+		{
+			"cms": "coreshop",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"ac08a66b033430e3034e395cc9f04533"
+			]
+		},
+		{
+			"cms": "dtcloud",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"49fe0618acdcd7c9dc443faca20d7bd9"
+			]
+		},
+		{
+			"cms": "edoc",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"b6ff5fb80eb1412c57eb24b6df8148ec"
+			]
+		},
+		{
+			"cms": "h5s-video-platform",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"71d350f81224c181b2fc5851fc61b0ba"
+			]
+		},
+		{
+			"cms": "jetty",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"ed7d5c39c69262f4ba95418d4f909b10"
+			]
+		},
+		{
+			"cms": "jianmu",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"a60399bff2cbc1462547d9a38284264d"
+			]
+		},
+		{
+			"cms": "linked-see",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"4aa64c674d4f0b5f85b17ae727fa5e7e"
+			]
+		},
+		{
+			"cms": "muhttpd",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"e50cc7cc4f8d7f2346d901c35dee3a5f"
+			]
+		},
+		{
+			"cms": "netcom-ngfw",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"9252bd07dbb6277f7ae898da87dada3a"
+			]
+		},
+		{
+			"cms": "pear-project",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"4a912be52af99e4407d53651ccde64e6"
+			]
+		},
+		{
+			"cms": "teslamate",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"0e3b30468f89fa98cb22983c89e49d0a"
+			]
+		},
+		{
+			"cms": "thinkphp",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"f49c4a4bde1eec6c0b80c2277c76e3db"
+			]
+		},
+		{
+			"cms": "tikiwiki",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"e789cc1db6eefad0b58c9dda94f57d3c"
+			]
+		},
+		{
+			"cms": "umami",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"e7acd200faa2134fc17bce2e39304292"
+			]
+		},
+		{
+			"cms": "yonyou-grp-u8",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"b41be1ccc6f9f2894e0cfcf23acf5fc0"
+			]
+		},
+		{
+			"cms": "zentao-system",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"b1d3deb4bd16c8c1637235515deea114"
+			]
+		},
+		{
+			"cms": "zkteco",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"67c76f647cb8d42a71eb295e003394d2"
+			]
+		},
+		{
+			"cms": "合肥易用信息科技有限公司crm系统",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"2e7ead236832180553dab45ba77db6b7"
+			]
+		},
+		{
+			"cms": "奇安信-vpn",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"4cf31d7e53197f79b435b66cc8cb3098"
+			]
+		},
+		{
+			"cms": "正通慧丰实例控制台-oa",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"f07d5960a56ea44c35496bf1dea9a015"
+			]
+		},
+		{
+			"cms": "点晴mis管理信息系统",
+			"method": "faviconhash",
+			"location": "body",
+			"keyword": [
+				"837f7af9a5509a71122fe77505e4451c"
+			]
+		},
+		{
+			"cms": "hfish",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<title>hfish",
+				"src=\"/static/images/hfish.png\"",
+				"href=\"https://github.com/hacklcx/hfish\""
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "huawei-ssl-vpn",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"Clear SSL cache successfully",
+				"getCookie(\"SGDPortal\")",
+				"SVN_GetLoginContextValue("
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "jeecgboot",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"color: #222222;",
+				"lang=zh-cmn-Hans",
+				"loader-"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "neo4j-browser",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"neo4j://",
+				"neo4j_version",
+				"neo4j_edition"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "华磊科技物流信息系统",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"content=\"华磊科技",
+				"快递系统",
+				"erp对接"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "alibaba-anyproxy",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<title>AnyProxy</title>",
+				"dist/main.css"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "alibaba-fastjson",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"fastjson",
+				"version"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "argocd",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<title>argo cd</title>",
+				"argoproj.github.io"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "casdoor",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<title>casdoor",
+				"casdoor/manifest.json"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "cpanel",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"cpanel_magic_revision",
+				"go.cpanel.net"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "dahua-wpms",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<li id=\"DSS-help\">",
+				"<span>DSS助手</span>"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "dedecms",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"name=\"dede_fields",
+				"name=\"dede_fieldshash"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "dedecms",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<form  name=\"formsearch\" action=\"/plus/search.php\">",
+				"name=\"q\""
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "gitlab",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"search gitlab",
+				"navbar-gitlab"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "grafana",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"grafana_icon.svg",
+				"login"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "jamf-panel",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"Jamf Pro Login",
+				"Jamf Cloud Node"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "lexmark",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<title>Lexmark",
+				"/Status"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "metabase",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"_metabaseBootstrap",
+				"_metabaseLocalization"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "nuxtjs",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"__nuxt",
+				"buildAssetsDir"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "outline",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<title>outline</title>",
+				"title=\"outline\"/>"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "quiz-system",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"quiz system",
+				"<title>| Online Quiz System |</title>"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "ruoyi-system",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"href=\"/ruoyi/css/ry-ui.css",
+				"src=\"/ruoyi/js/ry-ui.js"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "sangfor-data-center",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"/cfwloginout.php",
+				"_top"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "sunline-cmdb",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"var key = \"sunlines\";",
+				"sunline co"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "vcms",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<h2>VCMS</h2>",
+				"<h4>VCMS全能网站管理系统</h4>"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "xstream",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"com.thoughtworks.xstream",
+				"Exception"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "yonyou-grp-u8",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"key2 = \"grp\", key3 = \"u8\"",
+				"用友grp-u8"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "zyxel-zywall",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<title>zywall",
+				"zyfunction.js"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "中卫信-体验档案查询系统",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"体检档案查询系统",
+				"技术支持：中卫信软件"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "中远麒麟iaudit堡垒机",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"www.tosec.com.cn/doc",
+				"(atype==\"fingersecauth\"||atype==\"localfingersecauth\")"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "天融信-安全审计",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<title>topsec单点登录系统",
+				"<p>安全审计</p>"
+			],
+			"logic": "and"
 		}
 	]
 }

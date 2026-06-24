@@ -143,5 +143,62 @@
 	],
 	"天融信防火墙-TopSec": [
 		"superman/talent"
+	],
+	"Metabase": [
+		"admin/(首次设置)"
+	],
+	"Adminer": [
+		"(无密码, 直接访问)"
+	],
+	"Neo4j": [
+		"neo4j/neo4j"
+	],
+	"cPanel": [
+		"(系统用户)"
+	],
+	"Grav-CMS": [
+		"admin/(首次设置)"
+	],
+	"DedeCMS": [
+		"admin/admin"
+	],
+	"HFish蜜罐": [
+		"admin/admin"
+	],
+	"奇安信-VPN": [
+		"admin/admin"
+	],
+	"通达OA": [
+		"admin/(空密码)",
+		"admin/admin"
+	],
+	"致远OA-Seeyon": [
+		"admin/admin",
+		"system/system"
+	],
+	"蓝凌OA-Landray": [
+		"admin/admin"
+	],
+	"用友U8-ERP": [
+		"admin/(空密码)",
+		"demo/demo"
+	],
+	"金蝶云星空": [
+		"administrator/(空密码)"
+	],
+	"Umami分析": [
+		"admin/umami"
+	],
+	"Apache-CouchDB": [
+		"admin/admin"
+	],
+	"Apache-Superset": [
+		"admin/admin"
+	],
+	"Casdoor": [
+		"admin/123456"
+	],
+	"Nexpose漏洞扫描": [
+		"nxadmin/nxadmin"
 	]
 }
