@@ -283,6 +283,8 @@ library/            指纹库 + 默认口令库 + CDN/IP 数据
 
 [FingerprintHub](https://github.com/0x727/FingerprintHub)
 
+[DefaultCreds-cheat-sheet](https://github.com/ihebski/DefaultCreds-cheat-sheet)
+
 感谢**Ti0s** 提供的建议
 
 [![Stargazers over time](https://starchart.cc/EASY233/Finger.svg)](https://starchart.cc/EASY233/Finger)
