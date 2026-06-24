@@ -17,17 +17,14 @@
     <img src="https://img.shields.io/badge/Author-EASY-da282a">
     <img src="https://img.shields.io/badge/Language-Python%203.7+-da282a"></a>
     <img src="https://img.shields.io/badge/Version-V6.0-da282a">
-    <img src="https://img.shields.io/badge/Rules-16938-da282a">
-    <img src="https://img.shields.io/badge/Products-11993-da282a">
 </p>
 
 ---
 
 ## 开始
 
-Finger定位于一款红队在大量的资产中存活探测与重点攻击系统指纹探测工具。在面临大量资产时候Finger可以快速从中查找出重点攻击系统协助我们快速展开渗透。早有前辈贡献出优秀的作品[EHole(棱洞)2.0 重构版-红队重点攻击系统指纹探测工具](https://github.com/EdgeSecurityTeam/EHole) 但是该项目代码不开源我想做出一些修改也没有办法，所以决定使用其指纹库自行开发一个趁手的工具。
+Finger定位于一款红队在大量的资产中存活探测与重点攻击系统指纹探测工具。在面临大量资产时候Finger可以快速从中查找出重点攻击系统协助我们快速展开渗透。早有前辈贡献出优秀的作品[EHole(棱洞)3.0 重构版-红队重点攻击系统指纹探测工具](https://github.com/EdgeSecurityTeam/EHole) 但是该项目代码不开源我想做出一些修改也没有办法，所以决定使用其指纹库自行开发一个趁手的工具。
 
-> **V6.0 新版本**：规则库大规模扩充至 16,938 条（覆盖 11,993 产品），重写置信度引擎，新增 Server 版本提取、默认口令标注（1,756 产品）、规则质量审计等功能。详见 [V6.0 新增功能](#v60-新增功能)。
 
 ---
 
@@ -101,7 +98,7 @@ Finger追求极简命令参数只有以下几个:
 | `--geo` | 启用IP归属地查询（默认关闭） |
 | `--audit` | 🆕 启用规则质量审计 |
 
-Finger支持的URL格式有:www.baidu.com , 127.0.0.1,http://www.baidu.com。 但是前两种不推荐使用Finger会在URL处理阶段自动为其添加`http://`和`https://`
+Finger支持的URL格式有:www.baidu.com,127.0.0.1,http://www.baidu.com。 但是前两种不推荐使用Finger会在URL处理阶段自动为其添加`http://`和`https://`
 
 Finger支持的IP格式有单个IP格式192.168.10.1,IP段192.168.10.1/24，某一小段IP192..168.10.10-192.168.10.50满足日常使用的所有需求。Finger会首先通过Fofa采集IP的web资产，然后对其进行存活探测以及系统指纹探测。
 
@@ -133,7 +130,7 @@ FingerPrint_Update = False
 
 ## 指纹识别规则
 
-Finger的指纹规则学习之[EHole(棱洞)2.0 重构版-红队重点攻击系统指纹探测工具](https://github.com/EdgeSecurityTeam/EHole)。规则格式如下:
+Finger的指纹规则学习之[EHole(棱洞)3.0 重构版-红队重点攻击系统指纹探测工具](https://github.com/EdgeSecurityTeam/EHole)。规则格式如下:
 
 ### 规则字段
 
