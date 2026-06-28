@@ -13,38 +13,37 @@ import os
 import random
 import base64
 import hashlib
-import json
 import requests
 import mmh3
 import urllib3
-import xlsxwriter
 from urllib.parse import urlsplit, urljoin
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import re
-from config.data import path, logging, Extra
+from config.data import logging
 from config import settings
 from lib.identify import Identify
 from lib.ip_factory import IPFactory
+from lib.resultio import save_results
+from lib.runtime import create_runtime_config
 
 urllib3.disable_warnings()
 
 
 class Finger:
     """Finger 指纹识别器 — 库入口"""
+    HTTPS_UPGRADE_MARKERS = (
+        "the plain http request was sent to https port",
+    )
+    MAX_CLIENT_REDIRECTS = 2
+    BODY_READ_LIMIT = 131072
 
-    def __init__(self, threads=30):
-        self.threads = threads
-        self._init_paths()
-        self.identify = Identify()
-        self.ip_factory = IPFactory()
-
-    def _init_paths(self):
-        """确保路径已初始化（兼容直接 import 而非 CLI 入口）"""
-        if not hasattr(path, 'library') or not path.library:
-            root = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-            path.home = root
-            path.library = os.path.join(root, 'library')
+    def __init__(self, threads=None, config=None):
+        self.config = config or create_runtime_config()
+        self.threads = threads or self.config.threads
+        self.identify = Identify(library_dir=self.config.paths.library_dir)
+        self.ip_factory = IPFactory(library_dir=self.config.paths.library_dir)
+        self._headers = self._get_headers()
 
     # ── 公开 API ──────────────────────────
 
@@ -59,26 +58,32 @@ class Finger:
             list[dict]
         """
         if timeout is None:
-            timeout = getattr(settings, 'timeout', 10)
+            timeout = self.config.timeout
         results = []
         errors = []
-        unique_urls = list(set(urls))
+        unique_urls = list(dict.fromkeys(urls))
+        scheduled_urls = set(unique_urls)
 
         pool = ThreadPoolExecutor(self.threads)
         try:
-            futures = {pool.submit(self._scan_one, url, timeout): url for url in unique_urls}
+            futures = {
+                pool.submit(self._scan_one, url, timeout, scheduled_urls=scheduled_urls): url
+                for url in unique_urls
+            }
             for future in as_completed(futures):
                 url = futures[future]
                 try:
                     result = future.result()
-                    if result: results.append(result)
+                    if not result:
+                        continue
+                    if result.get("error_type"):
+                        errors.append(result)
+                    else:
+                        results.append(result)
                 except KeyboardInterrupt:
                     raise
                 except Exception as e:
-                    errors.append({"url": url, "cms": "-", "title": str(e),
-                        "status": "-", "Server": "-", "size": "-",
-                        "iscdn": "-", "ip": "-", "address": "-",
-                        "isp": "-", "confidence": 0, "version": "-"})
+                    errors.append(self._error_result(url, "worker_error", str(e)))
         except KeyboardInterrupt:
             pool.shutdown(wait=False, cancel_futures=True)
             logging.error("用户强制中止!")
@@ -105,77 +110,149 @@ class Finger:
         results = self.scan(urls, timeout=timeout)
 
         if output_dir is None:
-            output_dir = os.path.join(path.home, 'output')
-        os.makedirs(output_dir, exist_ok=True)
-
-        import time as _time
-        ts = _time.strftime("%Y%m%d%H%M%S", _time.localtime())
-
-        if fmt == "json":
-            filepath = os.path.join(output_dir, f"{ts}.json")
-            with open(filepath, 'w', encoding='utf-8') as f:
-                json.dump(results, f, ensure_ascii=False, indent=2)
-        else:
-            filepath = self._save_xlsx(results, output_dir, ts)
+            output_dir = self.config.paths.output_dir
+        filepath = save_results(results, output_dir, fmt, library_dir=self.config.paths.library_dir)
 
         logging.success(f"结果已保存: {filepath}")
         return results, filepath
 
     # ── 内部实现 ──────────────────────────
 
-    def _scan_one(self, url, timeout):
+    def _scan_one(self, url, timeout, visited=None, client_redirect_depth=0, scheduled_urls=None):
         """扫描单个 URL，返回结果 dict"""
+        visited = visited or set()
+        visited.add(url)
+        session = requests.Session()
         try:
-            with requests.get(
+            with session.get(
                 url, timeout=(3, timeout),  # (连接3s, 读取timeout)
-                headers=self._get_headers(),
+                headers=dict(self._headers),
                 verify=False,
                 allow_redirects=True,
                 stream=True,
-                proxies=settings.get_proxies(),
+                proxies=self.config.proxies(),
             ) as resp:
-                return self._process_response(url, resp)
+                try:
+                    return self._process_response(
+                        url,
+                        resp,
+                        timeout,
+                        session=session,
+                        visited=visited,
+                        client_redirect_depth=client_redirect_depth,
+                        scheduled_urls=scheduled_urls,
+                    )
+                except Exception as e:
+                    return self._error_result(
+                        url,
+                        "response_parse_error",
+                        str(e),
+                        status=getattr(resp, 'status_code', '-'),
+                        server=self._safe_server_header(resp),
+                    )
+        except requests.exceptions.ConnectTimeout as e:
+            return self._error_result(url, "connect_timeout", str(e))
+        except requests.exceptions.ReadTimeout as e:
+            return self._error_result(url, "read_timeout", str(e))
+        except requests.exceptions.TooManyRedirects as e:
+            return self._error_result(url, "too_many_redirects", str(e))
+        except requests.exceptions.ProxyError as e:
+            return self._error_result(url, "proxy_error", str(e))
+        except requests.exceptions.SSLError as e:
+            return self._error_result(url, "ssl_error", str(e))
+        except (requests.exceptions.InvalidURL,
+                requests.exceptions.InvalidSchema,
+                requests.exceptions.MissingSchema) as e:
+            return self._error_result(url, "invalid_url", str(e))
+        except requests.exceptions.ConnectionError as e:
+            return self._error_result(url, "connection_error", str(e))
+        except requests.exceptions.Timeout as e:
+            return self._error_result(url, "timeout", str(e))
+        except requests.exceptions.RequestException as e:
+            return self._error_result(url, "request_error", str(e))
         except Exception as e:
-            return {
-                "url": url, "cms": "", "confidence": 0, "version": "-",
-                "title": str(e), "status": "-", "Server": "-",
-                "size": "-", "iscdn": "-", "ip": "-",
-                "address": "-", "isp": "-",
-            }
+            return self._error_result(url, "unknown_error", str(e))
+        finally:
+            session.close()
 
-    def _process_response(self, url, response):
+    def _process_response(self, url, response, timeout, session, visited=None, client_redirect_depth=0, scheduled_urls=None):
         """解析 HTTP 响应，做指纹匹配"""
-        content_length = int(response.headers.get("content-length", 1000))
+        visited = visited or {url}
+        effective_url = getattr(response, 'url', url) or url
+        content_length = int(response.headers.get("content-length", 0) or 0)
 
-        if content_length > 100000:
-            html = ""
-            size = content_length
-        else:
-            response.encoding = (
-                response.apparent_encoding
-                if response.encoding == 'ISO-8859-1'
-                else response.encoding
-            )
-            response.encoding = "utf-8" if response.encoding is None else response.encoding
-            html = response.content.decode(response.encoding, "ignore")
-            size = len(html)
+        raw_bytes = response.raw.read(self.BODY_READ_LIMIT, decode_content=True)
+        response._content = raw_bytes
+        response._content_consumed = True
+        encoding = response.encoding
+        if encoding == 'ISO-8859-1':
+            encoding = response.apparent_encoding
+        encoding = encoding or "utf-8"
+        response.encoding = encoding
+        html = raw_bytes.decode(encoding, "ignore")
+        size = content_length or len(html)
+        body_truncated = bool(content_length and content_length > len(raw_bytes))
 
         title = self._get_title(html)
+
+        if self._should_retry_https(url, response, html, title):
+            retry_url = self._build_https_retry_url(effective_url)
+            logging.info(f"检测到 HTTPS 端口误用 HTTP，请求自动升级: {url} -> {retry_url}")
+            if retry_url not in visited and not self._is_already_scheduled_upgrade_target(url, retry_url, scheduled_urls):
+                return self._scan_one(
+                    retry_url,
+                    timeout,
+                    visited=visited,
+                    client_redirect_depth=client_redirect_depth,
+                    scheduled_urls=scheduled_urls,
+                )
+
+        client_redirect_url = self._extract_client_redirect_url(
+            base_url=effective_url,
+            response=response,
+            html=html,
+            title=title,
+            visited=visited,
+            client_redirect_depth=client_redirect_depth,
+        )
+        if client_redirect_url:
+            logging.info(f"检测到前端跳转，自动跟进: {url} -> {client_redirect_url}")
+            return self._scan_one(
+                client_redirect_url,
+                timeout,
+                visited=visited,
+                client_redirect_depth=client_redirect_depth + 1,
+                scheduled_urls=scheduled_urls,
+            )
+
         server = response.headers.get("Server", "")
         server = "" if len(server) > 50 else server
 
-        # favicon 正则提取
+        datas = {
+            "url": effective_url, "title": title, "body": html,
+            "status": response.status_code, "Server": server,
+            "size": size, "header": response.headers,
+            "faviconhash": {"ehole": 0, "fofa": 0, "md5": "0"},
+            "iscdn": 0, "ip": "", "address": "", "isp": "",
+        }
+
         favicon_url_hint = None
-        if html:
-            parsed = urlsplit(url)
+        if html and not body_truncated:
+            parsed = urlsplit(effective_url)
             base = f"{parsed.scheme}://{parsed.netloc}"
             favicon_url_hint = self._find_favicon_href(html, base)
-        faviconhash = self._get_faviconhash(url, favicon_url_hint)
+        faviconhash = self._get_faviconhash(
+            effective_url,
+            favicon_url_hint,
+            session=session,
+        )
+        datas["faviconhash"] = faviconhash
+        match_info = self.identify.match(datas)
 
         # CDN/IP (默认关闭，--cdn 开启)
-        if Extra.cdn:
+        if self.config.cdn:
             try:
-                iscdn, iplist = self.ip_factory.factory(url)
+                iscdn, iplist = self.ip_factory.factory(effective_url)
                 if iscdn == 0 and self.ip_factory.check_cdn_headers(response.headers):
                     iscdn = 1
                 iplist_str = ','.join(set(iplist))
@@ -184,25 +261,15 @@ class Finger:
         else:
             iscdn, iplist_str = 0, ""
 
-        # 指纹匹配
-        datas = {
-            "url": url, "title": title, "body": html,
-            "status": response.status_code, "Server": server,
-            "size": size, "header": response.headers,
-            "faviconhash": faviconhash, "iscdn": iscdn,
-            "ip": iplist_str, "address": "", "isp": "",
-        }
-        match_info = self.identify.match(datas)
-
         # 控制台实时输出（贴近 V5.1，增加置信度）
         if match_info["cms"]:
             from config.color import color
             logging.success("{0} {1} {2} {4} {3}  [{5}]".format(
-                color.green(match_info['cms']),
+                self._format_fingerprint_display(match_info),
                 color.blue(server),
                 str(title)[:50],
                 color.yellow(str(response.status_code)),
-                url,
+                effective_url,
                 color.cyan(str(match_info['confidence'])),
             ))
 
@@ -214,9 +281,10 @@ class Finger:
             version = version.strip()
 
         return {
-            "url": url,
+            "url": effective_url,
             "cms": match_info["cms"],
             "confidence": match_info["confidence"],
+            "fingerprints": match_info.get("fingerprints", []),
             "version": version or "-",
             "title": title,
             "status": response.status_code,
@@ -227,12 +295,189 @@ class Finger:
             "address": "",
             "isp": "",
             "faviconhash": faviconhash,
+            "error_type": "",
+            "error_detail": "",
         }
+
+    @staticmethod
+    def _format_fingerprint_display(match_info):
+        from config.color import color
+        fingerprints = match_info.get("fingerprints") or []
+        if not fingerprints:
+            return color.green(match_info.get("cms", ""))
+
+        parts = []
+        for item in fingerprints:
+            text = f"{item.get('cms', '')}[{item.get('confidence', 0)}]"
+            confidence = item.get("confidence", 0) or 0
+            if confidence >= 80:
+                parts.append(color.green(text))
+            elif confidence >= 50:
+                parts.append(color.yellow(text))
+            else:
+                parts.append(text)
+        return ','.join(parts)
+
+    def _should_retry_https(self, url, response, html, title):
+        parsed = urlsplit(url)
+        if parsed.scheme.lower() != 'http':
+            return False
+        if getattr(response, 'status_code', None) != 400:
+            return False
+
+        content = ' '.join([
+            str(title or ''),
+            str(html or ''),
+        ]).lower()
+        return any(marker in content for marker in self.HTTPS_UPGRADE_MARKERS)
+
+    @staticmethod
+    def _build_https_retry_url(url):
+        parsed = urlsplit(url)
+        return parsed._replace(scheme='https').geturl()
+
+    @staticmethod
+    def _normalize_url_identity(url):
+        parsed = urlsplit(url)
+        port = parsed.port
+        default_port = 443 if parsed.scheme.lower() == 'https' else 80
+        port = default_port if port is None else port
+        path = parsed.path or '/'
+        query = ('?' + parsed.query) if parsed.query else ''
+        return (
+            parsed.scheme.lower(),
+            (parsed.hostname or '').lower(),
+            port,
+            path,
+            query,
+        )
+
+    def _is_already_scheduled_upgrade_target(self, source_url, retry_url, scheduled_urls):
+        if not scheduled_urls:
+            return False
+        retry_identity = self._normalize_url_identity(retry_url)
+        source_identity = self._normalize_url_identity(source_url)
+        for scheduled in scheduled_urls:
+            scheduled_identity = self._normalize_url_identity(scheduled)
+            if scheduled_identity == retry_identity and scheduled_identity != source_identity:
+                return True
+        return False
+
+    def _extract_client_redirect_url(self, base_url, response, html, title, visited, client_redirect_depth):
+        if client_redirect_depth >= self.MAX_CLIENT_REDIRECTS:
+            return None
+        if getattr(response, 'status_code', None) != 200:
+            return None
+        if not self._is_probable_client_redirect_page(html, title):
+            return None
+
+        target = self._extract_meta_refresh_target(html) or self._extract_js_redirect_target(html)
+        if not target:
+            return None
+
+        target_url = urljoin(base_url, target.strip())
+        if target_url in visited:
+            return None
+        if not self._is_same_scan_origin(base_url, target_url):
+            return None
+        return target_url
+
+    @staticmethod
+    def _extract_meta_refresh_target(html):
+        patterns = (
+            r'<meta[^>]+http-equiv=["\']?refresh["\']?[^>]+content=["\'][^"\']*?url\s*=\s*([^"\';>]+)',
+            r'<meta[^>]+content=["\'][^"\']*?url\s*=\s*([^"\';>]+)[^>]*http-equiv=["\']?refresh["\']?',
+            r'<meta[^>]+http-equiv=["\']?refresh["\']?[^>]+content=([^ >]+)',
+        )
+        for pattern in patterns:
+            match = re.search(pattern, html, re.I)
+            if not match:
+                continue
+            content = match.group(1).strip().strip("'\"")
+            if pattern.endswith('content=([^ >]+)'):
+                url_match = re.search(r'url\s*=\s*(.+)', content, re.I)
+                if url_match:
+                    content = url_match.group(1).strip().strip("'\"")
+            if content:
+                return content
+        return None
+
+    @staticmethod
+    def _extract_js_redirect_target(html):
+        patterns = (
+            r'(?:window\.)?(?:top\.)?location(?:\.href)?\s*=\s*[\'"]([^\'"]+)[\'"]',
+            r'location\.replace\(\s*[\'"]([^\'"]+)[\'"]',
+        )
+        for pattern in patterns:
+            match = re.search(pattern, html, re.I)
+            if match:
+                target = match.group(1).strip()
+                if target:
+                    return target
+        return None
+
+    @staticmethod
+    def _is_same_scan_origin(source_url, target_url):
+        source = urlsplit(source_url)
+        target = urlsplit(target_url)
+        if target.scheme.lower() not in {'http', 'https'}:
+            return False
+        return bool(source.hostname and target.hostname and source.hostname.lower() == target.hostname.lower())
+
+    @staticmethod
+    def _is_probable_client_redirect_page(html, title):
+        if not html:
+            return False
+        if not (
+            re.search(r'<meta[^>]+http-equiv=["\']?refresh', html, re.I)
+            or re.search(r'(?:window\.)?(?:top\.)?location(?:\.href)?\s*=', html, re.I)
+            or re.search(r'location\.replace\(', html, re.I)
+        ):
+            return False
+
+        sanitized = re.sub(r'<script\b[^>]*>.*?</script>', ' ', html, flags=re.I | re.S)
+        sanitized = re.sub(r'<style\b[^>]*>.*?</style>', ' ', sanitized, flags=re.I | re.S)
+        visible = re.sub(r'<[^>]+>', ' ', sanitized)
+        visible = re.sub(r'\s+', ' ', visible).strip()
+        if len(visible) <= 120:
+            return True
+
+        title_text = (title or '').strip().lower()
+        return title_text in {'redirect', 'redirecting', 'loading', 'login'}
+
+    def _error_result(self, url, error_type, error_detail, status='-', server=''):
+        return {
+            "url": url,
+            "cms": "-",
+            "confidence": 0,
+            "version": "-",
+            "title": "",
+            "status": status,
+            "Server": server or "-",
+            "size": "-",
+            "iscdn": "-",
+            "ip": "-",
+            "address": "-",
+            "isp": "-",
+            "faviconhash": {"ehole": 0, "fofa": 0, "md5": "0"},
+            "error_type": error_type,
+            "error_detail": error_detail,
+        }
+
+    @staticmethod
+    def _safe_server_header(response):
+        try:
+            server = response.headers.get("Server", "")
+        except Exception:
+            return ""
+        return "" if len(server) > 50 else server
 
     # ── HTTP 请求工具 ──────────────────────
 
     def _get_headers(self):
         ua = random.choice(settings.user_agents)
+        if self.config.user_agents:
+            ua = random.choice(self.config.user_agents)
         return {
             'Accept': 'text/html,application/xhtml+xml,'
                       'application/xml;q=0.9,*/*;q=0.8',
@@ -249,27 +494,31 @@ class Finger:
 
     # ── favicon ───────────────────────────
 
-    def _get_faviconhash(self, url, favicon_url_hint=None):
+    def _get_faviconhash(self, url, favicon_url_hint=None, session=None, skip_fetch=False):
         favicon_url = url
+        if skip_fetch:
+            return {'ehole': 0, 'fofa': 0, 'md5': '0'}
         try:
             parsed = urlsplit(url)
             base = f"{parsed.scheme}://{parsed.netloc}"
             target = favicon_url_hint if favicon_url_hint else urljoin(base, "favicon.ico")
-            h = self._get_headers()
+            favicon_url = target
+            h = dict(self._headers)
             h['Accept'] = 'image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5'
             h['Sec-Fetch-Dest'] = 'image'
             h['Sec-Fetch-Mode'] = 'no-cors'
             h['Sec-Fetch-Site'] = 'same-origin'
             h.pop('Upgrade-Insecure-Requests', None)
             h.pop('Sec-Fetch-User', None)
-            resp = requests.get(target, headers=h, timeout=3, verify=False, proxies=settings.get_proxies())
+            requester = session or requests
+            resp = requester.get(target, headers=h, timeout=3, verify=False, proxies=self.config.proxies())
             raw = resp.content
             return {'ehole': mmh3.hash(base64.encodebytes(raw)),
                     'fofa': mmh3.hash(base64.b64encode(raw)),
                     'md5': hashlib.md5(raw).hexdigest()}
         except Exception as e:
             logging.warning(f"favicon 获取失败: {favicon_url} → {e}")
-            return {'ehole': 0, 'fofa': 0}
+            return {'ehole': 0, 'fofa': 0, 'md5': '0'}
 
     def _find_favicon_href(self, html, base_url):
         """正则提取 favicon 路径，兼容 href/rel 任意顺序"""
@@ -348,77 +597,3 @@ class Finger:
         if m: return m.group(1).strip()
         text = re.sub(r'<[^>]+>', ' ', html).strip()
         return text if len(text) <= 200 else ''
-
-    # ── 输出 ──────────────────────────────
-
-    @staticmethod
-    def _save_xlsx(results, output_dir, timestamp):
-        filepath = os.path.join(output_dir, f"{timestamp}.xlsx")
-        wb = xlsxwriter.Workbook(filepath)
-        ws = wb.add_worksheet('Finger scan')
-        bold = wb.add_format({"bold": True, "valign": "center"})
-        red = wb.add_format({"bold": True, "font_color": "red"})
-        yellow = wb.add_format({"bold": True, "font_color": "#FF8C00"})
-
-        headers = ['Url', 'Title', 'CMS', 'Confidence', 'Version',
-                   'Server', 'Status', 'Size', 'IP', 'Address', 'ISP', 'DefaultCreds']
-        col_widths = [30, 40, 30, 10, 15, 10, 6, 6, 12, 25, 25, 18]
-        for i, (h, w) in enumerate(zip(headers, col_widths)):
-            ws.set_column(i, i, w)
-            ws.write(0, i, h, bold)
-
-        # 加载默认口令库 (大小写不敏感 + 原始key标注)
-        default_creds = {}
-        creds_orig_keys = {}
-        creds_file = os.path.join(path.library, 'default_creds.json')
-        if os.path.exists(creds_file):
-            with open(creds_file, 'r', encoding='utf-8') as f:
-                raw = json.load(f)
-            default_creds = {k.lower(): v for k, v in raw.items()}
-            creds_orig_keys = {k.lower(): k for k in raw}
-
-        for row, v in enumerate(results, start=1):
-            ws.write(row, 0, v.get("url", ""))
-            ws.write(row, 1, v.get("title", ""))
-            cms = v.get("cms", "-")
-            conf = v.get("confidence", 0)
-            fmt = red if conf >= 80 else (yellow if conf >= 50 else None)
-            ws.write(row, 2, cms, fmt)
-            ws.write(row, 3, conf if cms != "-" else "")
-            ws.write(row, 4, v.get("version", ""))
-            ws.write(row, 5, v.get("Server", ""))
-            ws.write(row, 6, v.get("status", ""))
-            ws.write(row, 7, v.get("size", ""))
-            ws.write(row, 8, v.get("ip", ""))
-            ws.write(row, 9, v.get("address", ""))
-            ws.write(row, 10, v.get("isp", ""))
-            # 默认口令
-            creds = []
-            if cms and cms != "-":
-                seen = set()
-                for fp in cms.split(','):
-                    fp = fp.strip()
-                    fp_lower = fp.lower()
-                    # 1. 精确匹配
-                    if fp_lower in default_creds:
-                        label = creds_orig_keys.get(fp_lower, fp)
-                        for c in default_creds[fp_lower]:
-                            if '$hostname' in c: continue
-                            entry = f"[{label}] {c}"
-                            if entry not in seen:
-                                creds.append(entry)
-                                seen.add(entry)
-                    # 2. 模糊匹配: key是产品名子串(来源标注)
-                    for k, v in default_creds.items():
-                        if k != fp_lower and len(k) >= 4 and k in fp_lower:
-                            label = creds_orig_keys.get(k, k)
-                            for c in v:
-                                if '$hostname' in c: continue
-                                entry = f"[{label}] {c}"
-                                if entry not in seen:
-                                    creds.append(entry)
-                                    seen.add(entry)
-            ws.write(row, 11, ' | '.join(creds) if creds else "")
-
-        wb.close()
-        return filepath

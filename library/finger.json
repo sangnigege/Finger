@@ -53,14 +53,6 @@
 			"logic": "or"
 		},
 		{
-			"cms": "0example",
-			"method": "keyword",
-			"location": "body",
-			"keyword": [
-				"<title>Example Domain</title>"
-			]
-		},
-		{
 			"cms": "1024cms",
 			"method": "keyword",
 			"location": "body",
@@ -2108,14 +2100,6 @@
 			"location": "header",
 			"keyword": [
 				"sfcurl=deleted;"
-			]
-		},
-		{
-			"cms": "Access-Control",
-			"method": "keyword",
-			"location": "header",
-			"keyword": [
-				"Access-Control-Allow-Methods"
 			]
 		},
 		{
@@ -4877,12 +4861,23 @@
 			]
 		},
 		{
-			"cms": "ALERTMANAGER",
+			"cms": "Alertmanager",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"defaultcreator"
-			]
+				"defaultCreator",
+				"Elm.Main.init"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "Alertmanager",
+			"method": "keyword",
+			"location": "title",
+			"keyword": [
+				"Alertmanager"
+			],
+			"logic": "and"
 		},
 		{
 			"cms": "AlertonBCM-WEB",
@@ -4985,7 +4980,7 @@
 			]
 		},
 		{
-			"cms": "AlibabaDruid",
+			"cms": "Alibaba-Druid",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -4994,7 +4989,9 @@
 				"druid.common.buildHead",
 				"druid.index.init(",
 				"clickdruid.login.login",
-				"druid.index.init"
+				"druid.index.init",
+				"Druid Stat Index",
+				"View JSON API"
 			],
 			"logic": "or"
 		},
@@ -5586,30 +5583,24 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"Amazon Web Services Web Application Firewall",
-				"Amazon"
-			],
-			"logic": "or"
+				"Amazon Web Services Web Application Firewall"
+			]
 		},
 		{
 			"cms": "AmazonWebServicesWebApplicationFirewall(Amazon)",
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
-				"Amazon Web Services Web Application Firewall",
-				"Amazon"
-			],
-			"logic": "or"
+				"Amazon Web Services Web Application Firewall"
+			]
 		},
 		{
 			"cms": "AmazonWebServicesWebApplicationFirewall(Amazon)",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
-				"Amazon Web Services Web Application Firewall",
-				"Amazon"
-			],
-			"logic": "or"
+				"Amazon Web Services Web Application Firewall"
+			]
 		},
 		{
 			"cms": "Amber",
@@ -6682,10 +6673,7 @@
 			"keyword": [
 				"<title>Apache Druid</title>",
 				"content=\"Apache Druid console\"",
-				"clickdruid.login.login",
-				"<title>druid monitor</title>",
-				"druid.common.buildHead",
-				"druid.index.init"
+				"Apache Druid console"
 			],
 			"logic": "or"
 		},
@@ -6752,7 +6740,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "apache-nifi",
+			"cms": "Apache-NiFi",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -6868,14 +6856,6 @@
 			"logic": "or"
 		},
 		{
-			"cms": "Apache-Struts2",
-			"method": "keyword",
-			"location": "header",
-			"keyword": [
-				"jsessionid"
-			]
-		},
-		{
 			"cms": "Apache-Unomi",
 			"method": "keyword",
 			"location": "body",
@@ -6913,7 +6893,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "ApacheAirflow",
+			"cms": "Apache-Airflow",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -6925,7 +6905,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "ApacheAirflow",
+			"cms": "Apache-Airflow",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -6952,17 +6932,18 @@
 			]
 		},
 		{
-			"cms": "ApacheDruid",
+			"cms": "Apache-Druid",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
 				"content=\"Apache Druid console\"",
-				"<title>Apache Druid</title>"
+				"<title>Apache Druid</title>",
+				"Apache Druid console"
 			],
 			"logic": "or"
 		},
 		{
-			"cms": "ApacheDruid",
+			"cms": "Apache-Druid",
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
@@ -6970,12 +6951,14 @@
 			]
 		},
 		{
-			"cms": "ApacheDruid",
+			"cms": "Apache-Druid",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
 				"Apache Druid"
-			]
+			],
+			"version_regex": "Apache Druid[^0-9]*([\\d]+(?:\\.[\\d]+)+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "ApacheFlink",
@@ -7323,7 +7306,7 @@
 			]
 		},
 		{
-			"cms": "Apahce-Airflow",
+			"cms": "Apache-Airflow",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -21130,7 +21113,7 @@
 			]
 		},
 		{
-			"cms": "cockpit",
+			"cms": "Cockpit",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -22140,23 +22123,29 @@
 			"location": "title",
 			"keyword": [
 				"consul by hashicorp"
-			]
+			],
+			"logic": "and"
 		},
 		{
-			"cms": "ConsulbyHashiCorp",
-			"method": "keyword",
-			"location": "title",
-			"keyword": [
-				"Consul"
-			]
-		},
-		{
-			"cms": "ConsulbyHashiCorp",
+			"cms": "Consul-HashiCorp",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"Consul"
-			]
+				"Log in with a token",
+				"SecretID",
+				"Contact your administrator for login credentials."
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "Consul-HashiCorp",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"Consul login failed",
+				"Could not log in to provider"
+			],
+			"logic": "or"
 		},
 		{
 			"cms": "Contao",
@@ -29728,7 +29717,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "druid",
+			"cms": "Alibaba-Druid",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -39478,7 +39467,9 @@
 				"href=\"https://docs.gitea.io\">Help</a>",
 				"content=\"Gitea - Git with a cup of tea\""
 			],
-			"logic": "or"
+			"logic": "or",
+			"version_regex": "Version[:：]\\s*([0-9]+(?:\\.[0-9]+)+(?:[+-][0-9A-Za-z.-]+)?)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Gitea",
@@ -39537,7 +39528,7 @@
 			]
 		},
 		{
-			"cms": "Gitlab",
+			"cms": "GitLab",
 			"method": "faviconhash",
 			"location": "body",
 			"keyword": [
@@ -39547,26 +39538,21 @@
 			"logic": "or"
 		},
 		{
-			"cms": "Gitlab",
+			"cms": "GitLab",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
 				"assets/gitlab_logo",
 				"gon.default_issues_tracker",
 				"content=\"gitlab community edition\"",
-				"content=\"gitlab",
-				"<a href=\"https://about.gitlab.com/\">about gitlab",
 				"class=\"col-sm-7 brand-holder pull-left\"",
 				"<a href=\"https://about.gitlab.com/\">About GitLab</a>",
-				"GitLab Community Edition",
-				"content=\"gitla"
+				"GitLab Community Edition"
 			],
-			"logic": "or",
-			"version_regex": "GitLab[^0-9]*([\\d.]+)",
-			"version_location": "body"
+			"logic": "or"
 		},
 		{
-			"cms": "Gitlab",
+			"cms": "GitLab",
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
@@ -39576,7 +39562,7 @@
 			"logic": "or"
 		},
 		{
-			"cms": "Gitlab",
+			"cms": "GitLab",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -40723,7 +40709,7 @@
 				"public/build/grafana"
 			],
 			"logic": "or",
-			"version_regex": "Grafana[^0-9]*([\\d.]+)",
+			"version_regex": "\"version\"\\s*:\\s*\"([\\d]+(?:\\.[\\d]+)+)\"|grafana/([\\d]+(?:\\.[\\d]+)+)",
 			"version_location": "body"
 		},
 		{
@@ -43112,7 +43098,7 @@
 			]
 		},
 		{
-			"cms": "harbor",
+			"cms": "Harbor",
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
@@ -43120,21 +43106,30 @@
 			]
 		},
 		{
-			"cms": "harbor",
+			"cms": "Harbor",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
 				"harbor.app",
-				"<title>Harbor</title>"
+				"<title>Harbor</title>",
+				"<harbor-app>"
 			],
-			"logic": "or"
+			"logic": "or",
+			"expected_server": [
+				"Harbor",
+				"harbor-nginx"
+			]
 		},
 		{
-			"cms": "harbor",
+			"cms": "Harbor",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
 				"Harbor"
+			],
+			"expected_server": [
+				"Harbor",
+				"harbor-nginx"
 			]
 		},
 		{
@@ -45785,16 +45780,6 @@
 			"keyword": [
 				"HTTP Kit"
 			]
-		},
-		{
-			"cms": "HttpOnly",
-			"method": "keyword",
-			"location": "header",
-			"keyword": [
-				"httponly",
-				"httponly@取消此条规则"
-			],
-			"logic": "or"
 		},
 		{
 			"cms": "http基本认证",
@@ -55617,6 +55602,17 @@
 		{
 			"cms": "Jupyter Notebook",
 			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"id=\"jupyter-config-data\"",
+				"notebookPage='tree'",
+				"jp-ThemedContainer"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "Jupyter Notebook",
+			"method": "keyword",
 			"location": "title",
 			"keyword": [
 				"Jupyter Notebook"
@@ -58257,7 +58253,6 @@
 			"location": "body",
 			"keyword": [
 				"login_files",
-				"platform",
 				"欢迎登陆系统"
 			],
 			"logic": "or"
@@ -66335,9 +66330,7 @@
 			"location": "title",
 			"keyword": [
 				"MinIO Browser"
-			],
-			"version_regex": "MinIO\\s*([\\d.]+)",
-			"version_location": "title"
+			]
 		},
 		{
 			"cms": "MinIO",
@@ -73287,7 +73280,7 @@
 			]
 		},
 		{
-			"cms": "nexus",
+			"cms": "Nexus Repository Manager",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -73303,9 +73296,7 @@
 			"location": "body",
 			"keyword": [
 				"1323738809"
-			],
-			"version_regex": "Nexus\\s*Repository\\s*Manager\\s*([\\d.]+)",
-			"version_location": "title"
+			]
 		},
 		{
 			"cms": "Nexus Repository Manager",
@@ -83368,7 +83359,7 @@
 			]
 		},
 		{
-			"cms": "portainer",
+			"cms": "Portainer",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -83376,12 +83367,15 @@
 				"<meta name=\"author\" content=\"Portainer.io\" />",
 				"content=\"Portainer.io\"",
 				"ng-app=\"portainer\"",
-				"meta name=\"author\" content=\"Portainer.io"
+				"meta name=\"author\" content=\"Portainer.io",
+				"data-edition=\"BE\"",
+				"react-query-dev-tools",
+				"ui-view=\"content\""
 			],
 			"logic": "or"
 		},
 		{
-			"cms": "portainer",
+			"cms": "Portainer",
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
@@ -83389,7 +83383,7 @@
 			]
 		},
 		{
-			"cms": "portainer",
+			"cms": "Portainer",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -84272,7 +84266,7 @@
 			]
 		},
 		{
-			"cms": "prometheus",
+			"cms": "Prometheus",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -86066,10 +86060,18 @@
 			"keyword": [
 				"content=\"ruby on rails",
 				"alt=\"ruby on rails\"",
-				"type=\"hidden\" name=\"authenticity_token",
-				"href=\"/assets/"
+				"type=\"hidden\" name=\"authenticity_token"
 			],
-			"logic": "or"
+			"logic": "or",
+			"expected_server": [
+				"Passenger",
+				"Puma",
+				"Unicorn",
+				"Thin",
+				"WEBrick",
+				"Mongrel",
+				"Ruby"
+			]
 		},
 		{
 			"cms": "RAILS-Framework",
@@ -86290,9 +86292,7 @@
 				"Welcome to Rancher",
 				"<meta name=\"ui/configs/asset-manifest\" content="
 			],
-			"logic": "or",
-			"version_regex": "Rancher[^0-9]*([\\d.]+)",
-			"version_location": "body"
+			"logic": "or"
 		},
 		{
 			"cms": "Rancher",
@@ -86300,9 +86300,7 @@
 			"location": "header",
 			"keyword": [
 				"Set-Cookie: PL=rancher"
-			],
-			"version_regex": "Rancher\\s*v?([\\d.]+)",
-			"version_location": "title"
+			]
 		},
 		{
 			"cms": "ranzhi",
@@ -86310,14 +86308,6 @@
 			"location": "body",
 			"keyword": [
 				"/sys/index.php?m=user&f=login&referer="
-			]
-		},
-		{
-			"cms": "ranzhi",
-			"method": "keyword",
-			"location": "header",
-			"keyword": [
-				"theme"
 			]
 		},
 		{
@@ -89578,7 +89568,6 @@
 				"datalayer','gtm-tl7g2lw'",
 				"datalayer\",\"gtm-tl7g2lw\"",
 				"windows_download_name: \"/download_installer_win.php\",",
-				"datalayer",
 				"gtm-tl7g2lw'"
 			],
 			"logic": "or"
@@ -89731,7 +89720,7 @@
 				"ad report",
 				"user_blur();"
 			],
-			"logic": "or"
+			"logic": "and"
 		},
 		{
 			"cms": "SANGFOR-S5100",
@@ -95461,7 +95450,7 @@
 			]
 		},
 		{
-			"cms": "Sonatype Nexus Repository Manager",
+			"cms": "Nexus Repository Manager",
 			"method": "faviconhash",
 			"location": "body",
 			"keyword": [
@@ -98529,7 +98518,8 @@
 			"keyword": [
 				"<div id=\"swagger-ui\"></div>",
 				"swagger-ui.css",
-				"swagger-ui.js",
+				"swagger-ui-bundle.js",
+				"swagger-ui-standalone-preset.js",
 				"Swagger UI"
 			],
 			"logic": "or"
@@ -100615,7 +100605,6 @@
 			"location": "body",
 			"keyword": [
 				"nas.cgi",
-				"x-ua-compatible",
 				"nas setup",
 				"window.open(\"http://www.terra-master.com/\",\"_blank\");"
 			],
@@ -110439,8 +110428,7 @@
 			"location": "body",
 			"keyword": [
 				"VMware Workspace ONE Access",
-				"VMware Workspace",
-				"Assist"
+				"VMware Workspace"
 			],
 			"logic": "or"
 		},
@@ -111953,7 +111941,6 @@
 			"keyword": [
 				"isdx",
 				"rnddata",
-				"redirecturl",
 				"szfeatures"
 			],
 			"logic": "or"
@@ -126503,14 +126490,6 @@
 			]
 		},
 		{
-			"cms": "国家数字化学习资源中心系统",
-			"method": "keyword",
-			"location": "body",
-			"keyword": [
-				"FrontEnd"
-			]
-		},
-		{
 			"cms": "国微CMS政府网站系统_县市门户版",
 			"method": "keyword",
 			"location": "body",
@@ -131462,7 +131441,7 @@
 				"方卡在线",
 				"Isite"
 			],
-			"logic": "or"
+			"logic": "and"
 		},
 		{
 			"cms": "方卡在线(Isite)",
@@ -131472,7 +131451,7 @@
 				"方卡在线",
 				"Isite"
 			],
-			"logic": "or"
+			"logic": "and"
 		},
 		{
 			"cms": "方天云智慧平台系统",
@@ -134370,8 +134349,7 @@
 			"location": "body",
 			"keyword": [
 				"isHighPerformance : !!SFIsHighPerformance,",
-				"location.href = \"./ui/\";",
-				"<title>Loading...</title>"
+				"location.href = \"./ui/\";"
 			],
 			"logic": "or"
 		},
@@ -142448,8 +142426,9 @@
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"keycloak",
-				"realm"
+				"id=\"kc-form-login\"",
+				"id=\"kc-header\"",
+				"id=\"kc-page-title\""
 			],
 			"logic": "and"
 		},
@@ -142460,6 +142439,16 @@
 			"keyword": [
 				"Casdoor"
 			]
+		},
+		{
+			"cms": "Casdoor",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"Casdoor - An Identity and Access Management",
+				"site/casdoor/manifest.json"
+			],
+			"logic": "or"
 		},
 		{
 			"cms": "Authentik",
@@ -142505,7 +142494,7 @@
 			]
 		},
 		{
-			"cms": "cockpit",
+			"cms": "Cockpit",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -142513,7 +142502,7 @@
 			]
 		},
 		{
-			"cms": "harbor",
+			"cms": "Harbor",
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
@@ -142539,7 +142528,7 @@
 			]
 		},
 		{
-			"cms": "portainer",
+			"cms": "Portainer",
 			"method": "keyword",
 			"location": "title",
 			"keyword": [
@@ -142788,7 +142777,9 @@
 			"location": "title",
 			"keyword": [
 				"Uptime Kuma"
-			]
+			],
+			"version_regex": "Version[:：]\\s*([\\d]+(?:\\.[\\d]+)+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "EMQX-MQTT Broker",
@@ -142872,7 +142863,19 @@
 			"keyword": [
 				"Argo CD",
 				"ArgoCD"
-			]
+			],
+			"logic": "or"
+		},
+		{
+			"cms": "ArgoCD",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"Let's get stuff deployed!",
+				"argo__logo",
+				"assets/images/argologo.svg"
+			],
+			"logic": "or"
 		},
 		{
 			"cms": "宏杉MacroSAN存储",
@@ -145304,7 +145307,9 @@
 				"Apache Flink",
 				"Flink Dashboard"
 			],
-			"logic": "or"
+			"logic": "or",
+			"version_regex": "Apache Flink[^0-9]*([\\d]+(?:\\.[\\d]+)+)",
+			"version_location": "body"
 		},
 		{
 			"cms": "Apache-NiFi",
@@ -146260,24 +146265,14 @@
 			"logic": "or"
 		},
 		{
-			"cms": "Apache-Struts2",
+			"cms": "Alibaba-Druid",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"struts",
-				".action",
-				".do"
-			],
-			"logic": "or"
-		},
-		{
-			"cms": "Alibaba-Druid连接池",
-			"method": "keyword",
-			"location": "body",
-			"keyword": [
-				"druid",
 				"Druid Stat",
-				"Druid Spring"
+				"Druid Spring",
+				"Druid Stat Index",
+				"View JSON API"
 			],
 			"logic": "or"
 		},
@@ -146485,12 +146480,10 @@
 			"logic": "and"
 		},
 		{
-			"cms": "Gitlab",
+			"cms": "GitLab",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
-				"gitlab",
-				"GitLab",
 				"gitlab-favicon"
 			],
 			"logic": "or"
@@ -146511,7 +146504,10 @@
 			"keyword": [
 				"/cas"
 			],
-			"logic": "and"
+			"logic": "and",
+			"expected_server": [
+				"CAS"
+			]
 		},
 		{
 			"cms": "H3C-Web-managerment-Home",
@@ -146594,60 +146590,6 @@
 			"location": "url",
 			"keyword": [
 				"/swagger-ui.html"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "Swagger",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/swagger.json"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "Swagger",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/swagger-resources"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "Swagger UI",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/swagger-ui.html"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "Swagger UI",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/swagger.json"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "Swagger UI",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/v1/swagger.json"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "Swagger UI",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/api-docs/swagger.yaml"
 			],
 			"logic": "and"
 		},
@@ -146769,34 +146711,7 @@
 			"logic": "and"
 		},
 		{
-			"cms": "harbor",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/harbor/"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "harbor",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/api/v2.0/"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "portainer",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/portainer/"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "portainer",
+			"cms": "Portainer",
 			"method": "keyword",
 			"location": "url",
 			"keyword": [
@@ -146841,34 +146756,28 @@
 			"logic": "and"
 		},
 		{
-			"cms": "prometheus",
+			"cms": "Prometheus",
 			"method": "keyword",
-			"location": "url",
+			"location": "title",
 			"keyword": [
-				"/graph"
+				"Prometheus Time Series Collection and Processing Server",
+				"Prometheus"
 			],
-			"logic": "and"
+			"logic": "or"
 		},
 		{
-			"cms": "prometheus",
+			"cms": "Prometheus",
 			"method": "keyword",
-			"location": "url",
+			"location": "body",
 			"keyword": [
-				"/targets"
+				"GLOBAL_AGENT_MODE='false'",
+				"GLOBAL_LOOKBACKDELTA=",
+				"The Prometheus Time Series Collection and Processing Server magic value is replaced during serving by Prometheus."
 			],
-			"logic": "and"
+			"logic": "or"
 		},
 		{
-			"cms": "prometheus",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/metrics"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "ALERTMANAGER",
+			"cms": "Alertmanager",
 			"method": "keyword",
 			"location": "url",
 			"keyword": [
@@ -146877,7 +146786,7 @@
 			"logic": "and"
 		},
 		{
-			"cms": "ALERTMANAGER",
+			"cms": "Alertmanager",
 			"method": "keyword",
 			"location": "url",
 			"keyword": [
@@ -146918,24 +146827,6 @@
 			"location": "url",
 			"keyword": [
 				"/solr"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "Apache-Druid",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/druid/"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "Apache-Druid",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/druid"
 			],
 			"logic": "and"
 		},
@@ -147003,15 +146894,6 @@
 			"logic": "and"
 		},
 		{
-			"cms": "Zabbix",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/zabbix"
-			],
-			"logic": "and"
-		},
-		{
 			"cms": "Webmin",
 			"method": "keyword",
 			"location": "url",
@@ -147030,16 +146912,7 @@
 			"logic": "and"
 		},
 		{
-			"cms": "cockpit",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/cockpit/"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "cockpit",
+			"cms": "Cockpit",
 			"method": "keyword",
 			"location": "url",
 			"keyword": [
@@ -147106,15 +146979,6 @@
 			"method": "keyword",
 			"location": "url",
 			"keyword": [
-				"/lab"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "Jupyter Notebook",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
 				"/notebooks"
 			],
 			"logic": "and"
@@ -147138,15 +147002,6 @@
 			"logic": "and"
 		},
 		{
-			"cms": "Nexus Repository Manager",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/nexus"
-			],
-			"logic": "and"
-		},
-		{
 			"cms": "通达OA",
 			"method": "keyword",
 			"location": "url",
@@ -147165,40 +147020,11 @@
 			"logic": "and"
 		},
 		{
-			"cms": "druid",
+			"cms": "Alibaba-Druid",
 			"method": "keyword",
 			"location": "url",
 			"keyword": [
 				"/druid/login.html"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "druid",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/druid/"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "Drupal",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/user/login"
-			],
-			"logic": "and",
-			"version_regex": "Drupal\\s*([\\d.]+)",
-			"version_location": "title"
-		},
-		{
-			"cms": "Drupal",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/admin/"
 			],
 			"logic": "and"
 		},
@@ -147367,17 +147193,6 @@
 			"logic": "and"
 		},
 		{
-			"cms": "Harbor",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/harbor/"
-			],
-			"logic": "and",
-			"version_regex": "Harbor\\s*v?([\\d.]+)",
-			"version_location": "title"
-		},
-		{
 			"cms": "Rancher",
 			"method": "keyword",
 			"location": "url",
@@ -147389,13 +147204,12 @@
 		{
 			"cms": "Portainer",
 			"method": "keyword",
-			"location": "url",
+			"location": "body",
 			"keyword": [
-				"/portainer/"
+				"ng-app=\"portainer\"",
+				"content=\"Portainer.io\""
 			],
-			"logic": "and",
-			"version_regex": "Portainer\\s*([\\d.]+)",
-			"version_location": "title"
+			"logic": "or"
 		},
 		{
 			"cms": "Roundcube",
@@ -147452,15 +147266,6 @@
 			"logic": "and"
 		},
 		{
-			"cms": "Sonatype-Nexus",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/nexus/"
-			],
-			"logic": "and"
-		},
-		{
 			"cms": "Artifactory",
 			"method": "keyword",
 			"location": "url",
@@ -147490,29 +147295,40 @@
 		{
 			"cms": "Prometheus",
 			"method": "keyword",
-			"location": "url",
+			"location": "title",
 			"keyword": [
-				"/graph"
-			],
-			"logic": "and",
-			"version_regex": "Prometheus\\s*v?([\\d.]+)",
-			"version_location": "title"
-		},
-		{
-			"cms": "Prometheus",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/targets"
+				"Prometheus Time Series Collection and Processing Server"
 			],
 			"logic": "and"
 		},
 		{
-			"cms": "Alertmanager",
+			"cms": "Prometheus",
 			"method": "keyword",
-			"location": "url",
+			"location": "body",
 			"keyword": [
-				"/alerts"
+				"GLOBAL_AGENT_MODE='false'",
+				"GLOBAL_LOOKBACKDELTA="
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "Alibaba-Druid",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"<title>druid monitor</title>",
+				"$.namespace(\"druid.login\")"
+			],
+			"logic": "and"
+		},
+		{
+			"cms": "Alibaba-Druid",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"Druid Stat Index",
+				"View JSON API",
+				"$.namespace(\"druid.index\")"
 			],
 			"logic": "and"
 		},
@@ -147522,15 +147338,6 @@
 			"location": "url",
 			"keyword": [
 				"/netdata/"
-			],
-			"logic": "and"
-		},
-		{
-			"cms": "Cockpit",
-			"method": "keyword",
-			"location": "url",
-			"keyword": [
-				"/cockpit/"
 			],
 			"logic": "and"
 		},
@@ -148514,24 +148321,24 @@
 			"logic": "and"
 		},
 		{
-			"cms": "argocd",
+			"cms": "ArgoCD",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
 				"<title>argo cd</title>",
 				"argoproj.github.io"
 			],
-			"logic": "and"
+			"logic": "or"
 		},
 		{
-			"cms": "casdoor",
+			"cms": "Casdoor",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
 				"<title>casdoor",
 				"casdoor/manifest.json"
 			],
-			"logic": "and"
+			"logic": "or"
 		},
 		{
 			"cms": "cpanel",
@@ -148574,7 +148381,7 @@
 			"logic": "and"
 		},
 		{
-			"cms": "gitlab",
+			"cms": "GitLab",
 			"method": "keyword",
 			"location": "body",
 			"keyword": [
@@ -148752,6 +148559,50 @@
 				"<p>安全审计</p>"
 			],
 			"logic": "and"
+		},
+		{
+			"cms": "Nginx Proxy Manager",
+			"method": "keyword",
+			"location": "title",
+			"keyword": [
+				"Nginx Proxy Manager"
+			],
+			"version_regex": "v([\\d]+(?:\\.[\\d]+)+)",
+			"version_location": "body"
+		},
+		{
+			"cms": "Nginx Proxy Manager",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"alt=\"Nginx Proxy Manager\"",
+				"class=\"text-center text-secondary mt-3\">v"
+			],
+			"logic": "and",
+			"version_regex": "v([\\d]+(?:\\.[\\d]+)+)",
+			"version_location": "body"
+		},
+		{
+			"cms": "OpenSearch",
+			"method": "keyword",
+			"location": "body",
+			"keyword": [
+				"The OpenSearch Project: https://opensearch.org/",
+				"\"distribution\":\"opensearch\""
+			],
+			"logic": "and",
+			"version_regex": "\"number\"\\s*:\\s*\"([^\"]+)\"",
+			"version_location": "body"
+		},
+		{
+			"cms": "OpenSearch Dashboards",
+			"method": "keyword",
+			"location": "title",
+			"keyword": [
+				"OpenSearch Dashboards"
+			],
+			"version_regex": "OpenSearch Dashboards[^0-9]*([\\d]+(?:\\.[\\d]+)+)",
+			"version_location": "body"
 		}
 	]
 }

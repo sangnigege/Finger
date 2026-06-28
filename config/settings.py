@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# author = sangnigege
+# author = EASY233
 
 import random
 
-Version = "V6.0"
-Author = "sangnigege"
+Version = "V6.1"
+Author = "EASY233"
 Banner = '\033[1;31m\n' + r'''
 ______ _
 |  ___(_)

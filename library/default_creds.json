@@ -124,6 +124,9 @@
 	"Jupyter-Notebook": [
 		"(token认证)"
 	],
+	"Jupyter Notebook": [
+		"(token认证)"
+	],
 	"Roundcube-Webmail": [
 		"(取决于邮件服务器)"
 	],
@@ -204,6 +207,15 @@
 	],
 	"Casdoor": [
 		"admin/123456"
+	],
+	"ArgoCD": [
+		"admin/(初始密码来自 argocd-initial-admin-secret)"
+	],
+	"Alertmanager": [
+		"(通常无内置认证; 取决于反向代理)"
+	],
+	"Consul-HashiCorp": [
+		"(ACL/Token认证)"
 	],
 	"Nexpose漏洞扫描": [
 		"nxadmin/nxadmin"
@@ -341,11 +353,6 @@
 		"postgres/(空密码)"
 	],
 	"Gitlab": [
-		"admin/5iveL!fe",
-		"root/5iveL!fe"
-	],
-	"gitlab": [
-		"admin/5iveL!fe",
 		"root/5iveL!fe"
 	],
 	"Cisco-Adaptive-Security-Appliance": [
@@ -3611,11 +3618,8 @@
 		"admin/tomcat"
 	],
 	"Apache-Airflow": [
-		"admin/(空密码)",
-		"admin/admin",
-		"admin/j5Brn9",
-		"admin/jboss4",
-		"admin/tomcat"
+		"admin/(初始化创建)",
+		"airflow/airflow"
 	],
 	"Apache-Solr": [
 		"admin/(空密码)",
@@ -3688,11 +3692,8 @@
 		"admin/tomcat"
 	],
 	"Apache-NiFi": [
-		"admin/(空密码)",
-		"admin/admin",
-		"admin/j5Brn9",
-		"admin/jboss4",
-		"admin/tomcat"
+		"(默认 single-user 随机生成用户名/密码)",
+		"(也可能使用 LDAP/Kerberos/证书认证)"
 	],
 	"apache-kylin": [
 		"admin/(空密码)",

@@ -4,29 +4,60 @@
 
 import os
 import json
+import re
 from collections import Counter, defaultdict
+
+from lib.resultio import write_csv_rows
+from lib.rule_heuristics import classify_rule, normalize_cms_key, prefer_display_name
 
 
 class RuleAudit:
     """分析扫描结果，标记可能存在误报的规则"""
 
-    def __init__(self, finger_path, xlsx_path=None):
-        self.finger_path = finger_path
+    VERSION_REGEX_WARNING_CMS = {
+        "prometheus",
+        "apache-airflow",
+        "apache-nifi",
+        "minio",
+        "rancher",
+        "keycloak",
+        "gitlab",
+        "gitlabci",
+        "nexus repository manager",
+        "harbor",
+        "portainer",
+        "casdoor",
+        "argocd",
+        "gitea",
+        "opensearch",
+        "opensearch dashboards",
+        "nginx proxy manager",
+        "uptime-kuma",
+        "alertmanager",
+        "consul-hashicorp",
+        "alibaba-druid",
+    }
+
+    def __init__(self, library_dir, xlsx_path=None):
+        self.library_dir = library_dir
+        self.finger_path = os.path.join(library_dir, 'finger.json')
         self.xlsx_path = xlsx_path
-        with open(finger_path, 'r', encoding='utf-8') as f:
-            self.rules = json.load(f)['fingerprint']
+        with open(self.finger_path, 'r', encoding='utf-8') as f:
+            self.rules = json.load(f).get('fingerprint', [])
 
     def run(self, scan_results):
         """scan_results: list[dict], 每个dict含 url/cms/Server/status/title"""
-        if not scan_results:
-            return []
-
-        # 建立 CMS→规则 索引
-        cms_to_rules = defaultdict(list)
-        for r in self.rules:
-            cms_to_rules[r['cms']].append(r)
-
         findings = []
+
+        findings.extend(self._static_rule_findings())
+        findings.extend(self._version_rule_findings())
+
+        if not scan_results:
+            findings.sort(key=lambda x: (
+                0 if x['severity'] == 'HIGH' else 1,
+                -x['hits']
+            ))
+            return findings
 
         # ── 维度1: 每种指纹的命中统计 ──
         fp_stats = defaultdict(lambda: {
@@ -141,15 +172,128 @@ class RuleAudit:
 
         return findings
 
+    def _static_rule_findings(self):
+        findings = []
+        cms_name_groups = defaultdict(set)
+        cms_rule_stats = defaultdict(lambda: {
+            "path_only_url": 0,
+            "risky_single_header": 0,
+            "total": 0,
+        })
+
+        for rule in self.rules:
+            cms = str(rule.get('cms', '')).strip()
+            if not cms:
+                continue
+            key = normalize_cms_key(cms)
+            cms_name_groups[key].add(cms)
+            flags = classify_rule(rule)
+            cms_rule_stats[key]["total"] += 1
+            if 'path_only_url' in flags:
+                cms_rule_stats[key]["path_only_url"] += 1
+            if 'risky_single_header' in flags:
+                cms_rule_stats[key]["risky_single_header"] += 1
+
+        for key, names in cms_name_groups.items():
+            if len(names) < 2:
+                continue
+            canonical_names = {prefer_display_name([name]) for name in names}
+            if len(canonical_names) == 1:
+                continue
+            findings.append({
+                'fingerprint': sorted(names)[0],
+                'hits': len(names),
+                'issue': '同产品名称碎片化',
+                'detail': ' / '.join(sorted(names)),
+                'severity': 'MEDIUM',
+                'suggestion': '建议统一 CMS 展示名，避免同一产品在结果中重复出现',
+                'examples': [],
+            })
+
+        for key, stats in cms_rule_stats.items():
+            if stats["path_only_url"] >= 2:
+                findings.append({
+                    'fingerprint': key,
+                    'hits': stats["path_only_url"],
+                    'issue': 'URL 路径型规则偏多',
+                    'detail': f'{stats["path_only_url"]}/{stats["total"]} 条规则仅靠路径识别',
+                    'severity': 'HIGH' if stats["path_only_url"] >= 3 else 'MEDIUM',
+                    'suggestion': '建议补充 title/body/header 佐证，避免仅靠路径命中',
+                    'examples': [],
+                })
+            if stats["risky_single_header"] >= 2:
+                findings.append({
+                    'fingerprint': key,
+                    'hits': stats["risky_single_header"],
+                    'issue': '高风险单头部规则偏多',
+                    'detail': f'{stats["risky_single_header"]}/{stats["total"]} 条规则仅靠通用响应头或 Cookie 识别',
+                    'severity': 'HIGH' if stats["risky_single_header"] >= 3 else 'MEDIUM',
+                    'suggestion': '建议补充页面正文、标题或 favicon 佐证',
+                    'examples': [],
+                })
+
+        return findings
+
+    def _version_rule_findings(self):
+        findings = []
+        for rule in self.rules:
+            version_regex = str(rule.get("version_regex", "")).strip()
+            if not version_regex:
+                continue
+            cms = str(rule.get("cms", "")).strip()
+            if not cms:
+                continue
+
+            location = str(rule.get("version_location", rule.get("location", "body"))).strip() or "body"
+            if location not in {"body", "title", "header", "url"}:
+                location = "body"
+
+            keyword_count = len(rule.get("keyword", []))
+            logic = rule.get("logic", "and")
+            key = normalize_cms_key(cms)
+            risk = 0
+            detail_bits = []
+
+            if key in self.VERSION_REGEX_WARNING_CMS:
+                risk += 1
+                detail_bits.append("高价值产品版本规则")
+
+            if location == "title" and keyword_count <= 1:
+                risk += 1
+                detail_bits.append("版本来源依赖单标题")
+            if location == "body" and keyword_count <= 1 and logic == "and":
+                risk += 1
+                detail_bits.append("版本来源依赖单正文证据")
+            if re.search(r'\\d\+|\\d\*\+|\\d\{\d', version_regex):
+                detail_bits.append("regex含明显数字模式")
+
+            if risk >= 2:
+                findings.append({
+                    'fingerprint': cms,
+                    'hits': 1,
+                    'issue': 'version_regex 可靠性需复核',
+                    'detail': f'location={location}, logic={logic}, regex={version_regex}',
+                    'severity': 'MEDIUM',
+                    'suggestion': '建议用真实页面夹具验证该版本规则；若无稳定版本文本，删除 version_regex',
+                    'examples': detail_bits[:3],
+                })
+
+        return findings
+
     def save_csv(self, findings, output_path):
         """保存审计结果为 CSV"""
-        with open(output_path, 'w', encoding='utf-8-sig') as f:
-            f.write('Severity,Fingerprint,Hits,Issue,Detail,Suggestion,Examples\n')
-            for item in findings:
-                examples = ' | '.join(item.get('examples', []))
-                f.write(f'{item["severity"]},{item["fingerprint"]},{item["hits"]},'
-                        f'"{item["issue"]}","{item["detail"]}","{item["suggestion"]}",'
-                        f'"{examples}"\n')
+        rows = [['Severity', 'Fingerprint', 'Hits', 'Issue', 'Detail', 'Suggestion', 'Examples']]
+        for item in findings:
+            rows.append([
+                item["severity"],
+                item["fingerprint"],
+                item["hits"],
+                item["issue"],
+                item["detail"],
+                item["suggestion"],
+                ' | '.join(item.get('examples', [])),
+            ])
+        write_csv_rows(rows, output_path)
 
     def print_summary(self, findings):
         """打印审计摘要"""
