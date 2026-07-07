@@ -231,7 +231,7 @@ Finger的指纹规则学习之[EHole(棱洞)3.0 重构版-红队重点攻击系�
 | Url | 目标 URL |
 | Title | 页面标题 |
 | CMS | 识别到的产品指纹（置信度着色） |
-| 最高置信度 | 所有指纹中最高的置信度分数 (0-100) |
+| Confidence | 置信度分数 (0-100) |
 | FingerprintDetails | 每个指纹的独立置信度和版本，如 `Grafana(88) Grafana 13.1.0` |
 | Version | 产品版本号 / Server 版本 |
 | Server | 原始 Server 响应头 |
