@@ -32,36 +32,27 @@ Finger定位于一款红队在大量的资产中存活探测与重点攻击系�
 
 ### V6.1 架构收敛与规则质量修复
 
-V6.1 重点不是单纯增加规则数量，而是修复扫描主链路、指纹置信度、输出可解释性和规则库误报问题。
-
-| 问题 | 修改 |
-|------|------|
-| CLI、库模式、旧 `lib/req.py` 路径存在多套状态与输出逻辑，结果容易不一致 | 新增 `lib/app.py`、`lib/runtime.py`、`lib/resultio.py`，统一扫描、配置、导出入口，旧路径改为复用 `Finger` 主引擎 |
-| `Identify.run()` 依赖全局结果列表，库模式不够纯净 | `Identify.match()` / `match_details()` 只返回结果，`run()` 支持显式 `result_store`，避免隐式全局状态 |
-| `regula` 多关键词规则只处理首条正则 | 正则规则统一预编译，并按 `and/or` 逻辑完整匹配 |
-| 只保留同产品最高证据，多个证据不能提升可信度 | 同产品证据聚合，保留 `evidence_count`、`locations`、`methods`，跨位置证据自动提高置信度 |
-| 多个产品共用一个总置信度，低置信陪衬服务看起来像高置信结果 | JSON 新增 `fingerprints` 明细，CLI 显示 `产品[置信度]`，xlsx 新增 `FingerprintDetails` 列 |
-| 高置信页面跳过 favicon 会漏掉 hash 证据 | 默认始终拉取 favicon，主页证据和 favicon 证据一起参与识别 |
-| `400 plain HTTP request was sent to HTTPS port` 会被当成失败 | 自动升级为 HTTPS 重试，并避免已同时调度 HTTP/HTTPS 时重复请求 |
-| JS/meta 前端跳转导致只识别跳转页 | 支持同源 JS/meta refresh 跳转跟进，限制深度并阻止跨源跳转 |
-| `stream=True` 下读取 `apparent_encoding` 会提前消费响应体，导致标题/正文为空 | 先读取受限响应体，再设置 `_content` 与编码，避免真实页面漏报 |
-| keyword 大小写敏感导致 `Swagger UI` / `swagger ui` 互相漏识别 | keyword 匹配改为大小写不敏感 |
-| 大响应体直接丢弃会漏标题和前半段关键特征 | 改为读取前 128KB，保留标题和首屏特征，同时继续拉 favicon |
-| xlsx/csv 可能写入远端公式内容 | 导出统一走字符串写入和 CSV 转义，规避公式注入 |
-| 输出文件按秒命名会在并发/连续扫描时覆盖 | 输出文件名加入毫秒，并在重名时自动追加后缀 |
-| 规则库别名碎片导致同产品多展示名 | 增加别名归一化和展示名优选，审计中别名碎片降为 0 |
-| Swagger、Grafana、Sonatype 营销页、Example Domain 等真实页面暴露误报/漏报 | 增加真实页面夹具回归，并收紧 `Access-Control`、`Apache-Struts2`、`0example`、`HttpOnly`、裸 `GitLab`、`theme`、`datalayer`、`x-ua-compatible`、`FrontEnd`、`Isite` 等宽规则 |
-| 版本提取 regex 部分过宽，Grafana 提取出伪版本 `1` | 支持多捕获组选择第一个有效组，并修正 Grafana 版本正则 |
-| 规则质量问题只能靠扫描后人工看结果 | `RuleAudit` 增加静态规则审计、版本规则审计、路径型规则提示和 CSV 安全输出 |
-| 回归覆盖只靠合成样本，不足以约束真实误报 | 增加 `tests/fixtures/pages/` 真实页面夹具和规则样本回归，覆盖 Swagger、Grafana、Harbor、Portainer、Nexus、Druid、Gitea、Prometheus 等高价值目标 |
-
-验证状态：
+- **架构统一**：新增 `lib/app.py`、`lib/runtime.py`、`lib/resultio.py`，统一扫描、配置、导出入口。`req.py` 改为复用 `Finger` 主引擎
+- **库模式纯净化**：`Identify.match()` / `match_details()` 只返回结果，`run()` 支持显式 `result_store`，避免隐式全局状态
+- **证据聚合**：同产品多证据保留 `evidence_count`、`locations`、`methods`，跨位置证据自动提高置信度
+- **置信度内联显示**：CLI 输出 `产品[置信度]`，xlsx 新增 `FingerprintDetails` 列
+- **强制 favicon**：默认始终拉取 favicon，不因高置信跳过 hash 证据
+- **HTTPS 自动重试**：`400 plain HTTP request was sent to HTTPS port` 自动升级为 HTTPS
+- **前端跳转跟进**：支持同源 JS/meta refresh 跳转跟进，限制深度并阻止跨源跳转
+- **编码修复**：`stream=True` 下先读取响应体再设置编码，避免标题/正文为空
+- **大小写不敏感**：keyword 匹配改为大小写不敏感，`Swagger UI` / `swagger ui` 统一识别
+- **大响应体优化**：读取前 128KB，保留标题和首屏特征
+- **公式注入防护**：导出统一走字符串写入和 CSV 转义
+- **输出文件名优化**：加入毫秒时间戳，重名自动追加后缀
+- **别名归一化**：增加展示名优选和 CMS 名别名归一化，消除碎片
+- **规则质量修复**：收紧宽规则（`Access-Control`、`Apache-Struts2`、`0example`、`HttpOnly`、裸 `GitLab` 等）；删除 Honeypot 规则中误匹配真实 Server 头的关键词
+- **版本提取修正**：支持多捕获组选择第一个有效组，修正 Grafana 版本正则
+- **规则审计增强**：`RuleAudit` 增加静态规则审计、版本规则审计、路径型规则提示
+- **回归测试**：新增 41 条测试 + `tests/fixtures/pages/` 真实页面夹具，覆盖 Swagger、Grafana、Harbor、Portainer、Nexus、Druid、Gitea、Prometheus 等
 
 ```bash
 python -m unittest discover -s tests -v
 ```
-
-当前回归集为 41 条测试，覆盖扫描错误分类、协议升级、前端跳转、favicon、版本提取、输出安全、规则审计、真实页面夹具。
 
 ### V6.0 版本大更新
 
