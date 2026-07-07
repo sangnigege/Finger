@@ -10,7 +10,7 @@ from lib.rule_heuristics import normalize_cms_key
 
 
 CSV_DANGEROUS_PREFIXES = ('=', '+', '-', '@')
-XLSX_HEADERS = ['Url', 'Title', 'CMS', 'Confidence', 'FingerprintDetails', 'Version',
+XLSX_HEADERS = ['Url', 'Title', 'CMS', 'MaxConfidence', 'FingerprintDetails', 'Version',
                 'Server', 'Status', 'Size', 'IP', 'Address', 'ISP',
                 'DefaultCreds', 'ErrorType', 'ErrorDetail']
 XLSX_WIDTHS = [30, 40, 30, 10, 50, 15, 10, 6, 6, 12, 25, 25, 18, 16, 40]
