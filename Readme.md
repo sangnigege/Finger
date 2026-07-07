@@ -298,7 +298,7 @@ library/               指纹库 + 默认口令库 + CDN/IP 数据
 
 [Glass(镜) V2.0-剑客到刺客的蜕变](https://github.com/s7ckTeam/Glass)
 
-[EHole(棱洞)2.0 重构版-红队重点攻击系统指纹探测工具](https://github.com/EdgeSecurityTeam/EHole)
+[EHole(棱洞)3.0 重构版-红队重点攻击系统指纹探测工具](https://github.com/EdgeSecurityTeam/EHole)
 
 [WebAliveScan](https://github.com/broken5/WebAliveScan)
 
@@ -316,4 +316,4 @@ library/               指纹库 + 默认口令库 + CDN/IP 数据
 
 感谢**Ti0s** 提供的建议
 
-[![Stargazers over time](https://starchart.cc/EASY233/Finger.svg)](https://starchart.cc/EASY233/Finger)
+![Stargazers over time](https://starchart.cc/EASY233/Finger.svg)
