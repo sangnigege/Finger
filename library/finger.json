@@ -44753,12 +44753,7 @@
 			"method": "keyword",
 			"location": "header",
 			"keyword": [
-				"uc-httpd 1.0.0",
-				"server: jboss",
-				"server: tomcat",
-				"server: apache",
-				"server: apache,tomcat,jboss,weblogic,phpstudy,struts",
-				"server: jboss-5.0"
+				"uc-httpd 1.0.0"
 			],
 			"logic": "or"
 		},
