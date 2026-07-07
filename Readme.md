@@ -23,14 +23,14 @@
 
 ## 开始
 
-Finger定位于一款红队在大量的资产中存活探测与重点攻击系统指纹探测工具。在面临大量资产时候Finger可以快速从中查找出重点攻击系统协助我们快速展开渗透。早有前辈贡献出优秀的作品[EHole(棱洞)3.0 重构版-红队重点攻击系统指纹探测工具](https://github.com/EdgeSecurityTeam/EHole) 但是该项目代码不开源我想做出一些修改也没有办法，所以决定使用其指纹库自行开发一个趁手的工具。
+Finger定位于一款红队在大量的资产中存活探测与重点攻击系统指纹探测工具。在面临大量资产时候Finger可以快速从中查找出重点攻击系统协助我们快速展开渗透。早有前辈贡献出优秀的作品[EHole(棱洞)3.0 重构版-红队重点攻击系统指纹探测工具](https://github.com/EdgeSecurityTeam/EHole)，但是该项目代码不开源我想做出一些修改也没有办法，所以决定使用其指纹库自行开发一个趁手的工具。
 
 
 ---
 
 ## 更新日志
 
-### V6.1 架构收敛与规则质量修复
+### V6.1 更新
 
 - **架构统一**：新增 `lib/app.py`、`lib/runtime.py`、`lib/resultio.py`，统一扫描、配置、导出入口。`req.py` 改为复用 `Finger` 主引擎
 - **库模式纯净化**：`Identify.match()` / `match_details()` 只返回结果，`run()` 支持显式 `result_store`，避免隐式全局状态
@@ -42,17 +42,12 @@ Finger定位于一款红队在大量的资产中存活探测与重点攻击系�
 - **编码修复**：`stream=True` 下先读取响应体再设置编码，避免标题/正文为空
 - **大小写不敏感**：keyword 匹配改为大小写不敏感，`Swagger UI` / `swagger ui` 统一识别
 - **大响应体优化**：读取前 128KB，保留标题和首屏特征
-- **公式注入防护**：导出统一走字符串写入和 CSV 转义
 - **输出文件名优化**：加入毫秒时间戳，重名自动追加后缀
 - **别名归一化**：增加展示名优选和 CMS 名别名归一化，消除碎片
-- **规则质量修复**：收紧宽规则（`Access-Control`、`Apache-Struts2`、`0example`、`HttpOnly`、裸 `GitLab` 等）；删除 Honeypot 规则中误匹配真实 Server 头的关键词
-- **版本提取修正**：支持多捕获组选择第一个有效组，修正 Grafana 版本正则
+- **规则质量修复**：收紧宽规则
+- **版本提取修正**：支持多捕获组选择第一个有效组，修正版本正则
 - **规则审计增强**：`RuleAudit` 增加静态规则审计、版本规则审计、路径型规则提示
 - **回归测试**：新增 41 条测试 + `tests/fixtures/pages/` 真实页面夹具，覆盖 Swagger、Grafana、Harbor、Portainer、Nexus、Druid、Gitea、Prometheus 等
-
-```bash
-python -m unittest discover -s tests -v
-```
 
 ### V6.0 版本大更新
 
@@ -122,9 +117,9 @@ Finger追求极简命令参数只有以下几个:
 | `--geo` | 启用IP归属地查询（默认关闭） |
 | `--audit` | 🆕 启用规则质量审计 |
 
-Finger支持的URL格式有:www.baidu.com,127.0.0.1,http://www.baidu.com。 但是前两种不推荐使用Finger会在URL处理阶段自动为其添加`http://`和`https://`
+Finger支持的URL格式有:`www.baidu.com`、`127.0.0.1`、`http://www.baidu.com`，但是前两种不推荐使用。Finger会在URL处理阶段自动为其添加`http://`和`https://`
 
-Finger支持的IP格式有单个IP格式192.168.10.1,IP段192.168.10.1/24，某一小段IP192..168.10.10-192.168.10.50满足日常使用的所有需求。Finger会首先通过Fofa采集IP的web资产，然后对其进行存活探测以及系统指纹探测。
+Finger支持的IP格式有单个IP格式（192.168.10.1）、IP段（192.168.10.1/24）、某一小段IP（192.168.10.10-192.168.10.50），满足日常使用的所有需求。Finger会首先通过Fofa采集IP的web资产，然后对其进行存活探测以及系统指纹探测。
 
 ### 配置说明
 
@@ -154,7 +149,7 @@ FingerPrint_Update = False
 
 ## 指纹识别规则
 
-Finger的指纹规则学习之[EHole(棱洞)3.0 重构版-红队重点攻击系统指纹探测工具](https://github.com/EdgeSecurityTeam/EHole)。规则格式如下:
+Finger的指纹规则学习之[EHole(棱洞)3.0 重构版-红队重点攻击系统指纹探测工具](https://github.com/EdgeSecurityTeam/EHole)，并进行了优化。规则格式如下:
 
 ### 规则字段
 
